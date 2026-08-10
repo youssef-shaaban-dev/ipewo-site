@@ -46,54 +46,51 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[90vh] pt-32 pb-20 flex items-center bg-linear-to-b from-blue-50/60 via-white to-slate-50 overflow-hidden">
+    <section className="relative min-h-[92vh] pt-32 pb-20 flex items-center bg-gradient-to-b from-blue-50/60 via-white to-slate-50 overflow-hidden">
 
       {/* Background Lighting & Soft Orbs */}
-      <div className="absolute top-1/4 -right-20 w-125 h-125 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -left-20 w-125 h-125 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -right-20 w-[550px] h-[550px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -left-20 w-[550px] h-[550px] bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
           {/* Text Content Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-7 space-y-6 text-center rtl:lg:text-right ltr:lg:text-left"
+            className="lg:col-span-6 space-y-6 text-center rtl:lg:text-right ltr:lg:text-left"
           >
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/80 border border-blue-200 text-xs font-bold text-blue-700 shadow-sm">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blue-100/90 border border-blue-200 text-xs sm:text-sm font-extrabold text-blue-800 shadow-sm">
               <Sparkles className="w-4 h-4 text-blue-600 animate-pulse" />
               <span>{t("badge")}</span>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-              {t("title")}{" "}
-              <span className="text-gradient-cyan block mt-2">
-                IPEWO Air Systems
-              </span>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+              {t("title")}
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto rtl:lg:mr-0 ltr:lg:ml-0 leading-relaxed font-normal">
+            {/* Subtitle Paragraph (Tightened & Refined) */}
+            <p className="text-base sm:text-lg text-slate-700 max-w-xl mx-auto rtl:lg:mr-0 ltr:lg:ml-0 leading-relaxed font-semibold">
               {t("subtitle")}
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center rtl:lg:justify-start ltr:lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center rtl:lg:justify-start ltr:lg:justify-start gap-4 pt-3">
               <Link
                 href="#products"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm bg-linear-to-r from-blue-600 to-cyan-600 text-white shadow-xl shadow-blue-500/20 hover:shadow-blue-500/35 hover:scale-105 active:scale-95 transition-all duration-200"
+                className="inline-flex items-center gap-2.5 px-9 py-4 rounded-2xl font-black text-base bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-200"
               >
                 <span>{t("ctaPrimary")}</span>
-                <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                <ArrowRight className="w-4.5 h-4.5 rtl:rotate-180" />
               </Link>
 
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm bg-white border border-slate-200 text-slate-800 shadow-md hover:bg-slate-50 hover:border-slate-300 hover:text-blue-600 transition-all duration-200"
+                className="inline-flex items-center gap-2.5 px-9 py-4 rounded-2xl font-black text-base bg-white border border-slate-200 text-slate-800 shadow-md hover:bg-slate-50 hover:border-slate-300 hover:text-blue-600 transition-all duration-200"
               >
                 <span>{t("ctaSecondary")}</span>
               </Link>
@@ -101,26 +98,26 @@ export default function Hero() {
 
           </motion.div>
 
-          {/* Hero Image Slider Column */}
+          {/* Hero Image Slider Column (Enlarged Size) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-6 relative w-full"
           >
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
 
               {/* Soft Light Frame Glow */}
-              <div className="absolute -inset-2 rounded-3xl bg-linear-to-r from-blue-400/30 to-cyan-400/30 blur-2xl pointer-events-none" />
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-blue-500/30 blur-2xl pointer-events-none" />
 
-              <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 p-3 shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200/90 p-3.5 shadow-2xl">
 
-                {/* Slider Container */}
-                <div className="relative h-80 sm:h-105 w-full rounded-2xl overflow-hidden bg-slate-900">
+                {/* Larger Slider Container */}
+                <div className="relative h-96 sm:h-[480px] lg:h-[530px] w-full rounded-2xl overflow-hidden bg-slate-900">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentIndex}
-                      initial={{ opacity: 0, scale: 1.05 }}
+                      initial={{ opacity: 0, scale: 1.06 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.6 }}
@@ -133,60 +130,61 @@ export default function Hero() {
                         className="object-cover object-center"
                         priority
                       />
-                      <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
                     </motion.div>
                   </AnimatePresence>
 
                   {/* Slider Controls (Next/Prev Arrows) */}
                   <button
                     onClick={handlePrev}
-                    className="absolute top-1/2 left-3 -translate-y-1/2 p-2.5 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white transition-all cursor-pointer z-20"
+                    className="absolute top-1/2 left-4 -translate-y-1/2 p-3 rounded-full bg-slate-900/60 hover:bg-slate-900/90 backdrop-blur-md text-white border border-white/20 transition-all cursor-pointer z-20 shadow-lg hover:scale-110"
                     aria-label="Previous Slide"
                   >
-                    <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
+                    <ChevronLeft className="w-6 h-6" />
                   </button>
 
                   <button
                     onClick={handleNext}
-                    className="absolute top-1/2 right-3 -translate-y-1/2 p-2.5 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white transition-all cursor-pointer z-20"
+                    className="absolute top-1/2 right-4 -translate-y-1/2 p-3 rounded-full bg-slate-900/60 hover:bg-slate-900/90 backdrop-blur-md text-white border border-white/20 transition-all cursor-pointer z-20 shadow-lg hover:scale-110"
                     aria-label="Next Slide"
                   >
-                    <ChevronRight className="w-5 h-5 rtl:rotate-180" />
+                    <ChevronRight className="w-6 h-6" />
                   </button>
 
                   {/* Slide Indicators / Dots */}
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+                  <div className="absolute top-5 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20">
                     {sliderImages.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrentIndex(idx)}
-                        className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${idx === currentIndex
-                            ? "w-8 bg-white"
-                            : "w-2 bg-white/50 hover:bg-white/80"
-                          }`}
+                        className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                          idx === currentIndex
+                            ? "w-9 bg-white shadow-lg"
+                            : "w-2.5 bg-white/50 hover:bg-white/80"
+                        }`}
                         aria-label={`Go to slide ${idx + 1}`}
                       />
                     ))}
                   </div>
 
                   {/* Floating Caption Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/85 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-between z-20">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-lg bg-blue-600 text-white shadow-md">
-                        <ShieldCheck className="w-5 h-5" />
+                  <div className="absolute bottom-5 left-5 right-5 p-4 sm:p-5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-2xl flex items-center justify-between z-20">
+                    <div className="flex items-center gap-3.5">
+                      <div className="p-3 rounded-xl bg-blue-600 text-white shadow-md">
+                        <ShieldCheck className="w-6 h-6" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-white">
+                        <div className="text-sm font-extrabold text-white">
                           {sliderImages[currentIndex].tag}
                         </div>
-                        <div className="text-[10px] text-slate-300">
+                        <div className="text-xs text-slate-300 font-medium">
                           {sliderImages[currentIndex].badge}
                         </div>
                       </div>
                     </div>
 
-                    <div className="hidden sm:flex items-center gap-1 text-emerald-400 text-xs font-bold bg-emerald-500/20 px-2.5 py-1 rounded-full border border-emerald-500/30">
-                      <Award className="w-3.5 h-3.5" />
+                    <div className="hidden sm:flex items-center gap-1.5 text-emerald-400 text-xs font-black bg-emerald-500/20 px-3 py-1.5 rounded-full border border-emerald-500/30">
+                      <Award className="w-4 h-4" />
                       <span>Certified</span>
                     </div>
                   </div>
