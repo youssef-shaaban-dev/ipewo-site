@@ -19,18 +19,15 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-5">
-            <Link href="/" className="flex items-center gap-3.5">
-              <div className="relative w-13 h-13 rounded-2xl overflow-hidden border border-slate-700 p-1 bg-white shadow-md">
+            <Link href="/" className="flex items-center">
+              <div className="relative h-16 w-36 rounded-2xl overflow-hidden bg-white border border-slate-700 p-2 shadow-lg hover:scale-105 transition-all">
                 <Image
-                  src="/ipewo2.jpeg"
+                  src="/ipewo-logo.webp"
                   alt="IPEWO Logo"
                   fill
                   className="object-contain p-1"
                 />
               </div>
-              <span className="font-black text-3xl tracking-tight text-white">
-                IPEWO
-              </span>
             </Link>
 
             <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-md">

@@ -58,23 +58,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="relative w-13 h-13 rounded-2xl overflow-hidden border-2 border-blue-100 p-1 bg-white shadow-sm group-hover:border-blue-600 transition-all">
+          <Link href="/" className="flex items-center group">
+            <div className="relative h-16 w-36 overflow-hidden p-1 transition-all">
               <Image
-                src="/ipewo2.jpeg"
+                src="/ipewo-logo.webp"
                 alt="IPEWO Logo"
                 fill
-                className="object-contain p-1"
+                className="object-contain"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-black text-2xl tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
-                IPEWO
-              </span>
-              <span className="text-xs tracking-widest text-slate-500 uppercase font-bold">
-                {isRtl ? "إيبويو للفلاتر" : "Air Filtration"}
-              </span>
             </div>
           </Link>
 
