@@ -22,10 +22,10 @@ export default function LanguageSwitcher() {
     <button
       onClick={toggleLanguage}
       disabled={isPending}
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 border border-slate-200 text-slate-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all duration-200 cursor-pointer disabled:opacity-50 shadow-sm"
+      className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold bg-slate-100 border border-slate-200 text-slate-800 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all duration-200 cursor-pointer disabled:opacity-50 shadow-sm"
       aria-label="Switch Language"
     >
-      <Globe className="w-3.5 h-3.5 text-blue-600 animate-spin-slow" />
+      <Globe className="w-4 h-4 text-blue-600 animate-spin-slow" />
       <span>{locale === "ar" ? "English" : "العربية"}</span>
     </button>
   );
