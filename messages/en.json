@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products & Services",
+    "gallery": "Gallery",
+    "clients": "Clients",
+    "careers": "Careers",
+    "contact": "Contact Us",
+    "allProducts": "All Products",
+    "primaryFilters": "Primary Pre-Filters",
+    "hepaFilters": "HEPA & ULPA Filters",
+    "paintRolls": "Paint & Bag Filter Rolls",
+    "manufacturingEquipment": "Manufacturing Supplies",
+    "sectors": "Sectors Served",
+    "import": "Import Services"
+  },
+  "hero": {
+    "badge": "Leaders in Central HVAC & Industrial Air Filtration",
+    "title": "Advanced Air Filtration & Industrial Purification",
+    "subtitle": "Specialized in manufacturing and supplying central HVAC filters, primary pre-filters, carbon filters, and HEPA/ULPA filters built to withstand up to 360°C.",
+    "ctaPrimary": "Explore Products",
+    "ctaSecondary": "Contact Us",
+    "stat1Num": "15+",
+    "stat1Label": "Years Experience",
+    "stat2Num": "500+",
+    "stat2Label": "Projects & Factories",
+    "stat3Num": "100%",
+    "stat3Label": "Certified Quality"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "IPEWO Air Filtration - Precision Manufacturing & Eco-Solutions",
+    "description": "Specialists in manufacturing and supplying all types of central HVAC air filters, from primary pre-filters (Aluminum, Felt, Bag, Pleated Carton, Rigid, Foam, Fiberglass) to Carbon and High-Temp HEPA/ULPA filters. We import and supply worldwide.",
+    "pillar1Title": "High-Temp Certified Quality",
+    "pillar1Desc": "Precision engineering capable of withstanding extreme temperatures up to 360°C.",
+    "pillar2Title": "Comprehensive Product Range",
+    "pillar2Desc": "Full supply of Aluminum, Pleated Carton, Bag, Rigid, Foam, Fiberglass, and Dust Collector filters.",
+    "pillar3Title": "Global Import & Supply",
+    "pillar3Desc": "Sourcing and delivering top-tier raw materials, production rolls, and complete filter lines globally."
+  },
+  "products": {
+    "badge": "Product Catalog & Services",
+    "title": "Explore Our Certified Air Filters & Industrial Lineup",
+    "subtitle": "Precision engineered for cleanrooms, hospitals, spray booths, and heavy industrial facilities.",
+    "viewDetails": "View Details",
+    "categories": {
+      "primary": "Primary Pre-Filters",
+      "hepa": "HEPA & ULPA Filters",
+      "carbon": "Carbon & Dust Collector Filters",
+      "supplies": "Manufacturing Supplies & Rolls",
+      "import": "Global Import Services"
+    },
+    "items": {
+      "primary": {
+        "title": "Primary Pre-Filters",
+        "desc": "Includes Aluminum, Felt, Bag, Pleated Carton, Rigid, Foam, and Fiberglass filters to protect central HVAC units."
+      },
+      "hepa": {
+        "title": "HEPA & ULPA Filters (Up to 360°C)",
+        "desc": "Ultra-high purity filters including Absolute (Mini/Deep Pleat), Terminal units, and High-Velocity V-SHAPE filters."
+      },
+      "carbon": {
+        "title": "Carbon & Dust Collector Filters",
+        "desc": "Odor and gas absorption carbon filters alongside industrial dust collector bags for factories."
+      },
+      "paint": {
+        "title": "Paint & Bag Filter Rolls",
+        "desc": "Specialized filter media rolls for spray booths, bag filters, and micro-particulate arresting."
+      },
+      "equipment": {
+        "title": "Filter Manufacturing Supplies",
+        "desc": "Supplying raw media rolls, aluminum mesh, frames, and components for filter assembly."
+      },
+      "import": {
+        "title": "Global Import & Export Services",
+        "desc": "Direct international sourcing and supply of premium global filtration materials and lines."
+      }
+    }
+  },
+  "gallery": {
+    "badge": "Photo Gallery",
+    "title": "Inside Our Production Lines & Certified Products",
+    "subtitle": "Live photos from our facility displaying primary pre-filters, HEPA units, and manufacturing raw materials."
+  },
+  "clients": {
+    "badge": "Our Clients",
+    "title": "Trusted by Major Industries & Facilities",
+    "subtitle": "Partnering with top companies to maintain clean air standards and operational purity."
+  },
+  "careers": {
+    "badge": "Careers",
+    "title": "Build Your Professional Future With IPEWO",
+    "subtitle": "Seeking talented professionals passionate about industrial innovation and air purity.",
+    "applyNow": "Apply Now"
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "We Are Here to Assist & Answer Your Inquiries",
+    "subtitle": "Reach out directly via Phone, WhatsApp, or Email for immediate technical assistance.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject / Filter Type Required",
+    "message": "Message / Request Details",
+    "send": "Send Message",
+    "address": "Headquarters Address",
+    "addressVal": "Egypt - Industrial Zone",
+    "phoneLabel": "Direct Phone / Call Us",
+    "emailLabel": "Email Address",
+    "workingHours": "Official Working Hours",
+    "workingHoursVal": "Sun - Thu: 9:00 AM - 5:00 PM"
+  },
+  "footer": {
+    "aboutText": "IPEWO specializes in manufacturing and importing central HVAC air filters, primary pre-filters, high-temp HEPA/ULPA systems, and industrial raw materials.",
+    "quickLinks": "Quick Links",
+    "productsList": "Our Products",
+    "rights": "All Rights Reserved © IPEWO Air Filtration"
+  }
+}
