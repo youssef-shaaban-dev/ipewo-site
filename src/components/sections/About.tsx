@@ -1,11 +1,13 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { Award, Layers, Globe2, CheckCircle2 } from "lucide-react";
+import { Award, Layers, Globe2, CheckCircle2, Thermometer, Shield } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   const t = useTranslations("about");
+  const locale = useLocale();
 
   const pillars = [
     {
@@ -13,18 +15,39 @@ export default function About() {
       desc: t("pillar1Desc"),
       icon: Award,
       color: "from-blue-600 to-indigo-600",
+      bgColor: "bg-blue-50",
+      textColor: "text-blue-600",
     },
     {
       title: t("pillar2Title"),
       desc: t("pillar2Desc"),
       icon: Layers,
       color: "from-cyan-600 to-blue-600",
+      bgColor: "bg-cyan-50",
+      textColor: "text-cyan-600",
     },
     {
       title: t("pillar3Title"),
       desc: t("pillar3Desc"),
       icon: Globe2,
       color: "from-sky-600 to-cyan-600",
+      bgColor: "bg-sky-50",
+      textColor: "text-sky-600",
+    },
+  ];
+
+  const highlights = [
+    {
+      icon: Thermometer,
+      text: locale === "ar" ? "فلاتر تتحمل حتى 360°م" : "Filters up to 360°C",
+    },
+    {
+      icon: Shield,
+      text: locale === "ar" ? "جودة معتمدة ومختبرة" : "Certified & Tested Quality",
+    },
+    {
+      icon: Globe2,
+      text: locale === "ar" ? "استيراد وتوريد عالمي" : "Global Import & Supply",
     },
   ];
 
@@ -50,6 +73,26 @@ export default function About() {
           </p>
         </div>
 
+        {/* Highlights Row */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+          {highlights.map((h, idx) => {
+            const Icon = h.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.1 }}
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-700 shadow-sm"
+              >
+                <Icon className="w-4.5 h-4.5 text-blue-600" />
+                <span>{h.text}</span>
+              </motion.div>
+            );
+          })}
+        </div>
+
         {/* Pillars Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-18">
           {pillars.map((pillar, idx) => {
@@ -66,7 +109,7 @@ export default function About() {
                 {/* Top Accent Line */}
                 <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${pillar.color}`} />
                 
-                <div className="p-4 rounded-2xl bg-blue-50 text-blue-600 w-fit mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                <div className={`p-4 rounded-2xl ${pillar.bgColor} ${pillar.textColor} w-fit mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm`}>
                   <Icon className="w-7 h-7" />
                 </div>
 

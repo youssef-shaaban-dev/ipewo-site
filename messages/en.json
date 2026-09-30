@@ -17,16 +17,22 @@
   },
   "hero": {
     "badge": "Leaders in Central HVAC & Industrial Air Filtration",
-    "title": "Advanced Air Filtration & Industrial Purification",
-    "subtitle": "Specialized in manufacturing and supplying central HVAC filters, primary pre-filters, carbon filters, and HEPA/ULPA filters built to withstand up to 360°C.",
-    "ctaPrimary": "Explore Products",
+    "title": "International Projects and Engineering Works",
+    "subtitle": "International Projects and Engineering Works",
+    "ctaPrimary": "Discover More",
     "ctaSecondary": "Contact Us",
     "stat1Num": "15+",
     "stat1Label": "Years Experience",
     "stat2Num": "500+",
     "stat2Label": "Projects & Factories",
     "stat3Num": "100%",
-    "stat3Label": "Certified Quality"
+    "stat3Label": "Certified Quality",
+    "slide1Tag": "Ultra-Efficient HEPA Filters",
+    "slide1Badge": "ISO 9001 Certified Quality",
+    "slide2Tag": "Integrated Industrial Filtration Systems",
+    "slide2Badge": "Cleanrooms & Hospitals Standard",
+    "slide3Tag": "Filter Manufacturing Materials & Supplies",
+    "slide3Badge": "Custom Engineering & Import"
   },
   "about": {
     "badge": "About Us",

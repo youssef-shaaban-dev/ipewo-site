@@ -1,203 +1,151 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, ShieldCheck, ChevronLeft, ChevronRight, Award } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 export default function Hero() {
   const t = useTranslations("hero");
 
   const sliderImages = [
-    {
-      url: "/images/hero/4_5789386688308446281 (2).jpg",
-      tag: "فلاتر هيبا فائقة الكفاءة",
-      badge: "ISO 9001 Certified Quality",
-    },
-    {
-      url: "/images/hero/510465542_122187413426050465_8951695654285290265_n.jpg",
-      tag: "أنظمة الفلترة الصناعية المتكاملة",
-      badge: "Cleanrooms & Hospitals Standard",
-    },
-    {
-      url: "/images/hero/634211589_122149209200973946_4627636532742139568_n (1).jpg",
-      tag: "وسائط ومستلزمات تصنيع الفلاتر",
-      badge: "Custom Engineering & Import",
-    },
+    { url: "/images/hero/slide-1.jpg" },
+    { url: "/images/hero/slide-2.jpg" },
+    { url: "/images/hero/slide-3.jpg" },
+    { url: "/images/hero/slide-4.jpg" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
   }, [sliderImages.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
-  };
+  }, [sliderImages.length]);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
-  };
+  useEffect(() => {
+    const timer = setInterval(handleNext, 5000);
+    return () => clearInterval(timer);
+  }, [handleNext]);
 
   return (
-    <section className="relative min-h-[92vh] pt-32 pb-20 flex items-center bg-gradient-to-b from-blue-50/60 via-white to-slate-50 overflow-hidden">
-
-      {/* Background Lighting & Soft Orbs */}
-      <div className="absolute top-1/4 -right-20 w-[550px] h-[550px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -left-20 w-[550px] h-[550px] bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
-          {/* Text Content Column */}
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
+      
+      {/* Background Slider */}
+      <div className="absolute inset-0 w-full h-full">
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-6 space-y-6 text-center rtl:lg:text-right ltr:lg:text-left"
-          >
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blue-100/90 border border-blue-200 text-xs sm:text-sm font-extrabold text-blue-800 shadow-sm">
-              <Sparkles className="w-4 h-4 text-blue-600 animate-pulse" />
-              <span>{t("badge")}</span>
-            </div>
-
-            {/* Main Title */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
-              {t("title")}
-            </h1>
-
-            {/* Subtitle Paragraph (Tightened & Refined) */}
-            <p className="text-base sm:text-lg text-slate-700 max-w-xl mx-auto rtl:lg:mr-0 ltr:lg:ml-0 leading-relaxed font-semibold">
-              {t("subtitle")}
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center rtl:lg:justify-start ltr:lg:justify-start gap-4 pt-3">
-              <Link
-                href="#products"
-                className="inline-flex items-center gap-2.5 px-9 py-4 rounded-2xl font-black text-base bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-200"
-              >
-                <span>{t("ctaPrimary")}</span>
-                <ArrowRight className="w-4.5 h-4.5 rtl:rotate-180" />
-              </Link>
-
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2.5 px-9 py-4 rounded-2xl font-black text-base bg-white border border-slate-200 text-slate-800 shadow-md hover:bg-slate-50 hover:border-slate-300 hover:text-blue-600 transition-all duration-200"
-              >
-                <span>{t("ctaSecondary")}</span>
-              </Link>
-            </div>
-
-          </motion.div>
-
-          {/* Hero Image Slider Column (Enlarged Size) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-6 relative w-full"
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0"
           >
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-
-              {/* Soft Light Frame Glow */}
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-blue-500/30 blur-2xl pointer-events-none" />
-
-              <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200/90 p-3.5 shadow-2xl">
-
-                {/* Larger Slider Container */}
-                <div className="relative h-96 sm:h-[480px] lg:h-[530px] w-full rounded-2xl overflow-hidden bg-slate-900">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentIndex}
-                      initial={{ opacity: 0, scale: 1.06 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.6 }}
-                      className="relative h-full w-full"
-                    >
-                      <Image
-                        src={sliderImages[currentIndex].url}
-                        alt="IPEWO Hero Slider Image"
-                        fill
-                        className="object-cover object-center"
-                        priority
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-                    </motion.div>
-                  </AnimatePresence>
-
-                  {/* Slider Controls (Next/Prev Arrows) */}
-                  <button
-                    onClick={handlePrev}
-                    className="absolute top-1/2 left-4 -translate-y-1/2 p-3 rounded-full bg-slate-900/60 hover:bg-slate-900/90 backdrop-blur-md text-white border border-white/20 transition-all cursor-pointer z-20 shadow-lg hover:scale-110"
-                    aria-label="Previous Slide"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-
-                  <button
-                    onClick={handleNext}
-                    className="absolute top-1/2 right-4 -translate-y-1/2 p-3 rounded-full bg-slate-900/60 hover:bg-slate-900/90 backdrop-blur-md text-white border border-white/20 transition-all cursor-pointer z-20 shadow-lg hover:scale-110"
-                    aria-label="Next Slide"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-
-                  {/* Slide Indicators / Dots */}
-                  <div className="absolute top-5 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20">
-                    {sliderImages.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentIndex(idx)}
-                        className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          idx === currentIndex
-                            ? "w-9 bg-white shadow-lg"
-                            : "w-2.5 bg-white/50 hover:bg-white/80"
-                        }`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Floating Caption Overlay */}
-                  <div className="absolute bottom-5 left-5 right-5 p-4 sm:p-5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-2xl flex items-center justify-between z-20">
-                    <div className="flex items-center gap-3.5">
-                      <div className="p-3 rounded-xl bg-blue-600 text-white shadow-md">
-                        <ShieldCheck className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-extrabold text-white">
-                          {sliderImages[currentIndex].tag}
-                        </div>
-                        <div className="text-xs text-slate-300 font-medium">
-                          {sliderImages[currentIndex].badge}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="hidden sm:flex items-center gap-1.5 text-emerald-400 text-xs font-black bg-emerald-500/20 px-3 py-1.5 rounded-full border border-emerald-500/30">
-                      <Award className="w-4 h-4" />
-                      <span>Certified</span>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
+            <Image
+              src={sliderImages[currentIndex].url}
+              alt="IPEWO Hero Slide"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-slate-900/40" />
           </motion.div>
-
-        </div>
+        </AnimatePresence>
       </div>
+
+      {/* Main Content Center Overlay */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-16">
+        
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative w-72 h-36 md:w-96 md:h-48 mb-6"
+        >
+          <Image
+            src="/ipewo-logo.webp"
+            alt="IPEWO Logo"
+            fill
+            className="object-contain brightness-0 invert drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
+            priority
+          />
+        </motion.div>
+
+        {/* Text Lines */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 drop-shadow-md leading-tight"
+        >
+          {t("title")}
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-lg md:text-2xl font-bold text-blue-400 mb-10 drop-shadow-md"
+        >
+          {t("title")}
+        </motion.p>
+
+        {/* Action Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <Link
+            href="#products"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition-colors shadow-lg"
+          >
+            <span>{t("ctaPrimary")}</span>
+            <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Edge Navigation Arrows */}
+      <button
+        onClick={handlePrev}
+        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-20 cursor-pointer hidden sm:block"
+        aria-label="Previous Slide"
+      >
+        <ChevronLeft className="w-12 h-12 drop-shadow-md font-light stroke-[1.5]" />
+      </button>
+
+      <button
+        onClick={handleNext}
+        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-20 cursor-pointer hidden sm:block"
+        aria-label="Next Slide"
+      >
+        <ChevronRight className="w-12 h-12 drop-shadow-md font-light stroke-[1.5]" />
+      </button>
+
+      {/* Pagination Dots Bottom Center */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
+        {sliderImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border border-white/80 ${
+              idx === currentIndex
+                ? "bg-transparent scale-110"
+                : "bg-white/90"
+            }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+
     </section>
   );
 }

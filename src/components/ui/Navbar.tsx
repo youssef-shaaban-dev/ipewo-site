@@ -51,7 +51,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md py-3.5"
-          : "bg-gradient-to-b from-white/95 to-transparent py-5"
+          : "bg-linear-to-b from-black/50 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +64,7 @@ export default function Navbar() {
                 src="/ipewo-logo.webp"
                 alt="IPEWO Logo"
                 fill
-                className="object-contain"
+                className={`object-contain transition-all duration-300 ${isScrolled ? "" : "brightness-0 invert"}`}
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -75,14 +75,14 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
             <Link
               href="/"
-              className="px-4 py-2.5 text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl transition-all"
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("home")}
             </Link>
 
             <Link
               href="#about"
-              className="px-4 py-2.5 text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl transition-all"
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("about")}
             </Link>
@@ -94,12 +94,12 @@ export default function Navbar() {
               onMouseLeave={() => setProductsDropdownOpen(false)}
             >
               <button
-                className="flex items-center gap-1.5 px-4 py-2.5 text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl transition-all cursor-pointer"
+                className={`flex items-center gap-1.5 px-4 py-2.5 text-base font-bold rounded-xl transition-all cursor-pointer ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
               >
                 <span>{t("products")}</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    productsDropdownOpen ? "rotate-180 text-blue-600" : ""
+                    productsDropdownOpen ? (isScrolled ? "rotate-180 text-blue-600" : "rotate-180 text-cyan-300") : ""
                   }`}
                 />
               </button>
@@ -142,21 +142,21 @@ export default function Navbar() {
 
             <Link
               href="#gallery"
-              className="px-4 py-2.5 text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl transition-all"
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("gallery")}
             </Link>
 
             <Link
               href="#clients"
-              className="px-4 py-2.5 text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl transition-all"
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("clients")}
             </Link>
 
             <Link
               href="#careers"
-              className="px-4 py-2.5 text-base font-bold text-slate-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-xl transition-all"
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("careers")}
             </Link>
@@ -164,11 +164,13 @@ export default function Navbar() {
 
           {/* Right Action Items */}
           <div className="hidden lg:flex items-center gap-4">
-            <LanguageSwitcher />
+            <div className={isScrolled ? "" : "opacity-90"}>
+              <LanguageSwitcher />
+            </div>
             
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-extrabold bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-200"
+              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-extrabold shadow-lg transition-all duration-200 ${isScrolled ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95" : "bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:scale-105 active:scale-95 backdrop-blur-sm"}`}
             >
               <PhoneCall className="w-4 h-4" />
               <span>{t("contact")}</span>
@@ -177,10 +179,12 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center gap-3">
-            <LanguageSwitcher />
+            <div className={isScrolled ? "" : "opacity-90"}>
+              <LanguageSwitcher />
+            </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-slate-800 hover:text-blue-600 hover:bg-slate-100 focus:outline-none"
+              className={`p-2.5 rounded-xl focus:outline-none ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
