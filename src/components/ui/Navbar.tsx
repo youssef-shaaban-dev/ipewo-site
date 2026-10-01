@@ -19,7 +19,6 @@ import {
   Mail,
   Home,
   Info,
-  Image as ImageIcon,
   Users,
   Briefcase
 } from "lucide-react";
@@ -191,13 +190,6 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="#gallery"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
-            >
-              {t("gallery")}
-            </Link>
-
-            <Link
               href="#clients"
               className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
@@ -324,17 +316,6 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-
-              <Link
-                href="#gallery"
-                onClick={() => setMobileMenuOpen(false)}
-                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
-              >
-                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
-                  <ImageIcon className="w-5 h-5" />
-                </div>
-                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("gallery")}</span>
-              </Link>
 
               <Link
                 href="#clients"

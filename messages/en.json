@@ -3,7 +3,6 @@
     "home": "Home",
     "about": "About Us",
     "products": "Products & Services",
-    "gallery": "Gallery",
     "clients": "Clients",
     "careers": "Careers",
     "contact": "Contact Us",
@@ -88,11 +87,6 @@
       }
     }
   },
-  "gallery": {
-    "badge": "Photo Gallery",
-    "title": "Inside Our Production Lines & Certified Products",
-    "subtitle": "Live photos from our facility displaying primary pre-filters, HEPA units, and manufacturing raw materials."
-  },
   "clients": {
     "badge": "Our Clients",
     "title": "Trusted by Major Industries & Facilities",
@@ -128,3 +122,4 @@
     "rights": "All Rights Reserved © IPEWO Air Filtration"
   }
 }
+
