@@ -42,7 +42,7 @@ export default function ProductsGrid() {
     : productsList.filter(p => p.category === activeCategory);
 
   return (
-    <section id="products" className="py-28 relative bg-white overflow-hidden">
+    <section id="products" className="py-16 relative bg-white overflow-hidden">
       
       {/* Soft Background Lighting */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />

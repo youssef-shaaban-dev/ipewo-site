@@ -10,7 +10,7 @@ export default function About() {
   const locale = useLocale();
 
   return (
-    <section id="about" className="py-24 relative bg-slate-50 overflow-hidden border-y border-slate-200/70">
+    <section id="about" className="py-16 relative bg-slate-50 overflow-hidden border-y border-slate-200/70">
       
       {/* Subtle Background Lighting */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

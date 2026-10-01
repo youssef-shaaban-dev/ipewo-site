@@ -9,7 +9,7 @@ export default function Contact() {
   const locale = useLocale();
 
   return (
-    <section id="contact" className="py-28 relative bg-white overflow-hidden border-t border-slate-200/80">
+    <section id="contact" className="py-16 relative bg-white overflow-hidden border-t border-slate-200/80">
       
       {/* Background Lighting */}
       <div className="absolute top-1/3 right-0 w-125 h-125 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />

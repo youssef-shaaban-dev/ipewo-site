@@ -1,22 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Users, Building, Stethoscope, Factory, Wind, Sparkles, Zap, ShieldCheck } from "lucide-react";
+import { Users } from "lucide-react";
 
 export default function Clients() {
   const t = useTranslations("clients");
-  const locale = useLocale();
 
-  const sectors = [
-    { icon: Stethoscope, name: locale === "ar" ? "المستشفيات والرعاية الطبية" : "Hospitals & Healthcare", color: "from-red-500 to-rose-600" },
-    { icon: Factory, name: locale === "ar" ? "مصانع الأدوية والصيدلة" : "Pharmaceutical Plants", color: "from-blue-500 to-indigo-600" },
-    { icon: Wind, name: locale === "ar" ? "أنظمة التكييف والتهوية HVAC" : "HVAC & Air Handling", color: "from-cyan-500 to-blue-600" },
-    { icon: Building, name: locale === "ar" ? "كبائن الدهان والسيارات" : "Automotive Spray Booths", color: "from-amber-500 to-orange-600" },
-    { icon: Sparkles, name: locale === "ar" ? "المصانع والقطاعات الثقيلة" : "Heavy Industrial Factories", color: "from-slate-500 to-slate-700" },
-    { icon: Zap, name: locale === "ar" ? "الغرف النظيفة والمختبرات" : "Cleanrooms & Labs", color: "from-emerald-500 to-teal-600" },
-  ];
 
   const clientLogos = [
     { src: "/images/clients/emaar.png", name: "Emaar" },
@@ -41,60 +32,23 @@ export default function Clients() {
   ];
 
   return (
-    <section id="clients" className="py-28 relative bg-white overflow-hidden border-t border-slate-200/80">
+    <section id="clients" className="py-16 relative bg-white overflow-hidden border-t border-slate-200/80">
       
       {/* Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-50/60 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
+        {/* Header Badge Only */}
+        <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-sm font-extrabold text-blue-800 shadow-sm">
             <Users className="w-4 h-4 text-blue-600" />
             <span>{t("badge")}</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight">
-            {t("title")}
-          </h2>
-          <p className="text-lg sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t("subtitle")}
-          </p>
-        </div>
-
-        {/* Client Sectors Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-16">
-          {sectors.map((sector, idx) => {
-            const Icon = sector.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="bg-slate-50 border border-slate-200/80 p-5 rounded-2xl text-center flex flex-col items-center justify-center space-y-3 group hover:bg-white hover:border-blue-300 hover:shadow-xl transition-all duration-300 shadow-sm"
-              >
-                <div className={`p-3.5 rounded-xl bg-gradient-to-br ${sector.color} text-white shadow-lg group-hover:scale-110 transition-transform`}>
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                  {sector.name}
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
 
         {/* Client Logos Grid */}
-        <div className="mt-20">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 text-sm font-bold text-slate-500">
-              <ShieldCheck className="w-4 h-4 text-blue-500" />
-              <span>{locale === "ar" ? "شركاء نعتز بالتعاون معهم" : "Partners We're Proud to Work With"}</span>
-            </div>
-          </div>
-
+        <div className="mt-10">
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
             {clientLogos.map((logo, idx) => (
               <motion.div

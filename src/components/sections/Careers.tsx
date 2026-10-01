@@ -28,7 +28,7 @@ export default function Careers() {
   ];
 
   return (
-    <section id="careers" className="py-28 relative bg-slate-50 overflow-hidden border-t border-slate-200/80">
+    <section id="careers" className="py-16 relative bg-slate-50 overflow-hidden border-t border-slate-200/80">
 
       {/* Background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl pointer-events-none" />
