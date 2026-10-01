@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "@/i18n/routing";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -60,13 +59,13 @@ export default function Hero() {
       </div>
 
       {/* Main Content Center Overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-16">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto -translate-y-16 md:-translate-y-24">
         
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, rotate: -180, scale: 0.5 }}
+          animate={{ opacity: 1, rotate: 0, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.2, type: "spring", bounce: 0.5 }}
           className="relative w-72 h-36 md:w-96 md:h-48 mb-6"
         >
           <Image
@@ -79,38 +78,29 @@ export default function Hero() {
         </motion.div>
 
         {/* Text Lines */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 drop-shadow-md leading-tight"
-        >
-          {t("title")}
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-2xl font-bold text-blue-400 mb-10 drop-shadow-md"
-        >
-          {t("title")}
-        </motion.p>
-
-        {/* Action Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <Link
-            href="#products"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition-colors shadow-lg"
-          >
-            <span>{t("ctaPrimary")}</span>
-            <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
-          </Link>
-        </motion.div>
+        <div className="w-full relative flex justify-center h-0 pointer-events-none">
+          <AnimatePresence>
+            {currentIndex === 0 && (
+              <motion.div
+                key="hero-text"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-0 flex flex-col items-center w-full px-4"
+              >
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-2xl sm:text-3xl md:text-5xl font-black text-white drop-shadow-md leading-tight text-center max-w-3xl"
+                >
+                  {t("title")}
+                </motion.h1>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Edge Navigation Arrows */}
@@ -136,10 +126,10 @@ export default function Hero() {
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border border-white/80 ${
+            className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
               idx === currentIndex
-                ? "bg-transparent scale-110"
-                : "bg-white/90"
+                ? "bg-white scale-125"
+                : "bg-white/40 hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
