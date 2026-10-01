@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
 import { Users } from "lucide-react";
 
 export default function Clients() {
   const t = useTranslations("clients");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
 
 
   const clientLogos = [
@@ -31,41 +32,58 @@ export default function Clients() {
     { src: "/images/clients/images (4).jpg", name: "Client" },
   ];
 
-  return (
-    <section id="clients" className="py-16 relative bg-white overflow-hidden border-t border-slate-200/80">
-      
-      {/* Background */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-50/60 rounded-full blur-3xl pointer-events-none" />
+  // Duplicate the logos to create an infinite scroll effect
+  const duplicatedLogos = [...clientLogos, ...clientLogos, ...clientLogos];
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  return (
+    <section id="clients" className="py-16 relative bg-slate-50 overflow-hidden border-t border-slate-200/80">
+      
+      {/* Custom CSS for Marquee Animation */}
+      <style>{`
+        @keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.3333%); }
+        }
+        @keyframes scroll-right {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(33.3333%); }
+        }
+        .animate-marquee {
+          animation: ${isRtl ? 'scroll-right' : 'scroll-left'} 45s linear infinite;
+        }
+        .pause-on-hover:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      {/* Background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="w-full relative z-10 overflow-hidden">
         
         {/* Header Badge Only */}
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-sm font-extrabold text-blue-800 shadow-sm">
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white border border-slate-200 text-sm font-extrabold text-blue-800 shadow-sm">
             <Users className="w-4 h-4 text-blue-600" />
             <span>{t("badge")}</span>
           </div>
         </div>
 
-        {/* Client Logos Grid */}
-        <div className="mt-10">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
-            {clientLogos.map((logo, idx) => (
-              <motion.div
+        {/* Client Logos Marquee */}
+        <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex gap-4 sm:gap-6 animate-marquee pause-on-hover w-max px-4">
+            {duplicatedLogos.map((logo, idx) => (
+              <div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.04 }}
-                className="relative h-20 sm:h-24 bg-white rounded-2xl border border-slate-200/90 p-3 flex items-center justify-center hover:border-blue-300 hover:shadow-lg transition-all duration-300 group overflow-hidden"
+                className="relative shrink-0 w-32 sm:w-40 h-20 sm:h-24 bg-white rounded-2xl border border-slate-200/90 p-4 flex items-center justify-center hover:border-blue-300 hover:shadow-lg transition-all duration-300 group"
               >
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   fill
-                  className="object-contain p-3 grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
