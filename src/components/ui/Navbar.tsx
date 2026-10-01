@@ -15,9 +15,22 @@ import {
   Wrench, 
   Building2, 
   Ship, 
-  PhoneCall 
+  PhoneCall,
+  Mail
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+  </svg>
+);
+
+const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+  </svg>
+);
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -50,11 +63,41 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md py-3.5"
-          : "bg-linear-to-b from-black/50 to-transparent py-5"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md"
+          : "bg-linear-to-b from-black/50 to-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top Bar */}
+      <div className={`hidden lg:block border-b transition-all duration-300 ${
+        isScrolled ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-white/5 backdrop-blur-xs"
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-2">
+            <div></div>
+            <div className={`flex items-center gap-6 text-sm font-medium ${isScrolled ? "text-slate-600" : "text-white/90"}`}>
+              <a href="tel:01014298465" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
+                <span className="font-semibold tracking-wider">01014298465</span>
+                <PhoneCall className={`w-4 h-4 ${isScrolled ? "text-blue-600" : "text-cyan-400"}`} />
+              </a>
+              <a href="mailto:ipewo@yahoo.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
+                <span>ipewo@yahoo.com</span>
+                <Mail className={`w-4 h-4 ${isScrolled ? "text-blue-600" : "text-cyan-400"}`} />
+              </a>
+              <div className={`w-px h-4 ${isScrolled ? "bg-slate-300" : "bg-white/30"}`}></div>
+              <div className="flex items-center gap-4" dir="ltr">
+                <a href="#" className={`hover:text-blue-600 transition-colors ${isScrolled ? "text-slate-800" : "text-white"}`}>
+                  <FacebookIcon className="w-4.5 h-4.5" />
+                </a>
+                <a href="#" className={`hover:text-blue-600 transition-colors ${isScrolled ? "text-slate-800" : "text-white"}`}>
+                  <LinkedinIcon className="w-4.5 h-4.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? "py-3.5" : "py-5"}`}>
         <div className="flex items-center justify-between">
           
           {/* Brand Logo */}
