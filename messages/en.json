@@ -1,115 +1,121 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "products": "Products & Services",
-    "clients": "Clients",
-    "careers": "Careers",
-    "contact": "Contact Us",
-    "allProducts": "All Products",
-    "primaryFilters": "Primary Pre-Filters",
-    "hepaFilters": "HEPA & ULPA Filters",
-    "paintRolls": "Paint & Bag Filter Rolls",
-    "manufacturingEquipment": "Manufacturing Supplies",
-    "sectors": "Sectors Served",
-    "import": "Import Services"
-  },
-  "hero": {
-    "badge": "Leaders in Central HVAC & Industrial Air Filtration",
-    "title": "International Projects and Engineering Works",
-    "subtitle": "International Projects and Engineering Works",
-    "ctaPrimary": "Discover More",
-    "ctaSecondary": "Contact Us",
-    "stat1Num": "15+",
-    "stat1Label": "Years Experience",
-    "stat2Num": "500+",
-    "stat2Label": "Projects & Factories",
-    "stat3Num": "100%",
-    "stat3Label": "Certified Quality",
-    "slide1Tag": "Ultra-Efficient HEPA Filters",
-    "slide1Badge": "ISO 9001 Certified Quality",
-    "slide2Tag": "Integrated Industrial Filtration Systems",
-    "slide2Badge": "Cleanrooms & Hospitals Standard",
-    "slide3Tag": "Filter Manufacturing Materials & Supplies",
-    "slide3Badge": "Custom Engineering & Import"
-  },
-  "about": {
-    "badge": "About Us",
-    "title": "Specialists in the supply of all types of central air conditioning filters.",
-    "companySummaryTitle": "Company Summary:",
-    "companySummaryDesc": "The International Company for projects and Engineering Works ( ipewo ) was established in 2010. It specializes in the supply and installation of all types of central air conditioning filters, providing optimal products to specific client needs. All filters are designed in accordance with international standards and codes. The company has a team of highly experienced engineers and technicians specializing in design and manufacturing, enabling it to deliver high-quality products within a short time.",
-    "companyGoalTitle": "Company Goal:",
-    "companyGoalDesc": "To be a leading company in the Arab Republic of Egypt and the Middle East in the manufacturing and supply of all types of filters by providing everything the customer needs in this field, using the latest scientific and technological advancements, at the best prices, thus saving them time and the trouble of searching for the required product.",
-    "companyProductsTitle": "Company products (manufactured or imported) for central air conditioning and air purification filters:",
-    "product1": "1- Pre-filters: Aluminum filters, Felt filters, Carbon filters, Cardboard filters, Foam filters, Fiberglass filters",
-    "product2": "2- Bag and Rigid filters",
-    "product3": "3- HEPA and ULPA filters: Absolute, V-shape, Terminal, Deep-pleat (heat resistant up to 360°C)",
-    "product4": "4- Dust Collector filters",
-    "product5": "5- Supply of all filter materials (media, frames, sheet metal)",
-    "product6": "6- Import and supply of filters from around the world"
-  },
-  "products": {
-    "badge": "Product Catalog & Services",
-    "title": "Explore Our Certified Air Filters & Industrial Lineup",
-    "subtitle": "Precision engineered for cleanrooms, hospitals, spray booths, and heavy industrial facilities.",
-    "viewDetails": "View Details",
-    "categories": {
-      "all": "All Products",
-      "primary": "Primary Filters",
-      "hepa": "HEPA & ALBA Filters",
-      "materials": "Filter Materials"
-    },
-    "items": {
-      "aluminum": "Aluminum Filters",
-      "bag": "Bag Filters",
-      "carton": "Carton Filters",
-      "rigid": "Rigid Filters",
-      "foam": "Foam Filters",
-      "fiberglass": "Fiberglass Filters",
-      "carbon": "Active Carbon Filters",
-      "carbon2": "Active Carbon Filters (2)",
-      "dustCollector": "Dust Collector Filters",
-      "hepaMini": "Absolute (Mini Plate)",
-      "terminal": "Terminal",
-      "vShape": "V-SHAPE (High velocity)",
-      "hepaDeep": "Absolute (Deep Plate)",
-      "rollBag": "Bag Filter Rolls",
-      "rollAluminum": "Aluminum Filter Rolls"
-    }
-  },
-  "clients": {
-    "badge": "Our Clients",
-    "title": "Trusted by Major Industries & Facilities",
-    "subtitle": "Partnering with top companies to maintain clean air standards and operational purity."
-  },
-  "careers": {
-    "badge": "Careers",
-    "title": "Build Your Professional Future With IPEWO",
-    "subtitle": "Seeking talented professionals passionate about industrial innovation and air purity.",
-    "applyNow": "Apply Now"
-  },
-  "contact": {
-    "badge": "Contact Us",
-    "title": "We Are Here to Assist & Answer Your Inquiries",
-    "subtitle": "Reach out directly via Phone, WhatsApp, or Email for immediate technical assistance.",
-    "name": "Full Name",
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "subject": "Subject / Filter Type Required",
-    "message": "Message / Request Details",
-    "send": "Send Message",
-    "address": "Headquarters Address",
-    "addressVal": "Egypt - Industrial Zone",
-    "phoneLabel": "Direct Phone / Call Us",
-    "emailLabel": "Email Address",
-    "workingHours": "Official Working Hours",
-    "workingHoursVal": "Sun - Thu: 9:00 AM - 5:00 PM"
-  },
-  "footer": {
-    "aboutText": "IPEWO specializes in manufacturing and importing central HVAC air filters, primary pre-filters, high-temp HEPA/ULPA systems, and industrial raw materials.",
-    "quickLinks": "Quick Links",
-    "productsList": "Our Products",
-    "rights": "All Rights Reserved © IPEWO Air Filtration"
-  }
+    "nav":  {
+                "home":  "Home",
+                "about":  "About Us",
+                "products":  "Products \u0026 Services",
+                "clients":  "Clients",
+                "careers":  "Careers",
+                "contact":  "Contact Us",
+                "allProducts":  "All Products",
+                "primaryFilters":  "Primary Pre-Filters",
+                "hepaFilters":  "HEPA \u0026 ULPA Filters",
+                "paintRolls":  "Paint \u0026 Bag Filter Rolls",
+                "manufacturingEquipment":  "Manufacturing Supplies",
+                "sectors":  "Sectors Served",
+                "import":  "Import Services"
+            },
+    "hero":  {
+                 "badge":  "Leaders in Central HVAC \u0026 Industrial Air Filtration",
+                 "title":  "International Projects and Engineering Works",
+                 "subtitle":  "International Projects and Engineering Works",
+                 "ctaPrimary":  "Discover More",
+                 "ctaSecondary":  "Contact Us",
+                 "stat1Num":  "15+",
+                 "stat1Label":  "Years Experience",
+                 "stat2Num":  "500+",
+                 "stat2Label":  "Projects \u0026 Factories",
+                 "stat3Num":  "100%",
+                 "stat3Label":  "Certified Quality",
+                 "slide1Tag":  "Ultra-Efficient HEPA Filters",
+                 "slide1Badge":  "ISO 9001 Certified Quality",
+                 "slide2Tag":  "Integrated Industrial Filtration Systems",
+                 "slide2Badge":  "Cleanrooms \u0026 Hospitals Standard",
+                 "slide3Tag":  "Filter Manufacturing Materials \u0026 Supplies",
+                 "slide3Badge":  "Custom Engineering \u0026 Import"
+             },
+    "about":  {
+                  "badge":  "About Us",
+                  "title":  "Specialists in the supply of all types of central air conditioning filters.",
+                  "companySummaryTitle":  "Company Summary:",
+                  "companySummaryDesc":  "The International Company for projects and Engineering Works ( ipewo ) was established in 2010. It specializes in the supply and installation of all types of central air conditioning filters, providing optimal products to specific client needs. All filters are designed in accordance with international standards and codes. The company has a team of highly experienced engineers and technicians specializing in design and manufacturing, enabling it to deliver high-quality products within a short time.",
+                  "companyGoalTitle":  "Company Goal:",
+                  "companyGoalDesc":  "To be a leading company in the Arab Republic of Egypt and the Middle East in the manufacturing and supply of all types of filters by providing everything the customer needs in this field, using the latest scientific and technological advancements, at the best prices, thus saving them time and the trouble of searching for the required product.",
+                  "productsListTitle": "Company products (manufactured or imported) for central air conditioning and air purification filters:",
+                  "product1Title": "1- Pre-filters:",
+                  "product1Items": [
+                    "- Aluminum filters", "- Felt filters", "- Carbon filters",
+                    "- Cardboard filters", "- Foam filters", "- Fiberglass filters"
+                  ],
+                  "product2": "2- Bag and Rigid filters:",
+                  "product3Title": "3- HEPA and ULPA filters:",
+                  "product3Items": [
+                    "Absolute", "V-shape", "Terminal", "Deep-pleat", "(heat resistant up to 360°C)"
+                  ],
+                  "product4": "4- Dust Collector filters:",
+                  "product5": "5- Supply of all filter materials (media, frames, sheet metal)",
+                  "product6": "6- Import and supply of filters from around the world"
+              },
+    "products":  {
+                     "badge":  "Product Catalog \u0026 Services",
+                     "title":  "Explore Our Certified Air Filters \u0026 Industrial Lineup",
+                     "subtitle":  "Precision engineered for cleanrooms, hospitals, spray booths, and heavy industrial facilities.",
+                     "viewDetails":  "View Details",
+                     "categories":  {
+                                        "all":  "All Products",
+                                        "primary":  "Primary Filters",
+                                        "hepa":  "HEPA \u0026 ALBA Filters",
+                                        "materials":  "Filter Materials"
+                                    },
+                     "items":  {
+                                   "aluminum":  "Aluminum Filters",
+                                   "bag":  "Bag Filters",
+                                   "carton":  "Carton Filters",
+                                   "rigid":  "Rigid Filters",
+                                   "foam":  "Foam Filters",
+                                   "fiberglass":  "Fiberglass Filters",
+                                   "carbon":  "Active Carbon Filters",
+                                   "carbon2":  "Active Carbon Filters (2)",
+                                   "dustCollector":  "Dust Collector Filters",
+                                   "hepaMini":  "Absolute (Mini Plate)",
+                                   "terminal":  "Terminal",
+                                   "vShape":  "V-SHAPE (High velocity)",
+                                   "hepaDeep":  "Absolute (Deep Plate)",
+                                   "rollBag":  "Bag Filter Rolls",
+                                   "rollAluminum":  "Aluminum Filter Rolls"
+                               }
+                 },
+    "clients":  {
+                    "badge":  "Our Clients",
+                    "title":  "Trusted by Major Industries \u0026 Facilities",
+                    "subtitle":  "Partnering with top companies to maintain clean air standards and operational purity."
+                },
+    "careers":  {
+                    "badge":  "Careers",
+                    "title":  "Build Your Professional Future With IPEWO",
+                    "subtitle":  "Seeking talented professionals passionate about industrial innovation and air purity.",
+                    "applyNow":  "Apply Now"
+                },
+    "contact":  {
+                    "badge":  "Contact Us",
+                    "title":  "We Are Here to Assist \u0026 Answer Your Inquiries",
+                    "subtitle":  "Reach out directly via Phone, WhatsApp, or Email for immediate technical assistance.",
+                    "name":  "Full Name",
+                    "email":  "Email Address",
+                    "phone":  "Phone Number",
+                    "subject":  "Subject / Filter Type Required",
+                    "message":  "Message / Request Details",
+                    "send":  "Send Message",
+                    "address":  "Headquarters Address",
+                    "addressVal":  "Egypt - Industrial Zone",
+                    "phoneLabel":  "Direct Phone / Call Us",
+                    "emailLabel":  "Email Address",
+                    "workingHours":  "Official Working Hours",
+                    "workingHoursVal":  "Sun - Thu: 9:00 AM - 5:00 PM"
+                },
+    "footer":  {
+                   "aboutText":  "IPEWO specializes in manufacturing and importing central HVAC air filters, primary pre-filters, high-temp HEPA/ULPA systems, and industrial raw materials.",
+                   "quickLinks":  "Quick Links",
+                   "productsList":  "Our Products",
+                   "rights":  "All Rights Reserved Â© IPEWO Air Filtration"
+               }
 }
-
