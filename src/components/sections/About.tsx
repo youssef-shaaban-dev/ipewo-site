@@ -33,22 +33,6 @@ export default function About() {
         {/* Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: locale === 'ar' ? 50 : -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative w-full h-full min-h-[350px] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border-[6px] border-white"
-          >
-            <Image
-              src="/images/hero/slide-1.jpg"
-              alt={t("title")}
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-
           {/* Right: Content */}
           <motion.div
             initial={{ opacity: 0, x: locale === 'ar' ? -50 : 50 }}
@@ -81,37 +65,24 @@ export default function About() {
 
           </motion.div>
 
+           {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: locale === 'ar' ? 50 : -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full h-full min-h-87.5 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border-[6px] border-white"
+          >
+            <Image
+              src="/images/hero/slide-1.jpg"
+              alt={t("title")}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+
         </div>
 
-        {/* Company Products Section */}
-        <div className="mt-28">
-          <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/50 border border-blue-200 text-sm font-bold text-blue-700">
-              <PackageSearch className="w-4 h-4" />
-              <span>{t("companyProductsTitle")}</span>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <motion.div
-                key={num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: num * 0.1 }}
-                className="bg-white p-6 rounded-3xl border border-slate-200 shadow-lg shadow-slate-200/30 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all group flex items-start gap-4"
-              >
-                <div className="mt-1">
-                  <CheckCircle2 className="w-6 h-6 text-blue-500 group-hover:scale-110 group-hover:text-blue-600 transition-transform" />
-                </div>
-                <h4 className="text-base font-bold text-slate-800 leading-relaxed group-hover:text-blue-700 transition-colors">
-                  {t(`product${num}`)}
-                </h4>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

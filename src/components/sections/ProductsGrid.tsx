@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, ShieldCheck, Paintbrush, Wrench, Ship, ArrowUpRight, Flame, Wind, Layers, Package } from "lucide-react";
+import { Filter, ShieldCheck, Paintbrush, Wrench, Ship, Wind } from "lucide-react";
 import { useState } from "react";
 
 export default function ProductsGrid() {
@@ -144,47 +144,13 @@ export default function ProductsGrid() {
                       fill
                       className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                    
-                    {/* High Temp Feature Badge */}
-                    {item.highlight && (
-                      <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4 px-3.5 py-1.5 rounded-full bg-amber-500 text-white text-xs font-black flex items-center gap-1 shadow-md">
-                        <Flame className="w-4 h-4" />
-                        <span>{locale === "ar" ? "تتحمل حتى 360°م" : "Up to 360°C"}</span>
-                      </div>
-                    )}
-
-                    {/* Category Tag */}
-                    <div className="absolute bottom-3 right-4 rtl:right-auto rtl:left-4 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-white/50 text-xs font-extrabold text-slate-800 shadow-sm max-w-[85%] truncate">
-                      {item.badge}
-                    </div>
                   </div>
 
                   {/* Content Box */}
-                  <div className="p-7 flex-1 flex flex-col justify-between space-y-4">
-                    <div className="space-y-2.5">
-                      <div className="flex items-center gap-2 text-blue-600 font-extrabold text-xs uppercase tracking-wide">
-                        <Icon className="w-4.5 h-4.5" />
-                        <span>IPEWO Filtration Line</span>
-                      </div>
-
-                      <h3 className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-base text-slate-600 font-medium leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-200/90 flex items-center justify-between">
-                      <span className="text-sm font-extrabold text-blue-600 group-hover:text-blue-700 transition-colors">
-                        {t("viewDetails")}
-                      </span>
-                      <div className="p-2.5 rounded-full bg-blue-100 text-blue-700 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
-                        <ArrowUpRight className="w-4 h-4 rtl:-rotate-90" />
-                      </div>
-                    </div>
+                  <div className="p-6 flex items-center justify-center bg-white">
+                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors text-center">
+                      {item.title}
+                    </h3>
                   </div>
                 </motion.div>
               );
