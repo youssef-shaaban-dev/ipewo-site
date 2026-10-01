@@ -50,22 +50,16 @@ export default function ProductsGrid() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
+        {/* Header Badge Only */}
+        <div className="text-center">
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-cyan-100 border border-cyan-200 text-sm font-extrabold text-cyan-800 shadow-sm">
             <Filter className="w-4 h-4 text-cyan-600" />
             <span>{t("badge")}</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight">
-            {t("title")}
-          </h2>
-          <p className="text-lg sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
-            {t("subtitle")}
-          </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mt-12">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
           {categories.map((cat) => (
             <button
               key={cat.key}
