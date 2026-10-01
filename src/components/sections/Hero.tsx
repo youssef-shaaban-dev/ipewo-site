@@ -59,13 +59,16 @@ export default function Hero() {
       </div>
 
       {/* Main Content Center Overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto -translate-y-16 md:-translate-y-24">
+      <div className={`relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto transition-transform duration-700 ${
+        currentIndex === 0 ? "-translate-y-16 md:-translate-y-24" : "translate-y-0"
+      }`}>
         
         {/* Logo */}
         <motion.div
+          key={currentIndex}
           initial={{ opacity: 0, rotate: -180, scale: 0.5 }}
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.2, type: "spring", bounce: 0.5 }}
+          transition={{ duration: 1.2, type: "spring", bounce: 0.5 }}
           className="relative w-72 h-36 md:w-96 md:h-48 mb-6"
         >
           <Image
