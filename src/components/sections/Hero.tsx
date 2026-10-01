@@ -10,7 +10,6 @@ export default function Hero() {
   const t = useTranslations("hero");
 
   const sliderImages = [
-    { url: "/images/hero/slide-1.jpg" },
     { url: "/images/hero/slide-2.jpg" },
     { url: "/images/hero/slide-3.jpg" },
     { url: "/images/hero/slide-4.jpg" },

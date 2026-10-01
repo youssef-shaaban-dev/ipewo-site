@@ -36,14 +36,18 @@
   },
   "about": {
     "badge": "About Us",
-    "title": "IPEWO Air Filtration - Precision Manufacturing & Eco-Solutions",
-    "description": "Specialists in manufacturing and supplying all types of central HVAC air filters, from primary pre-filters (Aluminum, Felt, Bag, Pleated Carton, Rigid, Foam, Fiberglass) to Carbon and High-Temp HEPA/ULPA filters. We import and supply worldwide.",
-    "pillar1Title": "High-Temp Certified Quality",
-    "pillar1Desc": "Precision engineering capable of withstanding extreme temperatures up to 360°C.",
-    "pillar2Title": "Comprehensive Product Range",
-    "pillar2Desc": "Full supply of Aluminum, Pleated Carton, Bag, Rigid, Foam, Fiberglass, and Dust Collector filters.",
-    "pillar3Title": "Global Import & Supply",
-    "pillar3Desc": "Sourcing and delivering top-tier raw materials, production rolls, and complete filter lines globally."
+    "title": "Specialists in the supply of all types of central air conditioning filters.",
+    "companySummaryTitle": "Company Summary:",
+    "companySummaryDesc": "The International Company for projects and Engineering Works ( ipewo ) was established in 2010. It specializes in the supply and installation of all types of central air conditioning filters, providing optimal products to specific client needs. All filters are designed in accordance with international standards and codes. The company has a team of highly experienced engineers and technicians specializing in design and manufacturing, enabling it to deliver high-quality products within a short time.",
+    "companyGoalTitle": "Company Goal:",
+    "companyGoalDesc": "To be a leading company in the Arab Republic of Egypt and the Middle East in the manufacturing and supply of all types of filters by providing everything the customer needs in this field, using the latest scientific and technological advancements, at the best prices, thus saving them time and the trouble of searching for the required product.",
+    "companyProductsTitle": "Company products (manufactured or imported) for central air conditioning and air purification filters:",
+    "product1": "1- Pre-filters: Aluminum filters, Felt filters, Carbon filters, Cardboard filters, Foam filters, Fiberglass filters",
+    "product2": "2- Bag and Rigid filters",
+    "product3": "3- HEPA and ULPA filters: Absolute, V-shape, Terminal, Deep-pleat (heat resistant up to 360°C)",
+    "product4": "4- Dust Collector filters",
+    "product5": "5- Supply of all filter materials (media, frames, sheet metal)",
+    "product6": "6- Import and supply of filters from around the world"
   },
   "products": {
     "badge": "Product Catalog & Services",

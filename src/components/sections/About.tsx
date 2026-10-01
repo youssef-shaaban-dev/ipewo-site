@@ -2,129 +2,116 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { Award, Layers, Globe2, CheckCircle2, Thermometer, Shield } from "lucide-react";
+import { CheckCircle2, Building2, Target, PackageSearch } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
   const t = useTranslations("about");
   const locale = useLocale();
 
-  const pillars = [
-    {
-      title: t("pillar1Title"),
-      desc: t("pillar1Desc"),
-      icon: Award,
-      color: "from-blue-600 to-indigo-600",
-      bgColor: "bg-blue-50",
-      textColor: "text-blue-600",
-    },
-    {
-      title: t("pillar2Title"),
-      desc: t("pillar2Desc"),
-      icon: Layers,
-      color: "from-cyan-600 to-blue-600",
-      bgColor: "bg-cyan-50",
-      textColor: "text-cyan-600",
-    },
-    {
-      title: t("pillar3Title"),
-      desc: t("pillar3Desc"),
-      icon: Globe2,
-      color: "from-sky-600 to-cyan-600",
-      bgColor: "bg-sky-50",
-      textColor: "text-sky-600",
-    },
-  ];
-
-  const highlights = [
-    {
-      icon: Thermometer,
-      text: locale === "ar" ? "فلاتر تتحمل حتى 360°م" : "Filters up to 360°C",
-    },
-    {
-      icon: Shield,
-      text: locale === "ar" ? "جودة معتمدة ومختبرة" : "Certified & Tested Quality",
-    },
-    {
-      icon: Globe2,
-      text: locale === "ar" ? "استيراد وتوريد عالمي" : "Global Import & Supply",
-    },
-  ];
-
   return (
-    <section id="about" className="py-28 relative bg-slate-50 overflow-hidden border-y border-slate-200/70">
+    <section id="about" className="py-24 relative bg-slate-50 border-y border-slate-200/70">
       
       {/* Subtle Background Lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-500/5 rounded-full blur-3xl" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
+        <div className="text-center max-w-4xl mx-auto space-y-5 mb-16">
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-sm font-extrabold text-blue-800 shadow-sm">
             <CheckCircle2 className="w-4 h-4 text-blue-600" />
             <span>{t("badge")}</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
             {t("title")}
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl mx-auto">
-            {t("description")}
-          </p>
         </div>
 
-        {/* Highlights Row */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
-          {highlights.map((h, idx) => {
-            const Icon = h.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.1 }}
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-700 shadow-sm"
-              >
-                <Icon className="w-4.5 h-4.5 text-blue-600" />
-                <span>{h.text}</span>
-              </motion.div>
-            );
-          })}
+        {/* Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: locale === 'ar' ? 50 : -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full h-full min-h-[350px] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border-[6px] border-white"
+          >
+            <Image
+              src="/images/hero/slide-1.jpg"
+              alt={t("title")}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+
+          {/* Right: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: locale === 'ar' ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
+          >
+            {/* Company Summary */}
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform">
+                  <Building2 className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">{t("companySummaryTitle")}</h3>
+              </div>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">{t("companySummaryDesc")}</p>
+            </div>
+
+            {/* Company Goal */}
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform">
+                  <Target className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">{t("companyGoalTitle")}</h3>
+              </div>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">{t("companyGoalDesc")}</p>
+            </div>
+
+          </motion.div>
+
         </div>
 
-        {/* Pillars Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-18">
-          {pillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
+        {/* Company Products Section */}
+        <div className="mt-28">
+          <div className="text-center mb-12 space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/50 border border-blue-200 text-sm font-bold text-blue-700">
+              <PackageSearch className="w-4 h-4" />
+              <span>{t("companyProductsTitle")}</span>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((num) => (
               <motion.div
-                key={idx}
+                key={num}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="bg-white p-8 rounded-3xl relative overflow-hidden group border border-slate-200 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300"
+                transition={{ duration: 0.5, delay: num * 0.1 }}
+                className="bg-white p-6 rounded-3xl border border-slate-200 shadow-lg shadow-slate-200/30 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all group flex items-start gap-4"
               >
-                {/* Top Accent Line */}
-                <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${pillar.color}`} />
-                
-                <div className={`p-4 rounded-2xl ${pillar.bgColor} ${pillar.textColor} w-fit mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm`}>
-                  <Icon className="w-7 h-7" />
+                <div className="mt-1">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 group-hover:scale-110 group-hover:text-blue-600 transition-transform" />
                 </div>
-
-                <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {pillar.title}
-                </h3>
-                
-                <p className="text-base text-slate-600 leading-relaxed font-medium">
-                  {pillar.desc}
-                </p>
+                <h4 className="text-base font-bold text-slate-800 leading-relaxed group-hover:text-blue-700 transition-colors">
+                  {t(`product${num}`)}
+                </h4>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );
