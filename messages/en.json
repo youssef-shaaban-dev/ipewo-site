@@ -54,37 +54,27 @@
     "subtitle": "Precision engineered for cleanrooms, hospitals, spray booths, and heavy industrial facilities.",
     "viewDetails": "View Details",
     "categories": {
-      "primary": "Primary Pre-Filters",
-      "hepa": "HEPA & ULPA Filters",
-      "carbon": "Carbon & Dust Collector Filters",
-      "supplies": "Manufacturing Supplies & Rolls",
-      "import": "Global Import Services"
+      "all": "All Products",
+      "primary": "Primary Filters",
+      "hepa": "HEPA & ALBA Filters",
+      "materials": "Filter Materials"
     },
     "items": {
-      "primary": {
-        "title": "Primary Pre-Filters",
-        "desc": "Includes Aluminum, Felt, Bag, Pleated Carton, Rigid, Foam, and Fiberglass filters to protect central HVAC units."
-      },
-      "hepa": {
-        "title": "HEPA & ULPA Filters (Up to 360°C)",
-        "desc": "Ultra-high purity filters including Absolute (Mini/Deep Pleat), Terminal units, and High-Velocity V-SHAPE filters."
-      },
-      "carbon": {
-        "title": "Carbon & Dust Collector Filters",
-        "desc": "Odor and gas absorption carbon filters alongside industrial dust collector bags for factories."
-      },
-      "paint": {
-        "title": "Paint & Bag Filter Rolls",
-        "desc": "Specialized filter media rolls for spray booths, bag filters, and micro-particulate arresting."
-      },
-      "equipment": {
-        "title": "Filter Manufacturing Supplies",
-        "desc": "Supplying raw media rolls, aluminum mesh, frames, and components for filter assembly."
-      },
-      "import": {
-        "title": "Global Import & Export Services",
-        "desc": "Direct international sourcing and supply of premium global filtration materials and lines."
-      }
+      "aluminum": "Aluminum Filters",
+      "bag": "Bag Filters",
+      "carton": "Carton Filters",
+      "rigid": "Rigid Filters",
+      "foam": "Foam Filters",
+      "fiberglass": "Fiberglass Filters",
+      "carbon": "Active Carbon Filters",
+      "carbon2": "Active Carbon Filters (2)",
+      "dustCollector": "Dust Collector Filters",
+      "hepaMini": "Absolute (Mini Plate)",
+      "terminal": "Terminal",
+      "vShape": "V-SHAPE (High velocity)",
+      "hepaDeep": "Absolute (Deep Plate)",
+      "rollBag": "Bag Filter Rolls",
+      "rollAluminum": "Aluminum Filter Rolls"
     }
   },
   "clients": {

@@ -1,81 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, ShieldCheck, Paintbrush, Wrench, Ship, Wind } from "lucide-react";
+import { Filter } from "lucide-react";
 import { useState } from "react";
 
 export default function ProductsGrid() {
   const t = useTranslations("products");
-  const locale = useLocale();
   const [activeCategory, setActiveCategory] = useState("all");
 
   const productsList = [
-    {
-      key: "primary",
-      category: "primary",
-      title: t("items.primary.title"),
-      desc: t("items.primary.desc"),
-      image: "/images/products/primary/468511583_122165124332050465_5080404655674054655_n.jpg",
-      icon: Filter,
-      badge: locale === "ar" ? "ألومنيوم • لباد • باج • كرتون • ريجد • فوم • فيبر جلاس" : "Aluminum • Felt • Bag • Carton • Rigid • Foam • Fiberglass",
-    },
-    {
-      key: "hepa",
-      category: "hepa",
-      title: t("items.hepa.title"),
-      desc: t("items.hepa.desc"),
-      image: "/images/products/hepa/704041974_122218616588050465_5342743417406722168_n.jpg",
-      icon: ShieldCheck,
-      badge: locale === "ar" ? "تتحمل حتى 360°م • Absolute & Terminal & V-Shape" : "Up to 360°C • Absolute & Terminal & V-Shape",
-      highlight: true,
-    },
-    {
-      key: "carbon",
-      category: "carbon",
-      title: t("items.carbon.title"),
-      desc: t("items.carbon.desc"),
-      image: "/images/products/dust/China-Factory-Price-Dust-Collector-Filter-Bag-for-Filtration.jpg",
-      icon: Wind,
-      badge: locale === "ar" ? "امتصاص الروائح • Dust Collector Bags" : "Odor Absorption • Dust Collector Bags",
-    },
-    {
-      key: "paint",
-      category: "supplies",
-      title: t("items.paint.title"),
-      desc: t("items.paint.desc"),
-      image: "/images/products/paint/468125548_122165047682050465_4601384919979319396_n.jpg",
-      icon: Paintbrush,
-      badge: locale === "ar" ? "رولات كبائن الدهان وفلاتر الباج" : "Spray Booth Rolls & Bag Filters",
-    },
-    {
-      key: "equipment",
-      category: "supplies",
-      title: t("items.equipment.title"),
-      desc: t("items.equipment.desc"),
-      image: "/images/products/equipment/FB_IMG_1606945531264.jpg",
-      icon: Wrench,
-      badge: locale === "ar" ? "خامات • رولات ألومنيوم • إطارات" : "Materials • Aluminum Rolls • Frames",
-    },
-    {
-      key: "import",
-      category: "import",
-      title: t("items.import.title"),
-      desc: t("items.import.desc"),
-      image: "/images/products/import/1630548953131.jpg",
-      icon: Ship,
-      badge: locale === "ar" ? "نستورد ونورد لجميع أنحاء العالم" : "Global Import & Export",
-    },
+    { key: "aluminum", category: "primary", title: t("items.aluminum"), image: "/images/products/all/image1.jpeg" },
+    { key: "bag", category: "primary", title: t("items.bag"), image: "/images/products/all/image2.jpeg" },
+    { key: "carton", category: "primary", title: t("items.carton"), image: "/images/products/all/image3.jpeg" },
+    { key: "rigid", category: "primary", title: t("items.rigid"), image: "/images/products/all/image4.jpeg" },
+    { key: "foam", category: "primary", title: t("items.foam"), image: "/images/products/all/image5.jpeg" },
+    { key: "fiberglass", category: "primary", title: t("items.fiberglass"), image: "/images/products/all/image6.jpeg" },
+    { key: "carbon", category: "primary", title: t("items.carbon"), image: "/images/products/all/image7.jpeg" },
+    { key: "carbon2", category: "primary", title: t("items.carbon2"), image: "/images/products/all/image8.jpeg" },
+    { key: "dustCollector", category: "primary", title: t("items.dustCollector"), image: "/images/products/all/image9.jpeg" },
+    
+    { key: "hepaMini", category: "hepa", title: t("items.hepaMini"), image: "/images/products/all/image10.jpeg" },
+    { key: "terminal", category: "hepa", title: t("items.terminal"), image: "/images/products/all/image11.jpeg" },
+    { key: "vShape", category: "hepa", title: t("items.vShape"), image: "/images/products/all/image12.jpeg" },
+    { key: "hepaDeep", category: "hepa", title: t("items.hepaDeep"), image: "/images/products/all/image13.jpeg" },
+
+    { key: "rollBag", category: "materials", title: t("items.rollBag"), image: "/images/products/all/image14.jpeg" },
+    { key: "rollAluminum", category: "materials", title: t("items.rollAluminum"), image: "/images/products/all/image15.png" },
   ];
 
   const categories = [
-    { key: "all", label: locale === "ar" ? "جميع المنتجات" : "All Products" },
+    { key: "all", label: t("categories.all") },
     { key: "primary", label: t("categories.primary") },
     { key: "hepa", label: t("categories.hepa") },
-    { key: "carbon", label: t("categories.carbon") },
-    { key: "supplies", label: t("categories.supplies") },
-    { key: "import", label: locale === "ar" ? "الاستيراد" : "Import" },
+    { key: "materials", label: t("categories.materials") },
   ];
 
   const filteredProducts = activeCategory === "all"
@@ -126,7 +85,6 @@ export default function ProductsGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
           <AnimatePresence mode="wait">
             {filteredProducts.map((item, idx) => {
-              const Icon = item.icon;
               return (
                 <motion.div
                   key={item.key}
@@ -137,17 +95,17 @@ export default function ProductsGrid() {
                   className="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/90 flex flex-col group hover:bg-white hover:border-blue-300 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 shadow-sm"
                 >
                   {/* Image Box */}
-                  <div className="relative h-64 w-full overflow-hidden bg-slate-100">
+                  <div className="relative h-64 w-full overflow-hidden bg-white">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                      className="object-contain object-center group-hover:scale-110 transition-transform duration-500 p-4"
                     />
                   </div>
 
                   {/* Content Box */}
-                  <div className="p-6 flex items-center justify-center bg-white">
+                  <div className="p-6 flex items-center justify-center bg-white border-t border-slate-100">
                     <h3 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors text-center">
                       {item.title}
                     </h3>
