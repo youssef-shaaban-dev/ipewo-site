@@ -16,7 +16,12 @@ import {
   Building2, 
   Ship, 
   PhoneCall,
-  Mail
+  Mail,
+  Home,
+  Info,
+  Image as ImageIcon,
+  Users,
+  Briefcase
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -50,6 +55,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHeaderSolid = isScrolled || mobileMenuOpen;
+
   const productItems = [
     { name: t("primaryFilters"), href: "#products", icon: Filter },
     { name: t("hepaFilters"), href: "#products", icon: ShieldCheck },
@@ -62,33 +69,33 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isHeaderSolid
           ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md"
           : "bg-linear-to-b from-black/50 to-transparent"
       }`}
     >
       {/* Top Bar */}
       <div className={`hidden lg:block border-b transition-all duration-300 ${
-        isScrolled ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-white/5 backdrop-blur-xs"
+        isHeaderSolid ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-white/5 backdrop-blur-xs"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2">
             <div></div>
-            <div className={`flex items-center gap-6 text-sm font-medium ${isScrolled ? "text-slate-600" : "text-white/90"}`}>
+            <div className={`flex items-center gap-6 text-sm font-medium ${isHeaderSolid ? "text-slate-600" : "text-white/90"}`}>
               <a href="tel:01014298465" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
                 <span className="font-semibold tracking-wider">01014298465</span>
-                <PhoneCall className={`w-4 h-4 ${isScrolled ? "text-blue-600" : "text-cyan-400"}`} />
+                <PhoneCall className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
               </a>
               <a href="mailto:ipewo@yahoo.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
                 <span>ipewo@yahoo.com</span>
-                <Mail className={`w-4 h-4 ${isScrolled ? "text-blue-600" : "text-cyan-400"}`} />
+                <Mail className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
               </a>
-              <div className={`w-px h-4 ${isScrolled ? "bg-slate-300" : "bg-white/30"}`}></div>
+              <div className={`w-px h-4 ${isHeaderSolid ? "bg-slate-300" : "bg-white/30"}`}></div>
               <div className="flex items-center gap-4" dir="ltr">
-                <a href="#" className={`hover:text-blue-600 transition-colors ${isScrolled ? "text-slate-800" : "text-white"}`}>
+                <a href="#" className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>
                   <FacebookIcon className="w-4.5 h-4.5" />
                 </a>
-                <a href="#" className={`hover:text-blue-600 transition-colors ${isScrolled ? "text-slate-800" : "text-white"}`}>
+                <a href="#" className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>
                   <LinkedinIcon className="w-4.5 h-4.5" />
                 </a>
               </div>
@@ -97,7 +104,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? "py-3.5" : "py-5"}`}>
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isHeaderSolid ? "py-3.5" : "py-5"}`}>
         <div className="flex items-center justify-between">
           
           {/* Brand Logo */}
@@ -107,7 +114,7 @@ export default function Navbar() {
                 src="/ipewo-logo.webp"
                 alt="IPEWO Logo"
                 fill
-                className={`object-contain transition-all duration-300 ${isScrolled ? "" : "brightness-0 invert"}`}
+                className={`object-contain transition-all duration-300 ${isHeaderSolid ? "" : "brightness-0 invert"}`}
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -118,14 +125,14 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
             <Link
               href="/"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("home")}
             </Link>
 
             <Link
               href="#about"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("about")}
             </Link>
@@ -137,12 +144,12 @@ export default function Navbar() {
               onMouseLeave={() => setProductsDropdownOpen(false)}
             >
               <button
-                className={`flex items-center gap-1.5 px-4 py-2.5 text-base font-bold rounded-xl transition-all cursor-pointer ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+                className={`flex items-center gap-1.5 px-4 py-2.5 text-base font-bold rounded-xl transition-all cursor-pointer ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
               >
                 <span>{t("products")}</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    productsDropdownOpen ? (isScrolled ? "rotate-180 text-blue-600" : "rotate-180 text-cyan-300") : ""
+                    productsDropdownOpen ? (isHeaderSolid ? "rotate-180 text-blue-600" : "rotate-180 text-cyan-300") : ""
                   }`}
                 />
               </button>
@@ -185,21 +192,21 @@ export default function Navbar() {
 
             <Link
               href="#gallery"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("gallery")}
             </Link>
 
             <Link
               href="#clients"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("clients")}
             </Link>
 
             <Link
               href="#careers"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("careers")}
             </Link>
@@ -207,13 +214,13 @@ export default function Navbar() {
 
           {/* Right Action Items */}
           <div className="hidden lg:flex items-center gap-4">
-            <div className={isScrolled ? "" : "opacity-90"}>
+            <div className={isHeaderSolid ? "" : "opacity-90"}>
               <LanguageSwitcher />
             </div>
             
             <Link
               href="#contact"
-              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-extrabold shadow-lg transition-all duration-200 ${isScrolled ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95" : "bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:scale-105 active:scale-95 backdrop-blur-sm"}`}
+              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-extrabold shadow-lg transition-all duration-200 ${isHeaderSolid ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95" : "bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:scale-105 active:scale-95 backdrop-blur-sm"}`}
             >
               <PhoneCall className="w-4 h-4" />
               <span>{t("contact")}</span>
@@ -222,12 +229,12 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center gap-3">
-            <div className={isScrolled ? "" : "opacity-90"}>
+            <div className={isHeaderSolid ? "" : "opacity-90"}>
               <LanguageSwitcher />
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2.5 rounded-xl focus:outline-none ${isScrolled ? "text-slate-800 hover:text-blue-600 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
+              className={`p-2.5 rounded-xl focus:outline-none transition-colors ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -244,35 +251,48 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-4 pt-4 pb-6 overflow-hidden shadow-2xl"
+            className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-4 pt-4 pb-8 overflow-hidden shadow-2xl"
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 max-h-[75vh] overflow-y-auto custom-scrollbar pr-2">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 text-base font-bold text-slate-800 hover:bg-slate-100 rounded-xl"
+                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                {t("home")}
+                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                  <Home className="w-5 h-5" />
+                </div>
+                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("home")}</span>
               </Link>
               
               <Link
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 text-base font-bold text-slate-800 hover:bg-slate-100 rounded-xl"
+                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                {t("about")}
+                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                  <Info className="w-5 h-5" />
+                </div>
+                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("about")}</span>
               </Link>
 
               {/* Accordion Products Toggle */}
               <div>
                 <button
                   onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                  className="w-full flex items-center justify-between px-4 py-3 text-base font-extrabold text-blue-600 hover:bg-blue-50 rounded-xl transition-all cursor-pointer"
+                  className="group w-full flex items-center justify-between px-3 py-3 rounded-2xl transition-all hover:bg-slate-50 cursor-pointer"
                 >
-                  <span>{t("products")}</span>
+                  <div className="flex items-center gap-4">
+                    <div className={`p-2.5 rounded-xl transition-colors ${mobileProductsOpen ? "bg-blue-100 text-blue-600" : "bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600"}`}>
+                      <Filter className="w-5 h-5" />
+                    </div>
+                    <span className={`text-base transition-colors ${mobileProductsOpen ? "font-extrabold text-blue-600" : "font-bold text-slate-700 group-hover:text-blue-600"}`}>
+                      {t("products")}
+                    </span>
+                  </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-blue-600 transition-transform duration-300 ${
-                      mobileProductsOpen ? "rotate-180" : ""
+                    className={`w-5 h-5 transition-transform duration-300 ${
+                      mobileProductsOpen ? "rotate-180 text-blue-600" : "text-slate-400 group-hover:text-blue-600"
                     }`}
                   />
                 </button>
@@ -284,7 +304,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden rtl:pr-3 ltr:pl-3 mt-1 space-y-1 border-r-2 rtl:border-r-blue-500 ltr:border-l-2 ltr:border-l-blue-500"
+                      className="overflow-hidden rtl:pr-14 ltr:pl-14 mt-1 space-y-1"
                     >
                       {productItems.map((item, idx) => (
                         <Link
@@ -294,10 +314,10 @@ export default function Navbar() {
                             setMobileMenuOpen(false);
                             setMobileProductsOpen(false);
                           }}
-                          className="px-3.5 py-2.5 text-sm font-bold text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl flex items-center gap-3"
+                          className="group flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all hover:bg-blue-50"
                         >
-                          <item.icon className="w-4.5 h-4.5 text-blue-600" />
-                          <span>{item.name}</span>
+                          <item.icon className="w-4.5 h-4.5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                          <span className="text-sm font-bold text-slate-600 group-hover:text-blue-600 transition-colors">{item.name}</span>
                         </Link>
                       ))}
                     </motion.div>
@@ -308,33 +328,43 @@ export default function Navbar() {
               <Link
                 href="#gallery"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 text-base font-bold text-slate-800 hover:bg-slate-100 rounded-xl"
+                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                {t("gallery")}
+                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                  <ImageIcon className="w-5 h-5" />
+                </div>
+                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("gallery")}</span>
               </Link>
 
               <Link
                 href="#clients"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 text-base font-bold text-slate-800 hover:bg-slate-100 rounded-xl"
+                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                {t("clients")}
+                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                  <Users className="w-5 h-5" />
+                </div>
+                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("clients")}</span>
               </Link>
 
               <Link
                 href="#careers"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 text-base font-bold text-slate-800 hover:bg-slate-100 rounded-xl"
+                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                {t("careers")}
+                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                  <Briefcase className="w-5 h-5" />
+                </div>
+                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("careers")}</span>
               </Link>
 
               <Link
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-3 text-center py-3.5 rounded-xl text-base font-extrabold bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg"
+                className="mt-4 flex items-center justify-center gap-2.5 py-4 rounded-2xl text-base font-extrabold bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-[0.98] transition-all"
               >
-                {t("contact")}
+                <PhoneCall className="w-5 h-5" />
+                <span>{t("contact")}</span>
               </Link>
             </div>
           </motion.div>
