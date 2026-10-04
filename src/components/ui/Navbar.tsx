@@ -10,6 +10,8 @@ import {
   Menu, 
   X, 
   ChevronDown, 
+  ChevronLeft,
+  ChevronRight,
   Filter, 
   ShieldCheck, 
   Paintbrush, 
@@ -155,37 +157,56 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                     className={`absolute top-full ${
                       isRtl ? "right-0" : "left-0"
-                    } mt-2 w-[700px] xl:w-[850px] p-6 rounded-3xl bg-white border border-slate-200 shadow-2xl z-50`}
+                    } mt-2 w-[550px] p-2.5 rounded-2xl bg-white border border-slate-200 shadow-2xl z-50`}
                   >
-                    <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
-                      {productsData.map((cat, idx) => (
-                        <div key={idx} className="flex flex-col gap-3">
-                          <Link
-                            href={`/products/${cat.id}`}
-                            onClick={() => setProductsDropdownOpen(false)}
-                            className="group flex items-start gap-2"
-                          >
-                            <Filter strokeWidth={1.5} className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
-                            <span className="text-base font-black text-slate-800 group-hover:text-blue-600 transition-colors">
-                              {locale === "ar" ? cat.nameAr : cat.nameEn}
-                            </span>
-                          </Link>
-                          {cat.subProducts && cat.subProducts.length > 0 && (
-                            <div className={`flex flex-col gap-2 ${isRtl ? "pr-7" : "pl-7"}`}>
-                              {cat.subProducts.map((sub, subIdx) => (
-                                <Link
-                                  key={subIdx}
-                                  href={`/products/${cat.id}/${sub.id}`}
-                                  onClick={() => setProductsDropdownOpen(false)}
-                                  className="text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors"
-                                >
-                                  {locale === "ar" ? sub.nameAr : sub.nameEn}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                      {productsData.map((cat, idx) => {
+                        const hasSub = cat.subProducts && cat.subProducts.length > 0;
+                        return (
+                          <div key={idx} className="group relative">
+                            <Link
+                              href={`/products/${cat.id}`}
+                              onClick={() => setProductsDropdownOpen(false)}
+                              className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-all w-full"
+                            >
+                              <div className="flex items-center gap-3">
+                                <Filter strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
+                                <span className="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
+                                  {locale === "ar" ? cat.nameAr : cat.nameEn}
+                                </span>
+                              </div>
+                              {hasSub && (
+                                <ChevronLeft className={`w-4 h-4 text-slate-400 ${isRtl ? "" : "rotate-180"}`} />
+                              )}
+                            </Link>
+
+                            {/* Flyout Menu */}
+                            {hasSub && (
+                              <div 
+                                className={`absolute top-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ${
+                                  isRtl ? "right-full translate-x-2 group-hover:translate-x-0 mr-1" : "left-full -translate-x-2 group-hover:translate-x-0 ml-1"
+                                } w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl p-2 z-50`}
+                              >
+                                <div className="flex flex-col gap-1">
+                                  {cat.subProducts.map((sub, subIdx) => (
+                                    <Link
+                                      key={subIdx}
+                                      href={`/products/${cat.id}/${sub.id}`}
+                                      onClick={() => setProductsDropdownOpen(false)}
+                                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-all group/sub"
+                                    >
+                                      <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover/sub:bg-blue-600 transition-colors"></span>
+                                      <span className="text-sm font-bold text-slate-600 group-hover/sub:text-blue-600 transition-colors">
+                                        {locale === "ar" ? sub.nameAr : sub.nameEn}
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </motion.div>
                 )}

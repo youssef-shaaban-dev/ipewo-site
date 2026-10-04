@@ -11,7 +11,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
   const catData = productsData.find((c) => c.id === category);
 
   if (!catData) {
-    return <div>Debug: category="{category}", length={category.length}. First product id="{productsData[0].id}", length={productsData[0].id.length}. Match? {String(productsData[0].id === category)}</div>;
+    notFound();
   }
 
   const isRtl = locale === "ar";
