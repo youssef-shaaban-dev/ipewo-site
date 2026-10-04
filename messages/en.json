@@ -92,15 +92,21 @@
     "careers": {
         "badge": "Job Vacancies",
         "title": "Available Opportunities",
-        "subtitle": "International Projects for Engineering Works (ipewo) asked the following job opportunities:",
-        "jobTitle": "Filter Manufacturing Technicians and Assistants",
-        "jobDesc": "Technicians and assistants are required for the manufacture of central air conditioning filters (bag, aluminum, and filters types) at the factory in Belqas.",
-        "req1Title": "Assistants:",
-        "req1Desc": "Residents of Belqas or Mostorod are preferred; no prior experience is required.",
-        "req2Title": "Technicians:",
-        "req2Desc": "From any location or governorate are welcome; prior experience is required.",
-        "benefitsTitle": "Benefits:",
-        "benefitsDesc": "Accommodation provided; attractive salaries + production-based incentives.",
+        "subtitle": "International Projects for Engineering Works (IPEWO) announces the following job opportunities:",
+        "jobs": [
+            {
+                "title": "Mechanical Engineer",
+                "desc": "5 years of experience in petroleum projects."
+            },
+            {
+                "title": "Civil Engineer",
+                "desc": "5 years of experience in construction."
+            },
+            {
+                "title": "Filter Manufacturing Technicians and Assistants",
+                "desc": "Technicians and assistants are required for the manufacture of central air conditioning filters (bag, aluminum, and filters types) at the factory in Belqas. Assistants: Residents of Belqas or Mostorod are preferred; no prior experience is required. Technicians: From any location or governorate are welcome; prior experience is required. Benefits: Accommodation provided; attractive salaries + production-based incentives."
+            }
+        ],
         "contactText": "To apply, please contact us:",
         "whatsappLabel": "WhatsApp",
         "whatsappNumber": "+20 101 429 8465",
