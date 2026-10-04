@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import ProductGallery from "@/components/ui/ProductGallery";
+import ParsedText from "@/components/ui/ParsedText";
 
 // Dynamic route
 
@@ -84,30 +85,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
                   </h1>
                   <div className="w-20 h-1.5 bg-blue-600 rounded-full mb-8"></div>
                   
-                  <div className="prose prose-slate prose-lg max-w-none text-slate-600">
-                    <p>
-                      {isRtl 
-                        ? `هذه الصفحة مخصصة لمنتجات ${title}. يتم تصنيع منتجاتنا بأعلى معايير الجودة لتلبية احتياجاتك في أنظمة التكييف المركزي وتنقية الهواء.`
-                        : `This page is dedicated to ${title}. Our products are manufactured with the highest quality standards to meet your needs in central HVAC and air purification systems.`}
-                    </p>
-                  </div>
+                  <ParsedText text={isRtl 
+                    ? (catData.descAr || `هذه الصفحة مخصصة لمنتجات ${title}. يتم تصنيع منتجاتنا بأعلى معايير الجودة لتلبية احتياجاتك في أنظمة التكييف المركزي وتنقية الهواء.`)
+                    : (catData.descEn || `This page is dedicated to ${title}. Our products are manufactured with the highest quality standards to meet your needs in central HVAC and air purification systems.`)} 
+                  />
                 </div>
 
-                <div className="bg-blue-50/50 rounded-3xl p-8 border border-blue-100">
-                  <h3 className="text-xl font-bold text-slate-800 mb-4">
-                    {isRtl ? "المميزات الرئيسية" : "Key Features"}
-                  </h3>
-                  <ul className="space-y-3">
-                    {[1, 2, 3].map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
-                        <span className="text-slate-700 font-medium">
-                          {isRtl ? "جودة تصنيع عالية ومطابقة للمواصفات القياسية" : "High manufacturing quality conforming to standard specifications"}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
               </div>
             </div>

@@ -1,9 +1,8 @@
 import { productsData } from "@/data/products";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
 import ProductGallery from "@/components/ui/ProductGallery";
+import ParsedText from "@/components/ui/ParsedText";
 
 // Dynamic route
 
@@ -50,30 +49,13 @@ export default async function SubProductPage({ params }: { params: Promise<{ loc
                 </h1>
                 <div className="w-20 h-1.5 bg-blue-600 rounded-full mb-8"></div>
                 
-                <div className="prose prose-slate prose-lg max-w-none text-slate-600">
-                  <p>
-                    {isRtl 
-                      ? `هذه الصفحة مخصصة لمنتج ${title}. نحن نقدم أفضل الحلول لضمان جودة الهواء باستخدام أحدث تقنيات الفلاتر في العالم.`
-                      : `This page is dedicated to the ${title} product. We provide the best solutions for air quality using the latest filter technologies in the world.`}
-                  </p>
-                </div>
+                <ParsedText text={isRtl 
+                  ? (productData.descAr || `هذه الصفحة مخصصة لمنتج ${title}. نحن نقدم أفضل الحلول لضمان جودة الهواء باستخدام أحدث تقنيات الفلاتر في العالم.`)
+                  : (productData.descEn || `This page is dedicated to the ${title} product. We provide the best solutions for air quality using the latest filter technologies in the world.`)} 
+                />
               </div>
 
-              <div className="bg-blue-50/50 rounded-3xl p-8 border border-blue-100">
-                <h3 className="text-xl font-bold text-slate-800 mb-4">
-                  {isRtl ? "المواصفات العامة" : "General Specifications"}
-                </h3>
-                <ul className="space-y-3">
-                  {[1, 2, 3, 4].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
-                      <span className="text-slate-700 font-medium">
-                        {isRtl ? "كفاءة ترشيح عالية ومقاومة للرطوبة ودرجات الحرارة" : "High filtration efficiency, moisture and temperature resistant"}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
             </div>
           </div>
         </div>
