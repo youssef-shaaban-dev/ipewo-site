@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, rotate: -180, scale: 0.5 }}
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
           transition={{ duration: 1.2, type: "spring", bounce: 0.5 }}
-          className="relative w-72 h-36 md:w-96 md:h-48 mb-6"
+          className="relative w-56 h-28 md:w-72 md:h-36 mb-4"
         >
           <Image
             src="/ipewo-logo.webp"
@@ -95,7 +95,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-2xl sm:text-3xl md:text-5xl font-black text-white drop-shadow-md leading-tight text-center max-w-3xl"
+                  className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide"
                 >
                   {t("title")}
                 </motion.h1>
