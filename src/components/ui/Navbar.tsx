@@ -155,25 +155,37 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                     className={`absolute top-full ${
                       isRtl ? "right-0" : "left-0"
-                    } mt-2 w-80 p-2.5 rounded-2xl bg-white border border-slate-200 shadow-2xl z-50`}
+                    } mt-2 w-[700px] xl:w-[850px] p-6 rounded-3xl bg-white border border-slate-200 shadow-2xl z-50`}
                   >
-                    <div className="grid grid-cols-1 gap-1">
-                      {productItems.map((item, idx) => {
-                        const Icon = item.icon;
-                        return (
+                    <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
+                      {productsData.map((cat, idx) => (
+                        <div key={idx} className="flex flex-col gap-3">
                           <Link
-                            key={idx}
-                            href={item.href}
+                            href={`/products/${cat.id}`}
                             onClick={() => setProductsDropdownOpen(false)}
-                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all group"
+                            className="group flex items-start gap-2"
                           >
-                            <Icon strokeWidth={1.5} className="w-5 h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
-                            <span className="text-base font-bold text-slate-700 group-hover:text-blue-700 transition-colors">
-                              {item.name}
+                            <Filter strokeWidth={1.5} className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                            <span className="text-base font-black text-slate-800 group-hover:text-blue-600 transition-colors">
+                              {locale === "ar" ? cat.nameAr : cat.nameEn}
                             </span>
                           </Link>
-                        );
-                      })}
+                          {cat.subProducts && cat.subProducts.length > 0 && (
+                            <div className={`flex flex-col gap-2 ${isRtl ? "pr-7" : "pl-7"}`}>
+                              {cat.subProducts.map((sub, subIdx) => (
+                                <Link
+                                  key={subIdx}
+                                  href={`/products/${cat.id}/${sub.id}`}
+                                  onClick={() => setProductsDropdownOpen(false)}
+                                  className="text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors"
+                                >
+                                  {locale === "ar" ? sub.nameAr : sub.nameEn}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   </motion.div>
                 )}
@@ -271,21 +283,41 @@ export default function Navbar() {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden rtl:pr-14 ltr:pl-14 mt-1 space-y-1"
+                      className="overflow-hidden mt-2 space-y-4"
                     >
-                      {productItems.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          href={item.href}
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            setMobileProductsOpen(false);
-                          }}
-                          className="group flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all hover:bg-blue-50"
-                        >
-                          <item.icon strokeWidth={1.5} className="w-4.5 h-4.5 text-slate-400 group-hover:text-blue-600 transition-colors" />
-                          <span className="text-sm font-bold text-slate-600 group-hover:text-blue-600 transition-colors">{item.name}</span>
-                        </Link>
+                      {productsData.map((cat, idx) => (
+                        <div key={idx} className="flex flex-col gap-2">
+                          <Link
+                            href={`/products/${cat.id}`}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              setMobileProductsOpen(false);
+                            }}
+                            className="group flex items-center gap-3 px-3 py-2 rounded-xl transition-all hover:bg-blue-50"
+                          >
+                            <Filter strokeWidth={1.5} className="w-5 h-5 text-blue-600 transition-colors" />
+                            <span className="text-base font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                              {locale === "ar" ? cat.nameAr : cat.nameEn}
+                            </span>
+                          </Link>
+                          {cat.subProducts && cat.subProducts.length > 0 && (
+                            <div className={`flex flex-col gap-2 ${isRtl ? "pr-11" : "pl-11"}`}>
+                              {cat.subProducts.map((sub, subIdx) => (
+                                <Link
+                                  key={subIdx}
+                                  href={`/products/${cat.id}/${sub.id}`}
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMobileProductsOpen(false);
+                                  }}
+                                  className="text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors py-1"
+                                >
+                                  {locale === "ar" ? sub.nameAr : sub.nameEn}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </motion.div>
                   )}

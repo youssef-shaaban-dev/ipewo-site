@@ -6,11 +6,12 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 
 // Dynamic route
 
-export default function CategoryPage({ params: { locale, category } }: { params: { locale: string; category: string } }) {
+export default async function CategoryPage({ params }: { params: Promise<{ locale: string; category: string }> }) {
+  const { locale, category } = await params;
   const catData = productsData.find((c) => c.id === category);
 
   if (!catData) {
-    notFound();
+    return <div>Debug: category="{category}", length={category.length}. First product id="{productsData[0].id}", length={productsData[0].id.length}. Match? {String(productsData[0].id === category)}</div>;
   }
 
   const isRtl = locale === "ar";

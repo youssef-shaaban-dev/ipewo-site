@@ -6,7 +6,8 @@ import { CheckCircle2 } from "lucide-react";
 
 // Dynamic route
 
-export default function SubProductPage({ params: { locale, category, slug } }: { params: { locale: string; category: string; slug: string } }) {
+export default async function SubProductPage({ params }: { params: Promise<{ locale: string; category: string; slug: string }> }) {
+  const { locale, category, slug } = await params;
   const catData = productsData.find((c) => c.id === category);
   if (!catData) notFound();
 
