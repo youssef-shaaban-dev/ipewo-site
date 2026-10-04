@@ -31,11 +31,11 @@ export default function Hero() {
   }, [handleNext]);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0, scale: 1.05 }}
@@ -52,7 +52,7 @@ export default function Hero() {
               priority
             />
             {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-slate-900/40" />
+            <div className="absolute inset-0 bg-black/50" />
           </motion.div>
         </AnimatePresence>
       </div>
