@@ -44,39 +44,10 @@ export default function ProductsGrid() {
   return (
     <section id="products" className="py-16 relative bg-white overflow-hidden">
       
-      {/* Soft Background Lighting */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/50 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header Badge Only */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-cyan-100 border border-cyan-200 text-sm font-extrabold text-cyan-800 shadow-sm">
-            <Filter className="w-4 h-4 text-cyan-600" />
-            <span>{t("badge")}</span>
-          </div>
-        </div>
-
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
-          {categories.map((cat) => (
-            <button
-              key={cat.key}
-              onClick={() => setActiveCategory(cat.key)}
-              className={`px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                activeCategory === cat.key
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25 scale-105"
-                  : "bg-slate-100 text-slate-800 hover:bg-slate-200"
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="wait">
             {filteredProducts.map((item, idx) => {
               return (

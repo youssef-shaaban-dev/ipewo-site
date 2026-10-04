@@ -21,10 +21,7 @@ export default function About() {
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-5 mb-16">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 text-sm font-extrabold text-blue-800 shadow-sm">
-            <CheckCircle2 className="w-4 h-4 text-blue-600" />
-            <span>{t("badge")}</span>
-          </div>
+          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
             {t("title")}
           </h2>

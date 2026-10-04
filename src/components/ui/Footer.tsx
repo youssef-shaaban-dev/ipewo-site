@@ -56,7 +56,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5 text-sm text-slate-400">
                 <MapPin className="w-4 h-4" />
-                <span>{locale === "ar" ? "مصر - المنطقة الصناعية" : "Egypt - Industrial Zone"}</span>
+                <span>{locale === "ar" ? " مصر - المنطقة الصناعية بمسطرد" : "Egypt - Industrial Zone in Mostrod"}</span>
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#careers" className="hover:text-cyan-400 transition-colors">
+                <Link href="/careers" className="hover:text-cyan-400 transition-colors">
                   {navT("careers")}
                 </Link>
               </li>
