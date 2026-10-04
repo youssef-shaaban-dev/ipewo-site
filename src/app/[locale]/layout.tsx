@@ -5,6 +5,8 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -57,7 +59,11 @@ export default async function LocaleLayout({
       <body className={`min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ${isRtl ? "font-arabic" : ""}`}>
         <main className="min-h-screen flex flex-col">
           <NextIntlClientProvider messages={messages} locale={locale}>
-            {children}
+            <Navbar/>
+            <main className="py-10">
+              {children}
+            </main>
+            <Footer/>
           </NextIntlClientProvider>
         </main>
       </body>

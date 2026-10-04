@@ -93,7 +93,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-cyan-400 transition-colors">
+                <Link href="/contact" className="hover:text-cyan-400 transition-colors">
                   {navT("contact")}
                 </Link>
               </li>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { 
@@ -54,7 +54,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isHeaderSolid = isScrolled || mobileMenuOpen;
+  const pathname = usePathname();
+  const isForceSolid = pathname === "/contact";
+  const isHeaderSolid = isScrolled || mobileMenuOpen || isForceSolid;
 
   const productItems = [
     { name: t("primaryFilters"), href: "#products", icon: Filter },
@@ -202,6 +204,13 @@ export default function Navbar() {
             >
               {t("careers")}
             </Link>
+
+            <Link
+              href="/contact"
+              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
+            >
+              {t("contact")}
+            </Link>
           </nav>
 
           {/* Right Action Items */}
@@ -209,14 +218,6 @@ export default function Navbar() {
             <div className={isHeaderSolid ? "" : "opacity-90"}>
               <LanguageSwitcher />
             </div>
-            
-            <Link
-              href="#contact"
-              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-extrabold shadow-lg transition-all duration-200 ${isHeaderSolid ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95" : "bg-white/10 border border-white/30 text-white hover:bg-white/20 hover:scale-105 active:scale-95 backdrop-blur-sm"}`}
-            >
-              <PhoneCall className="w-4 h-4" />
-              <span>{t("contact")}</span>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -340,12 +341,14 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 flex items-center justify-center gap-2.5 py-4 rounded-2xl text-base font-extrabold bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-[0.98] transition-all"
+                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                <PhoneCall className="w-5 h-5" />
-                <span>{t("contact")}</span>
+                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                  <PhoneCall className="w-5 h-5" />
+                </div>
+                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("contact")}</span>
               </Link>
             </div>
           </motion.div>
