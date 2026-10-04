@@ -73,11 +73,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-cyan-400 transition-colors">
-                  {navT("about")}
-                </Link>
-              </li>
-              <li>
                 <Link href="#products" className="hover:text-cyan-400 transition-colors">
                   {navT("products")}
                 </Link>

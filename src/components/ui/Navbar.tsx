@@ -131,13 +131,6 @@ export default function Navbar() {
               {t("home")}
             </Link>
 
-            <Link
-              href="#about"
-              className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
-            >
-              {t("about")}
-            </Link>
-
             {/* Products Dropdown */}
             <div
               className="relative"
@@ -254,15 +247,6 @@ export default function Navbar() {
                 <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("home")}</span>
               </Link>
               
-              <Link
-                href="#about"
-                onClick={() => setMobileMenuOpen(false)}
-                className="group flex items-center gap-3 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
-              >
-                <Info strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
-                <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("about")}</span>
-              </Link>
-
               {/* Accordion Products Toggle */}
               <div>
                 <button
