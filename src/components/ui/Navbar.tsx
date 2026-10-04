@@ -191,7 +191,7 @@ export default function Navbar() {
                                 } w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl p-2 z-50`}
                               >
                                 <div className="flex flex-col gap-1">
-                                  {cat.subProducts.map((sub, subIdx) => (
+                                  {cat.subProducts?.map((sub, subIdx) => (
                                     <Link
                                       key={subIdx}
                                       href={`/products/${cat.id}/${sub.id}`}
