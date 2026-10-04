@@ -3,12 +3,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter } from "lucide-react";
-import { useState } from "react";
 
 export default function ProductsGrid() {
   const t = useTranslations("products");
-  const [activeCategory, setActiveCategory] = useState("all");
 
   const productsList = [
     { key: "aluminum", category: "primary", title: t("items.aluminum"), image: "/images/products/all/image1.jpeg" },
@@ -30,17 +27,6 @@ export default function ProductsGrid() {
     { key: "rollAluminum", category: "materials", title: t("items.rollAluminum"), image: "/images/products/all/image15.png" },
   ];
 
-  const categories = [
-    { key: "all", label: t("categories.all") },
-    { key: "primary", label: t("categories.primary") },
-    { key: "hepa", label: t("categories.hepa") },
-    { key: "materials", label: t("categories.materials") },
-  ];
-
-  const filteredProducts = activeCategory === "all"
-    ? productsList
-    : productsList.filter(p => p.category === activeCategory);
-
   return (
     <section id="products" className="py-16 relative bg-white overflow-hidden">
       
@@ -49,7 +35,7 @@ export default function ProductsGrid() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="wait">
-            {filteredProducts.map((item, idx) => {
+            {productsList.map((item, idx) => {
               return (
                 <motion.div
                   key={item.key}
