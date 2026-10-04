@@ -192,7 +192,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="#clients"
+              href="/clients"
               className={`px-4 py-2.5 text-base font-bold rounded-xl transition-all ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-blue-50/80" : "text-white hover:text-cyan-300 hover:bg-white/10"}`}
             >
               {t("clients")}
@@ -319,7 +319,7 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="#clients"
+                href="/clients"
                 onClick={() => setMobileMenuOpen(false)}
                 className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
