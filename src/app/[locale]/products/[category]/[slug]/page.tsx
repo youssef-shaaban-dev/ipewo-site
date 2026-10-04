@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import ProductGallery from "@/components/ui/ProductGallery";
 
 // Dynamic route
 
@@ -39,33 +40,7 @@ export default async function SubProductPage({ params }: { params: Promise<{ loc
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
             {/* Product Images Gallery */}
-            <div className="space-y-6 sticky top-24">
-              <div className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-white border border-slate-100">
-                {productData.images && productData.images.length > 0 ? (
-                  <Image
-                    src={productData.images[0]}
-                    alt={title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/ipewo-logo.webp" alt="IPEWO Logo" width={200} height={100} className="opacity-20 grayscale" />
-                  </div>
-                )}
-              </div>
-              
-              {productData.images && productData.images.length > 1 && (
-                <div className="grid grid-cols-4 gap-4">
-                  {productData.images.slice(1, 5).map((img, idx) => (
-                    <div key={idx} className="relative aspect-square rounded-xl overflow-hidden shadow-sm border border-slate-200">
-                      <Image src={img} alt={`${title} ${idx + 2}`} fill className="object-cover" />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <ProductGallery images={productData.images} title={title} />
 
             {/* Product Info */}
             <div className="space-y-8">
@@ -98,15 +73,6 @@ export default async function SubProductPage({ params }: { params: Promise<{ loc
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="pt-6">
-                <Link 
-                  href={`/${locale}/contact`}
-                  className="inline-flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto"
-                >
-                  {isRtl ? "طلب تسعير / استفسار" : "Request Quote / Inquiry"}
-                </Link>
               </div>
             </div>
           </div>
