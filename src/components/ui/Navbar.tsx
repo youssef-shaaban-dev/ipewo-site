@@ -174,12 +174,10 @@ export default function Navbar() {
                             key={idx}
                             href={item.href}
                             onClick={() => setProductsDropdownOpen(false)}
-                            className="flex items-center gap-3.5 p-3 rounded-xl hover:bg-blue-50 transition-all group"
+                            className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-all group"
                           >
-                            <div className="p-2.5 rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                              <Icon className="w-5 h-5" />
-                            </div>
-                            <span className="text-base font-bold text-slate-800 group-hover:text-blue-600">
+                            <Icon strokeWidth={1.5} className="w-5 h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                            <span className="text-base font-bold text-slate-700 group-hover:text-blue-700 transition-colors">
                               {item.name}
                             </span>
                           </Link>
@@ -250,22 +248,18 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
+                className="group flex items-center gap-3 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
-                  <Home className="w-5 h-5" />
-                </div>
+                <Home strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
                 <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("home")}</span>
               </Link>
               
               <Link
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="group flex items-center gap-4 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
+                className="group flex items-center gap-3 px-3 py-3 rounded-2xl transition-all hover:bg-slate-50"
               >
-                <div className="p-2.5 rounded-xl bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
-                  <Info className="w-5 h-5" />
-                </div>
+                <Info strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
                 <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("about")}</span>
               </Link>
 
@@ -275,10 +269,8 @@ export default function Navbar() {
                   onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
                   className="group w-full flex items-center justify-between px-3 py-3 rounded-2xl transition-all hover:bg-slate-50 cursor-pointer"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2.5 rounded-xl transition-colors ${mobileProductsOpen ? "bg-blue-100 text-blue-600" : "bg-slate-100/80 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600"}`}>
-                      <Filter className="w-5 h-5" />
-                    </div>
+                  <div className="flex items-center gap-3">
+                    <Filter strokeWidth={1.5} className={`w-5 h-5 transition-colors ${mobileProductsOpen ? "text-blue-600" : "text-slate-500 group-hover:text-blue-600"}`} />
                     <span className={`text-base transition-colors ${mobileProductsOpen ? "font-extrabold text-blue-600" : "font-bold text-slate-700 group-hover:text-blue-600"}`}>
                       {t("products")}
                     </span>
@@ -309,7 +301,7 @@ export default function Navbar() {
                           }}
                           className="group flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all hover:bg-blue-50"
                         >
-                          <item.icon className="w-4.5 h-4.5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                          <item.icon strokeWidth={1.5} className="w-4.5 h-4.5 text-slate-400 group-hover:text-blue-600 transition-colors" />
                           <span className="text-sm font-bold text-slate-600 group-hover:text-blue-600 transition-colors">{item.name}</span>
                         </Link>
                       ))}
