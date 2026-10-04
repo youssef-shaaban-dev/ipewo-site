@@ -157,11 +157,14 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                     className={`absolute top-full ${
                       isRtl ? "right-0" : "left-0"
-                    } mt-2 w-[550px] p-2.5 rounded-2xl bg-white border border-slate-200 shadow-2xl z-50`}
+                    } mt-2 w-137.5 p-2.5 rounded-2xl bg-white border border-slate-200 shadow-2xl z-50`}
                   >
                     <div className="grid grid-cols-2 gap-x-2 gap-y-1">
                       {productsData.map((cat, idx) => {
                         const hasSub = cat.subProducts && cat.subProducts.length > 0;
+                        const isRightColumn = isRtl ? idx % 2 === 0 : idx % 2 === 1;
+                        const openToRight = isRightColumn;
+                        
                         return (
                           <div key={idx} className="group relative">
                             <Link
@@ -176,7 +179,7 @@ export default function Navbar() {
                                 </span>
                               </div>
                               {hasSub && (
-                                <ChevronLeft className={`w-4 h-4 text-slate-400 ${isRtl ? "" : "rotate-180"}`} />
+                                <ChevronLeft className={`w-4 h-4 text-slate-400 ${openToRight ? "rotate-180" : ""}`} />
                               )}
                             </Link>
 
@@ -184,7 +187,7 @@ export default function Navbar() {
                             {hasSub && (
                               <div 
                                 className={`absolute top-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ${
-                                  isRtl ? "right-full translate-x-2 group-hover:translate-x-0 mr-1" : "left-full -translate-x-2 group-hover:translate-x-0 ml-1"
+                                  openToRight ? "left-full -translate-x-2 group-hover:translate-x-0 ml-1" : "right-full translate-x-2 group-hover:translate-x-0 mr-1"
                                 } w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl p-2 z-50`}
                               >
                                 <div className="flex flex-col gap-1">
