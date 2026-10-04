@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { ChevronRight , Home } from "lucide-react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import SectionHero from "@/components/ui/SectionHero";
 
 export default function ClientsPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
@@ -36,32 +35,12 @@ export default function ClientsPage({ params: { locale } }: { params: { locale: 
     <main className="min-h-screen bg-slate-50 pb-16">
       
       {/* Hero Section */}
-      <div className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center pt-20">
-        <div className="absolute inset-0 z-0">
-          {/* We use hero.png if available, else fallback to a nice gradient */}
-          <Image
-            src="/images/clients/hero.png"
-            alt="Clients Hero"
-            fill
-            className="object-cover object-center opacity-90"
-            priority
-          />
-          <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
-        </div>
-        
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6 drop-shadow-md">
-            {t("badge")}
-          </h1>
-          <div className="flex items-center justify-center gap-3 text-white/90 text-sm md:text-base font-medium">
-            <Link href="/" className="hover:text-cyan-300 transition-colors">
-              <Home className="w-6 h-6" />
-            </Link>
-            <ChevronRight className={`w-4 h-4 ${isRtl ? "rotate-180" : ""}`} />
-            <span className="text-cyan-300">{t("badge")}</span>
-          </div>
-        </div>
-      </div>
+      <SectionHero
+        title={t("badge")}
+        imageSrc="/images/clients/hero.png"
+        isRtl={isRtl}
+        breadcrumb={{ label: t("badge") }}
+      />
 
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">

@@ -59,11 +59,11 @@ export default async function LocaleLayout({
       <body className={`min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ${isRtl ? "font-arabic" : ""}`}>
         <main className="min-h-screen flex flex-col">
           <NextIntlClientProvider messages={messages} locale={locale}>
-            <Navbar/>
+            <Navbar />
             <main className="py-10">
               {children}
             </main>
-            <Footer/>
+            <Footer />
           </NextIntlClientProvider>
         </main>
       </body>

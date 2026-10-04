@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { MapPin, Mail, PhoneCall, Printer, Smartphone, Globe } from "lucide-react";
-import Image from "next/image";
-
+import { MapPin, Mail, PhoneCall, Printer, Smartphone } from "lucide-react";
+import SectionHero from "@/components/ui/SectionHero";
 
 export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
@@ -10,24 +9,13 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   const isRtl = locale === "ar";
 
   return (
-    <main className="min-h-screen bg-slate-50 pt-29 pb-16">
-      {/* Map Section */}
-      <div className="w-full h-100 md:h-125 relative">
-        <Image
-          src="/images/contact/hero.bmp"
-          alt="Contact Hero"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-
-        {/* Page Title Overlay */}
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none">
-          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight drop-shadow-xl">
-            {t("pageTitle")}
-          </h1>
-        </div>
-      </div>
+    <main className="min-h-screen bg-slate-50 pb-16">
+      <SectionHero
+        title={t("pageTitle")}
+        imageSrc="/images/contact/hero.bmp"
+        isRtl={isRtl}
+        breadcrumb={{ label: t("pageTitle") }}
+      />
 
       {/* Quick Info Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
