@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
+import { productsData } from "@/data/products";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { 
   Menu, 
@@ -55,17 +56,15 @@ export default function Navbar() {
   }, []);
 
   const pathname = usePathname();
-  const isForceSolid = pathname === "/contact";
+  const isForceSolid = pathname === "/contact" || pathname.startsWith("/products");
   const isHeaderSolid = isScrolled || mobileMenuOpen || isForceSolid;
 
-  const productItems = [
-    { name: t("primaryFilters"), href: "#products", icon: Filter },
-    { name: t("hepaFilters"), href: "#products", icon: ShieldCheck },
-    { name: t("paintRolls"), href: "#products", icon: Paintbrush },
-    { name: t("manufacturingEquipment"), href: "#products", icon: Wrench },
-    { name: t("sectors"), href: "#products", icon: Building2 },
-    { name: t("import"), href: "#products", icon: Ship },
-  ];
+  // Icon mapping could be more detailed, but for now we'll use generic ones or based on id
+  const productItems = productsData.map((cat) => ({
+    name: locale === "ar" ? cat.nameAr : cat.nameEn,
+    href: `/products/${cat.id}`,
+    icon: Filter // default icon for all
+  }));
 
   return (
     <header
@@ -131,7 +130,6 @@ export default function Navbar() {
               {t("home")}
             </Link>
 
-            {/* Products Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setProductsDropdownOpen(true)}
