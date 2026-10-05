@@ -11,17 +11,10 @@ import {
   X, 
   ChevronDown, 
   ChevronLeft,
-  ChevronRight,
-  Filter, 
-  ShieldCheck, 
-  Paintbrush, 
-  Wrench, 
-  Building2, 
-  Ship, 
+  AirVent, 
   PhoneCall,
   Mail,
   Home,
-  Info,
   Users,
   Briefcase
 } from "lucide-react";
@@ -60,13 +53,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const isForceSolid = pathname === "/contact" || pathname.startsWith("/products");
   const isHeaderSolid = isScrolled || mobileMenuOpen || isForceSolid;
-
-  // Icon mapping could be more detailed, but for now we'll use generic ones or based on id
-  const productItems = productsData.map((cat) => ({
-    name: locale === "ar" ? cat.nameAr : cat.nameEn,
-    href: `/products/${cat.id}`,
-    icon: Filter // default icon for all
-  }));
 
   return (
     <header
@@ -173,7 +159,7 @@ export default function Navbar() {
                               className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-all w-full"
                             >
                               <div className="flex items-center gap-3">
-                                <Filter strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
+                                <AirVent strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
                                 <span className="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
                                   {locale === "ar" ? cat.nameAr : cat.nameEn}
                                 </span>
@@ -288,7 +274,7 @@ export default function Navbar() {
                   className="group w-full flex items-center justify-between px-3 py-3 rounded-2xl transition-all hover:bg-slate-50 cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <Filter strokeWidth={1.5} className={`w-5 h-5 transition-colors ${mobileProductsOpen ? "text-blue-600" : "text-slate-500 group-hover:text-blue-600"}`} />
+                    <AirVent strokeWidth={1.5} className={`w-5 h-5 transition-colors ${mobileProductsOpen ? "text-blue-600" : "text-slate-500 group-hover:text-blue-600"}`} />
                     <span className={`text-base transition-colors ${mobileProductsOpen ? "font-extrabold text-blue-600" : "font-bold text-slate-700 group-hover:text-blue-600"}`}>
                       {t("products")}
                     </span>
@@ -319,7 +305,7 @@ export default function Navbar() {
                             }}
                             className="group flex items-center gap-3 px-3 py-2 rounded-xl transition-all hover:bg-blue-50"
                           >
-                            <Filter strokeWidth={1.5} className="w-5 h-5 text-blue-600 transition-colors" />
+                            <AirVent strokeWidth={1.5} className="w-5 h-5 text-blue-600 transition-colors" />
                             <span className="text-base font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
                               {locale === "ar" ? cat.nameAr : cat.nameEn}
                             </span>
