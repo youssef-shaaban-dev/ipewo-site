@@ -28,9 +28,9 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "hero" });
 
   return {
-    title: "إيبويو - IPEWO Air Filtration & Industrial Solutions",
+    title: "إبيو - IPEWO Air Filtration & Industrial Solutions",
     description: t("subtitle"),
-    keywords: ["Air Filters", "HEPA Filters", "فلاتر هواء", "فلاتر هيبا", "IPEWO", "إيبويو"],
+    keywords: ["Air Filters", "HEPA Filters", "فلاتر هواء", "فلاتر هيبا", "IPEWO", "إبيو"],
   };
 }
 
