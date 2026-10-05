@@ -51,8 +51,6 @@ export default function Hero() {
               className="object-cover object-center"
               priority
             />
-            {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-black/50" />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -111,7 +109,7 @@ export default function Hero() {
         className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-20 cursor-pointer hidden sm:block"
         aria-label="Previous Slide"
       >
-        <ChevronLeft className="w-12 h-12 drop-shadow-md font-light stroke-[1.5]" />
+        <ChevronLeft className="w-12 h-12 drop-shadow-md font-light stroke-[1.5] bg-black/70" />
       </button>
 
       <button
@@ -119,7 +117,7 @@ export default function Hero() {
         className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-20 cursor-pointer hidden sm:block"
         aria-label="Next Slide"
       >
-        <ChevronRight className="w-12 h-12 drop-shadow-md font-light stroke-[1.5]" />
+        <ChevronRight className="w-12 h-12 drop-shadow-md font-light stroke-[1.5] bg-black/70" />
       </button>
 
       {/* Pagination Dots Bottom Center */}
