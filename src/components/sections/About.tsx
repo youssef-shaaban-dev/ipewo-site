@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { CheckCircle2, Building2, Target } from "lucide-react";
+import { Building2, Target } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-5 mb-16">
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight tracking-tight">
             {t("title")}
           </h2>
         </div>

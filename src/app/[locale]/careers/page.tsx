@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Briefcase, Mail, MessageCircle  } from "lucide-react";
+import { Circle, Mail, MessageCircle  } from "lucide-react";
 import SectionHero from "@/components/ui/SectionHero";
 
 export default function CareersPage({ params: { locale } }: { params: { locale: string } }) {
@@ -38,11 +38,11 @@ export default function CareersPage({ params: { locale } }: { params: { locale: 
           <div className="space-y-6">
             {jobs.map((job, idx) => (
               <div key={idx} className="p-6 md:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-blue-50/50 hover:border-blue-100 transition-colors group flex gap-5">
-                <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                  <Briefcase className="w-6 h-6" />
+                <div className="shrink-0 mt-1.5">
+                  <Circle className="w-4 h-4 text-slate-800 fill-slate-800 group-hover:scale-125 transition-transform" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{job.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3  transition-colors">{job.title}</h3>
                   <p className="text-slate-600 font-medium leading-relaxed">{job.desc}</p>
                 </div>
               </div>
