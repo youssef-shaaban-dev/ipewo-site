@@ -207,18 +207,12 @@ export const productsData: Category[] = [
           Available with a cardboard frame.`
       }
     ],
-    descAr: `الفلاتر الابتدائية (  (Pre Filters-Panel Filters:
-
-      الفلاتر الابتدائية مرشحات هواء تُستخدم بشكل أساسي في أنظمة التدفئة والتهوية وتكييف الهواء (HVAC)، وكذلك في العمليات الصناعية وغرف الأبحاث (الغرف النظيفة). وهي مصممة لتنقية الهواء من الجسيمات -مثل الغبار والأتربة وحبوب اللقاح والبكتيريا وغيرها من الملوثات- مما يجعلها عنصراً أساسياً لتحسين جودة الهواء، والحد من مسببات الحساسية، وضمان كفاءة أنظمة التدفئة والتهوية وتكييف الهواء؛ كما تُستخدم أيضاً كمرشحات أولية في وحدات معالجة الهواء متعددة المراحل لمختلف التطبيقات.
-
-      التركيب وآلية العمل
-      يتكون المرشح اللوحي عادةً من إطار (يُصنع غالباً من الورق المقوى أو البلاستيك أو المعدن) تُثبَّت بداخله مادة الترشيح. وتختلف مادة الترشيح باختلاف نوع المرشح، إلا أنها تتكون عادةً من مزيج من الألياف الصناعية، أو الأسلاك الفولاذية، أو الألياف الزجاجية، أو الكربون. وتتميز هذه المادة بكثافة وبنية محددة تسمح بمرور تيار الهواء عبرها، مع احتجاز الجسيمات أو الشوائب الموجودة في الهواء.`,
-    descEn: `(  (Pre Filters-Panel Filters:
-
-      Panel filters are air filters mainly used in heating, ventilation and air conditioning (HVAC) systems, as well as in industrial processes and clean rooms. They are designed to filter particles, such as dust, dirt, pollen, bacteria and other contaminants, from the air. This makes panel filters an essential component for improving air quality, reducing allergies and ensuring the efficiency of HVAC systems. as pre-filters in multistage air handling units for various applications.
-
-      Construction and operation
-      A panel filter usually consists of a frame (usually made of cardboard, plastic or metal) in which a filtration material is placed. The filtration material can vary depending on the type of filter, but it is usually a combination of synthetic fibres, steelwire, fibreglass or carbon. The material has a certain density and structure that allows airflow to pass through, while retaining particles or impurities in the air.`
+    descAr: `الفلاتر الابتدائية
+الفلاتر الابتدائية مرشحات هواء تُستخدم بشكل أساسي في أنظمة التدفئة والتهوية وتكييف الهواء، وكذلك في العمليات الصناعية وغرف الأبحاث الغرف النظيفة وهي مصممة لتنقية الهواء من الجسيمات مثل الغبار والأتربة وحبوب اللقاح والبكتيريا وغيرها من الملوثات مما يجعلها عنصراً أساسياً لتحسين جودة الهواء، والحد من مسببات الحساسية، وضمان كفاءة أنظمة التدفئة والتهوية وتكييف الهواء؛ كما تُستخدم أيضاً كمرشحات أولية في وحدات معالجة الهواء متعددة المراحل لمختلف التطبيقات.
+التركيب وآلية العمليتكون المرشح اللوحي عادةً من إطار يُصنع غالباً من الورق المقوى أو البلاستيك أو المعدن تُثبَّت بداخله مادة الترشيح وتختلف مادة الترشيح باختلاف نوع المرشح، إلا أنها تتكون عادةً من مزيج من الألياف الصناعية، أو الأسلاك الفولاذية، أو الألياف الزجاجية، أو الكربون وتتميز هذه المادة بكثافة وبنية محددة تسمح بمرور تيار الهواء عبرها، مع احتجاز الجسيمات أو الشوائب الموجودة في الهواء.`,
+    descEn: `Primary Filters
+Primary filters are air filters mainly used in HVAC systems, as well as industrial processes and clean rooms. They are designed to purify air from particles like dust, dirt, pollen, bacteria and other pollutants. This makes them an essential element for improving air quality, reducing allergens and ensuring HVAC efficiency. They are also used as primary filters in multi-stage air handling units for various applications.
+Structure and Mechanism: The panel filter usually consists of a frame made of cardboard, plastic or metal. The filter media is fixed inside it. The filter media varies depending on the type of filter, but it usually consists of a mixture of synthetic fibers, steel wire, fiberglass or carbon. This material has a specific density and structure that allows air flow through it, while trapping particles or impurities in the air.`
   },
   {
     id: "bag-and-rigid",
