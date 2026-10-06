@@ -8,9 +8,6 @@ export default function CareersPage({ params: { locale } }: { params: { locale: 
   const t = useTranslations("careers"); 
   const isRtl = locale === "ar";
 
-  // Create an array for the jobs from the translation object
-  // Since next-intl doesn't return objects directly easily if it's an array without raw, 
-  // we can use raw() or just map it.
   const jobs = t.raw("jobs") as Array<{ title: string; desc: string }>;
 
   return (
