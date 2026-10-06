@@ -4,7 +4,7 @@ import { ChevronRight, Home } from "lucide-react";
 
 interface SectionHeroProps {
   title: string;
-  imageSrc: string;
+  imageSrc?: string;
   isRtl: boolean;
   breadcrumb?: {
     label: string;
@@ -14,14 +14,16 @@ interface SectionHeroProps {
 export default function SectionHero({ title, imageSrc, isRtl, breadcrumb }: SectionHeroProps) {
   return (
     <div className="relative w-full h-[45vh] min-h-87.5 md:min-h-100 flex items-center justify-center pt-20">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={imageSrc}
-          alt={title}
-          fill
-          className="object-cover object-center opacity-90"
-          priority
-        />
+      <div className="absolute inset-0 z-0 bg-slate-900">
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt={title}
+            fill
+            className="object-cover object-center opacity-90"
+            priority
+          />
+        )}
         <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply" />
       </div>
       

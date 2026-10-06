@@ -37,7 +37,6 @@ export default function ClientsPage({ params: { locale } }: { params: { locale: 
       {/* Hero Section */}
       <SectionHero
         title={t("badge")}
-        imageSrc="/images/clients/hero.png"
         isRtl={isRtl}
         breadcrumb={{ label: t("badge") }}
       />
