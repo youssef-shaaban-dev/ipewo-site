@@ -67,12 +67,14 @@ export default function Hero() {
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
           transition={{ duration: 1.2, type: "spring", bounce: 0.5 }}
           className="relative w-56 h-28 md:w-72 md:h-36 mb-4"
+          style={{ filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.5))" }}
         >
           <Image
             src="/ipewo-logo.webp"
             alt="IPEWO Logo"
             fill
-            className="object-contain brightness-0 invert drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
+            className="object-contain"
+            style={{ filter: "brightness(0) invert(1)" }}
             priority
           />
         </motion.div>
