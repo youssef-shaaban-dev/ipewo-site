@@ -365,7 +365,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
         nameEn: "Deep Plate",
         nameAr: "Deep Plate",
         images: ["/images/catalog/cat-4-deep-plate-118570-11624005 (1).jpg", "/images/catalog/cat-4-deep-plate-mgh-10as-aluminium-seperator-hepa-filters-galvanized-frame-292-mm.jpg"],
-        descAr: `Deep pleat absolute HEPA filter (ALUMINUM SEPERATOR)4-
+        descAr: `Deep pleat absolute HEPA filter (ALUMINUM SEPERATOR)
 
           . Filter media Water repellent glass fibre paper folded with constantly calibrated spacing. Separation with thermoplastic threads.
           Galvanised steel frame..
@@ -376,7 +376,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
           They are installed inside ducts, directly into the AHU or in appropriate housings
 
           ( جميع الفلاتر تحتوي علي شهادات مختبرة من المصنع لها )`,
-        descEn: `Deep pleat absolute HEPA filter (ALUMINUM SEPERATOR)4-
+        descEn: `Deep pleat absolute HEPA filter (ALUMINUM SEPERATOR)
 
           . Filter media Water repellent glass fibre paper folded with constantly calibrated spacing. Separation with thermoplastic threads.
           Galvanised steel frame..

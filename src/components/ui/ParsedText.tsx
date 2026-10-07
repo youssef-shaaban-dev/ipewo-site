@@ -26,7 +26,7 @@ export default function ParsedText({ text }: { text: string }) {
         return lines.map((line, idx) => {
           const trimmed = line.trim();
           
-          if (!trimmed) return <div key={`${index}-${idx}`} className="h-2"></div>;
+          if (!trimmed) return null; // Let space-y-4 handle spacing, no empty divs needed
 
           if (trimmed.match(/\s{3,}/)) {
             const parts = trimmed.split(/\s{3,}/).filter(p => p.trim());
@@ -37,7 +37,7 @@ export default function ParsedText({ text }: { text: string }) {
                 className="flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-100 gap-4 hover:border-blue-200 transition-colors shadow-sm"
               >
                 {parts.map((part, i) => (
-                  <span key={i} className={`text-slate-800 ${i === 0 ? 'font-bold' : ''}`}>
+                  <span key={i} className="text-slate-700 font-semibold text-sm sm:text-base">
                     {part}
                   </span>
                 ))}
@@ -45,10 +45,12 @@ export default function ParsedText({ text }: { text: string }) {
             );
           }
 
+          const headingKeywords = ['المقاسات الاستاندرد', 'المواصفات والخصائص', 'الوظيفة والأهمية', 'التطبيقات', 'المميزات', 'كيف يعمل', 'الاستخدامات'];
+          const isHeadingKeyword = headingKeywords.some(kw => trimmed.includes(kw));
+          
           if (
-            trimmed.includes('المقاسات الاستاندرد') || 
-            trimmed.match(/^[0-9]+-/) ||
-            (trimmed.length < 50 && !trimmed.includes('.') && !trimmed.startsWith('('))
+            (trimmed.length < 60 && isHeadingKeyword) || 
+            trimmed.match(/^[0-9]+-/)
           ) {
             return (
               <h3 key={`${index}-${idx}`} dir="auto" className="text-xl md:text-2xl font-bold text-blue-800 mt-8 mb-4 border-b border-slate-100 pb-2">
@@ -58,7 +60,7 @@ export default function ParsedText({ text }: { text: string }) {
           }
 
           return (
-            <p key={`${index}-${idx}`} dir="auto" className="leading-relaxed text-lg text-start">
+            <p key={`${index}-${idx}`} dir="auto" className="leading-relaxed text-base md:text-lg text-justify text-slate-900">
               {trimmed}
             </p>
           );
