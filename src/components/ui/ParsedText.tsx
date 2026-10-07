@@ -5,7 +5,7 @@ import React from 'react';
 export default function ParsedText({ text }: { text: string }) {
   if (!text) return null;
 
-  const segments = text.split('```');
+  const segments = text.split('===TABLE===');
 
   return (
     <div className="space-y-4 text-slate-600" dir="auto">
@@ -13,7 +13,7 @@ export default function ParsedText({ text }: { text: string }) {
         // Odd index means it is inside a code block
         if (index % 2 !== 0) {
           return (
-            <div key={index} className="w-full overflow-x-auto bg-slate-800 text-slate-100 p-6 rounded-2xl shadow-inner my-8" dir="ltr">
+            <div key={index} className="w-full overflow-x-auto bg-white text-slate-800 p-6 rounded-2xl border border-slate-200 shadow-sm my-8" dir="ltr">
               <pre className="text-[10px] sm:text-xs md:text-sm font-mono leading-relaxed whitespace-pre min-w-max">
                 {segment.replace(/^\n+|\n+$/g, '')}
               </pre>
