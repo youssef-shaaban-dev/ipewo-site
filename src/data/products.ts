@@ -596,6 +596,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
       EN 16890 - This new standard defines the air concentrations of particles whose diameters are less than 10, 2.5 & 1 micron size.
       EN 1822:2009 - This standard covers HEPA filtration
 
+      ```
       EN 779
       Class  ASHRAE
       52.1  ASHRAE
@@ -604,6 +605,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
       2012  EN 1822: 2009  EN 1822:
       2009   Arrest  Dust spot  3-10 μm  1-3 μm  0.3-1 μm  0.4 μm  0.3 μm  MPPS
       G2  <75%  <20%  <20%  -  -  -  -  -   G3  <90%  <20%  <50%  -  -  -  -  -   G4  >90%  <45%  >80%  <50%  -  -  -  -   M5  >95%  50-55%  >85%  50-65%  -  40-60%  -  -   M6  >98%  60-75%  >90%  65-80%  -  60-80%  -  -   F7  >98%  80-90%  >90%  >90%  <75%  80-90%  -  -   F8  >98%  90-95%  >90%  >90%  75-85%  90-95%  -  -   F9  >98%  95%  >90%  >90%  85-90%  >95%  -  -   H10  -  -  -  -  -  -  95%  85%   H13  -  -  -  -  -  -  99.997%  99.95%   H14  -  -  -  -  -  -  99.999%  99.995%
+      ```
 
       ASHRAE 52.1 - This standard covers the determination of 'dust spot   efficiency' and 'dust weight arrestance'
 
@@ -619,6 +621,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
       EN 16890 - This new standard defines the air concentrations of particles whose diameters are less than 10, 2.5 & 1 micron size.
       EN 1822:2009 - This standard covers HEPA filtration
 
+      ```
       EN 779
       Class  ASHRAE
       52.1  ASHRAE
@@ -627,6 +630,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
       2012  EN 1822: 2009  EN 1822:
       2009   Arrest  Dust spot  3-10 μm  1-3 μm  0.3-1 μm  0.4 μm  0.3 μm  MPPS
       G2  <75%  <20%  <20%  -  -  -  -  -   G3  <90%  <20%  <50%  -  -  -  -  -   G4  >90%  <45%  >80%  <50%  -  -  -  -   M5  >95%  50-55%  >85%  50-65%  -  40-60%  -  -   M6  >98%  60-75%  >90%  65-80%  -  60-80%  -  -   F7  >98%  80-90%  >90%  >90%  <75%  80-90%  -  -   F8  >98%  90-95%  >90%  >90%  75-85%  90-95%  -  -   F9  >98%  95%  >90%  >90%  85-90%  >95%  -  -   H10  -  -  -  -  -  -  95%  85%   H13  -  -  -  -  -  -  99.997%  99.95%   H14  -  -  -  -  -  -  99.999%  99.995%
+      ```
 
       ASHRAE 52.1 - This standard covers the determination of 'dust spot   efficiency' and 'dust weight arrestance'
 
