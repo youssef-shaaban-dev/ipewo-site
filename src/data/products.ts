@@ -571,7 +571,15 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "نبذة عن الفلاتر",
     nameAr: "نبذة عن الفلاتر",
     isCategory: true,
-    images: [],
+    images: [
+      "/images/catalog/cat-11-3-s2.0-b9781845695644500141-f14-05-9781845695644.jpg",
+      "/images/catalog/cat-11-1111.png",
+      "/images/catalog/cat-11-air-filter-solution3.jpg",
+      "/images/catalog/cat-11-filterchart.gif",
+      "/images/catalog/cat-11-filterklasser--bubblor.png",
+      "/images/catalog/cat-11-how-a-hepa-filter-works-prana-air_1.png",
+      "/images/catalog/cat-11-table-1-hf.png"
+    ],
     subProducts: [],
     descAr: `تستخدم الفلاتر لتنقية وترشيح الهواء المكيف قبل ان ينتقل للانسان وانواعها:
       الفلتر الشبكي والجيبي والكربوني والهيبا وهو غالبا يستعمل في المستشفيات
