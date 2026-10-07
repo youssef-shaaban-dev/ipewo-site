@@ -21,6 +21,7 @@ export default function ParsedText({ text }: { text: string }) {
           return (
             <div 
               key={idx} 
+              dir="auto"
               className="flex flex-col sm:flex-row items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-100 gap-4 hover:border-blue-200 transition-colors shadow-sm"
             >
               {parts.map((part, i) => (
@@ -39,7 +40,7 @@ export default function ParsedText({ text }: { text: string }) {
           (trimmed.length < 50 && !trimmed.includes('.') && !trimmed.startsWith('('))
         ) {
           return (
-            <h3 key={idx} className="text-xl md:text-2xl font-bold text-blue-800 mt-8 mb-4 border-b border-slate-100 pb-2">
+            <h3 key={idx} dir="auto" className="text-xl md:text-2xl font-bold text-blue-800 mt-8 mb-4 border-b border-slate-100 pb-2">
               {trimmed}
             </h3>
           );
@@ -47,7 +48,7 @@ export default function ParsedText({ text }: { text: string }) {
 
         // Normal paragraph
         return (
-          <p key={idx} className="leading-relaxed text-lg text-start">
+          <p key={idx} dir="auto" className="leading-relaxed text-lg text-start">
             {trimmed}
           </p>
         );
