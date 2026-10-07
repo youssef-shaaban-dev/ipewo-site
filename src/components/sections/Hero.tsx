@@ -31,7 +31,7 @@ export default function Hero() {
   }, [handleNext]);
 
   return (
-    <section className="relative h-[60vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
+    <section className="relative h-[60vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-white md:bg-slate-900">
       
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
@@ -55,9 +55,12 @@ export default function Hero() {
         </AnimatePresence>
       </div>
 
+      {/* Top Gradient for Mobile Navbar Visibility */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-900/60 to-transparent z-10 md:hidden pointer-events-none" />
+
       {/* Main Content Center Overlay */}
       <div className={`relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto transition-transform duration-700 ${
-        currentIndex === 0 ? "-translate-y-16 md:-translate-y-24" : "translate-y-0"
+        currentIndex === 0 ? "-translate-y-8 md:-translate-y-24" : "translate-y-0"
       }`}>
         
         {/* Logo */}
@@ -67,16 +70,27 @@ export default function Hero() {
           animate={{ opacity: 1, rotate: 0, scale: 1 }}
           transition={{ duration: 1.2, type: "spring", bounce: 0.5 }}
           className="relative w-56 h-28 md:w-72 md:h-36 mb-4"
-          style={{ filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.5))" }}
         >
-          <Image
-            src="/ipewo-logo.webp"
-            alt="IPEWO Logo"
-            fill
-            className="object-contain"
-            style={{ filter: "brightness(0) invert(1)" }}
-            priority
-          />
+          {/* Desktop White Logo */}
+          <div className="hidden md:block w-full h-full relative" style={{ filter: "brightness(0) invert(1) drop-shadow(0 4px 4px rgba(0,0,0,0.5))" }}>
+            <Image
+              src="/ipewo-logo.webp"
+              alt="IPEWO Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          {/* Mobile Original Logo */}
+          <div className="block md:hidden w-full h-full relative drop-shadow-md">
+            <Image
+              src="/ipewo-logo.webp"
+              alt="IPEWO Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Text Lines */}
@@ -95,7 +109,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide"
+                  className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-800 md:text-white/95 md:drop-shadow-md leading-tight text-center max-w-4xl tracking-wide"
                 >
                   {t("title")}
                 </motion.h1>
@@ -123,15 +137,15 @@ export default function Hero() {
       </button>
 
       {/* Pagination Dots Bottom Center */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
         {sliderImages.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
               idx === currentIndex
-                ? "bg-white scale-125"
-                : "bg-white/40 hover:bg-white/60"
+                ? "bg-blue-600 md:bg-white scale-125"
+                : "bg-slate-300 hover:bg-slate-400 md:bg-white/40 md:hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
