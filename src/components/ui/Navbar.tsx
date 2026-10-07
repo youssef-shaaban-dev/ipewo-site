@@ -6,12 +6,12 @@ import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 import { productsData } from "@/data/products";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { 
-  Menu, 
-  X, 
-  ChevronDown, 
+import {
+  Menu,
+  X,
+  ChevronDown,
   ChevronLeft,
-  AirVent, 
+  AirVent,
   PhoneCall,
   Mail,
   Home,
@@ -56,16 +56,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHeaderSolid
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHeaderSolid
           ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md"
           : "bg-linear-to-b from-black/50 to-transparent"
-      }`}
+        }`}
     >
       {/* Top Bar */}
-      <div className={`hidden lg:block border-b transition-all duration-300 ${
-        isHeaderSolid ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-white/5 backdrop-blur-xs"
-      }`}>
+      <div className={`hidden lg:block border-b transition-all duration-300 ${isHeaderSolid ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-white/5 backdrop-blur-xs"
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2">
             <div></div>
@@ -74,8 +72,8 @@ export default function Navbar() {
                 <span className="font-semibold tracking-wider">01014298465</span>
                 <PhoneCall className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
               </a>
-              <a href="mailto:ipewo@yahoo.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
-                <span>ipewo@yahoo.com</span>
+              <a href="mailto:info@ipewofilters.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
+                <span>info@ipewofilters.com</span>
                 <Mail className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
               </a>
               <div className={`w-px h-4 ${isHeaderSolid ? "bg-slate-300" : "bg-white/30"}`}></div>
@@ -94,7 +92,7 @@ export default function Navbar() {
 
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isHeaderSolid ? "py-3.5" : "py-5"}`}>
         <div className="flex items-center justify-between">
-          
+
           {/* Brand Logo */}
           <Link href="/" className="flex items-center group">
             <div className="relative h-16 w-36 overflow-hidden p-1 transition-all">
@@ -128,9 +126,8 @@ export default function Navbar() {
               >
                 <span>{t("products")}</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    productsDropdownOpen ? (isHeaderSolid ? "rotate-180 text-blue-600" : "rotate-180 text-cyan-300") : ""
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-200 ${productsDropdownOpen ? (isHeaderSolid ? "rotate-180 text-blue-600" : "rotate-180 text-cyan-300") : ""
+                    }`}
                 />
               </button>
 
@@ -141,16 +138,15 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className={`absolute top-full ${
-                      isRtl ? "right-0" : "left-0"
-                    } mt-2 w-137.5 p-2.5 rounded-2xl bg-white border border-slate-200 shadow-2xl z-50`}
+                    className={`absolute top-full ${isRtl ? "right-0" : "left-0"
+                      } mt-2 w-137.5 p-2.5 rounded-2xl bg-white border border-slate-200 shadow-2xl z-50`}
                   >
                     <div className="grid grid-cols-2 gap-x-2 gap-y-1">
                       {productsData.map((cat, idx) => {
                         const hasSub = cat.subProducts && cat.subProducts.length > 0;
                         const isRightColumn = isRtl ? idx % 2 === 0 : idx % 2 === 1;
                         const openToRight = isRightColumn;
-                        
+
                         return (
                           <div key={idx} className="group relative">
                             <Link
@@ -171,10 +167,9 @@ export default function Navbar() {
 
                             {/* Flyout Menu */}
                             {hasSub && (
-                              <div 
-                                className={`absolute top-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ${
-                                  openToRight ? "left-full -translate-x-2 group-hover:translate-x-0 ml-1" : "right-full translate-x-2 group-hover:translate-x-0 mr-1"
-                                } w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl p-2 z-50`}
+                              <div
+                                className={`absolute top-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ${openToRight ? "left-full -translate-x-2 group-hover:translate-x-0 ml-1" : "right-full translate-x-2 group-hover:translate-x-0 mr-1"
+                                  } w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl p-2 z-50`}
                               >
                                 <div className="flex flex-col gap-1">
                                   {cat.subProducts?.map((sub, subIdx) => (
@@ -266,7 +261,7 @@ export default function Navbar() {
                 <Home strokeWidth={1.5} className="w-5 h-5 text-slate-500 group-hover:text-blue-600 transition-colors" />
                 <span className="text-base font-bold text-slate-700 group-hover:text-blue-600 transition-colors">{t("home")}</span>
               </Link>
-              
+
               {/* Accordion Products Toggle */}
               <div>
                 <button
@@ -280,9 +275,8 @@ export default function Navbar() {
                     </span>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 transition-transform duration-300 ${
-                      mobileProductsOpen ? "rotate-180 text-blue-600" : "text-slate-400 group-hover:text-blue-600"
-                    }`}
+                    className={`w-5 h-5 transition-transform duration-300 ${mobileProductsOpen ? "rotate-180 text-blue-600" : "text-slate-400 group-hover:text-blue-600"
+                      }`}
                   />
                 </button>
 

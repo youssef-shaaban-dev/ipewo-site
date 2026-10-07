@@ -13,15 +13,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900 border-t border-slate-800 text-slate-200 pt-20 pb-14 relative overflow-hidden">
-      
+
       {/* Background orbs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-900/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-slate-800">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-5">
             <Link href="/" className="flex items-center">
@@ -50,9 +50,9 @@ export default function Footer() {
                 <PhoneCall className="w-4 h-4" />
                 <span dir="ltr">01014298465</span>
               </a>
-              <a href="mailto:ipewo@yahoo.com" className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
+              <a href="mailto:info@ipewofilters.com" className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>ipewo@yahoo.com</span>
+                <span>info@ipewofilters.com</span>
               </a>
               <div className="flex items-center gap-2.5 text-sm text-slate-400">
                 <MapPin className="w-4 h-4" />
