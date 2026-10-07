@@ -55,8 +55,6 @@ export default function Hero() {
         </AnimatePresence>
       </div>
 
-      {/* Top Gradient for Mobile Navbar Visibility */}
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-900/60 to-transparent z-10 md:hidden pointer-events-none" />
 
       {/* Main Content Center Overlay */}
       <div className={`relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto transition-transform duration-700 ${
