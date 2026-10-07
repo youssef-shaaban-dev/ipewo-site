@@ -51,7 +51,7 @@ export default function Navbar() {
   }, []);
 
   const pathname = usePathname();
-  const isForceSolid = pathname === "/contact" || pathname.startsWith("/products");
+  const isForceSolid = pathname !== "/";
   const isHeaderSolid = isScrolled || mobileMenuOpen || isForceSolid;
 
   return (

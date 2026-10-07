@@ -11,7 +11,7 @@ export default function CareersPage({ params: { locale } }: { params: { locale: 
   const jobs = t.raw("jobs") as Array<{ title: string; desc: string }>;
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-16">
+    <main className="min-h-screen bg-white pb-16">
       
       {/* Hero Section */}
       <SectionHero
