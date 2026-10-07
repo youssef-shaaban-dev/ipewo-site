@@ -30,7 +30,7 @@ export const productsData: Category[] = [
           المقاسات الاستاندرد ( بالسم )
           59.2 سم طول  * 59.2 سم  عرض* 4.5سم ( سمك )
           59.2 سم طول * 29.7 سم  عرض * 4.5سم ( سمك )
-          28.7 سم طول * 29.7 سم  عرض * 4.5سم ( سمك )
+          29.7 سم طول * 29.7 سم  عرض * 4.5سم ( سمك )
           59.2 سم طول  * 59.2 سم  عرض* 2.2سم ( سمك )
           59.2 سم طول * 29.7 سم  عرض * 2.2سم ( سمك )
           29.7 سم طول * 29.7 سم  عرض * 2.2سم ( سمك
@@ -51,7 +51,7 @@ export const productsData: Category[] = [
           Standard Sizes (cm):
           59.2 cm (L) x 59.2 cm (W) x 4.5 cm (Thickness)
           59.2 cm (L) x 29.7 cm (W) x 4.5 cm (Thickness)
-          28.7 cm (L) x 29.7 cm (W) x 4.5 cm (Thickness)
+          29.7 cm (L) x 29.7 cm (W) x 4.5 cm (Thickness)
           59.2 cm (L) x 59.2 cm (W) x 2.2 cm (Thickness)
           59.2 cm (L) x 29.7 cm (W) x 2.2 cm (Thickness)
           29.7 cm (L) x 29.7 cm (W) x 2.2 cm (Thickness)
@@ -77,7 +77,7 @@ export const productsData: Category[] = [
           ستخدم كمرحلة ترشيح أولى في ترشيح الجسيمات الخشنة ، وقد تم اختبارها وفقًا لمعيار EN 779: 2012
           الكفاءة G3-G4. وسيط المرشح مصنوع من الألياف الاصطناعية المموجة ، مما يزيد من مساحة الترشيح ويسمح بقدرة أعلى على جمع الغبار
 
-          فلاتر وحدات FAN COIL UNITS G3/G4 :`,
+          فلاتر وحدات FAN COIL UNITS G3/G4`,
         descEn: `Felt ( LABAD ) Filters: Class G3/G4
 
           Used as a first-stage filter for coarse particle filtration; tested in accordance with the EN 779:2012 standard.
@@ -88,7 +88,7 @@ export const productsData: Category[] = [
           ستخدم كمرحلة ترشيح أولى في ترشيح الجسيمات الخشنة ، وقد تم اختبارها وفقًا لمعيار EN 779: 2012
           الكفاءة G3-G4. وسيط المرشح مصنوع من الألياف الاصطناعية المموجة ، مما يزيد من مساحة الترشيح ويسمح بقدرة أعلى على جمع الغبار
 
-          فلاتر وحدات FAN COIL UNITS G3/G4 :`
+          فلاتر وحدات FAN COIL UNITS G3/G4`
       },
       {
         id: "cardboard",
@@ -103,7 +103,7 @@ export const productsData: Category[] = [
           حجم الجسيمات المستهدفة: مصمم لالتقاط الجسيمات التي يزيد حجمها عن 10 ميكرومتر (مثل: الغبار الخشن، الرمل، حبوب اللقاح، الشعر، الحشرات، وأوراق الشجر). [
           تصميم الإطار: إطار من الورق المقوى (الكرتون) المتين والمقاوم للتشوه، ويكون غالباً بتصميم مطوي على شكل حرف "V" لزيادة مساحة السطح وتعزيز قدرة احتجاز الغبار وتقليل مقاومة تدفق الهواء.
           الوظيفة والأهمية
-          الترشيح الأولي: يتم وضعه في المرحلة الأولى لمدخل الهواء لحماية الفلاتر الرئيسية عالية الكفاءة (مثل F7 أو F9 أو HEPA) من الانسداد. [
+          الترشيح الأولي: يتم وضعه في المرحلة الأولى لمدخل الهواء لحماية الفلاتر الرئيسية عالية الكفاءة (مثل F7 أو F9 أو HEPA) من الانسداد. 
           حماية المعدات: يمنع دخول الأوساخ إلى مراوح ومحركات وحدات معالجة الهواء (AHU) وقنوات التهوية، مما يطيل عمر النظام الاقتصادي والتشغيلي.`,
         descEn: `.
           Cardboard  Carton Filters: Class G4
@@ -122,7 +122,7 @@ export const productsData: Category[] = [
         id: "carbon",
         nameEn: "Carbon filters",
         nameAr: "فلاتر الكربون",
-        images: ["/images/catalog/cat-1-sub-4-carbon panel.png", "/images/catalog/cat-1-sub-4-FB_IMG_1672060950992.jpg", "/images/catalog/cat-1-sub-4-FB_IMG_1690189253169.jpg", "/images/catalog/cat-1-sub-4-SuperFlow_VC.png"],
+        images: ["/images/catalog/cat-1-sub-4-carbon panel.png", "/images/catalog/cat-1-sub-4-FB_IMG_1690189253169.jpg", "/images/catalog/cat-1-sub-4-SuperFlow_VC.png"],
         descAr: `فلاتر الكربون :Active Carbon Filters
 
           فلاتر الكربون النشط (Activated Carbon Filters) هي أنظمة تنقية تعتمد على الامتزاز السطحي لإزالة الروائح، والغازات، والمركبات العضوية، والكلور من الهواء.
@@ -528,32 +528,20 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     subProducts: [],
     descAr: `نبيع جميع انواع الفلاتر المستوردة من انحاء العالم :
 
-      ايطالي - تركي  تركي
+      ايطالي - تركي  
 
-      اماراتي تركي
+      اماراتي 
 
-      تركي  امريكي- ماليزي
+      امريكي- ماليزي
 
-      تايواني
-      تركي
-
-      ايطالي  ايطالي
-
-      ايطالي  تركي`,
+     `,
     descEn: `We sell all types of filters imported from around the world:
 
-      Italian - Turkish  Turkish
+      Italian - Turkish  
 
-      Emirati Turkish
+      Emirati 
 
-      Turkish                                                         American-Malaysian
-
-      Turkish
-      Taiwanese
-
-      Italian  Italian
-
-      Italian Turkish`
+      American-Malaysian`
   },
   {
     id: "cat-10",
