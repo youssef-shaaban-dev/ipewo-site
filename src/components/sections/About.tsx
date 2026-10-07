@@ -108,9 +108,9 @@ export default function About() {
                   <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">1</span>
                   {t("product1Title").replace("1-", "").trim()}
                 </p>
-                <ul className="grid grid-cols-2 gap-3 px-2">
+                <ul className="flex flex-col gap-3 px-2">
                   {t.raw("product1Items").map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-center gap-2 whitespace-nowrap text-slate-600 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-blue-400">
+                    <li key={idx} className="flex items-center gap-2 text-slate-600 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-blue-400">
                       {item.replace("-", "").trim()}
                     </li>
                   ))}
