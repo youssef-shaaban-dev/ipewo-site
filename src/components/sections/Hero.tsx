@@ -31,7 +31,7 @@ export default function Hero() {
   }, [handleNext]);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-[60vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
       
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
@@ -48,7 +48,7 @@ export default function Hero() {
               src={sliderImages[currentIndex].url}
               alt="IPEWO Hero Slide"
               fill
-              className="object-cover object-center"
+              className="object-contain md:object-cover object-center opacity-90 md:opacity-100"
               priority
             />
           </motion.div>
