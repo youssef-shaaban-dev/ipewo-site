@@ -58,7 +58,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHeaderSolid
           ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md"
-          : "md:bg-linear-to-b md:from-black/50 md:to-transparent"
+          : "bg-gradient-to-b from-black/60 to-transparent"
         }`}
     >
       {/* Top Bar */}
@@ -100,7 +100,7 @@ export default function Navbar() {
                 src="/ipewo-logo.webp"
                 alt="IPEWO Logo"
                 fill
-                className={`object-contain transition-all duration-300 ${isHeaderSolid ? "" : "md:brightness-0 md:invert"}`}
+                className={`object-contain transition-all duration-300 ${isHeaderSolid ? "" : "brightness-0 invert drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]"}`}
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -233,7 +233,7 @@ export default function Navbar() {
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2.5 rounded-xl focus:outline-none transition-colors ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-slate-100" : "text-slate-800 md:text-white hover:bg-slate-200 md:hover:bg-white/10"}`}
+              className={`p-2.5 rounded-xl focus:outline-none transition-colors drop-shadow-md ${isHeaderSolid ? "text-slate-800 hover:text-blue-600 hover:bg-slate-100 drop-shadow-none" : "text-white hover:bg-white/20"}`}
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}

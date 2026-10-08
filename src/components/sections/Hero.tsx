@@ -48,7 +48,7 @@ export default function Hero() {
               src={sliderImages[currentIndex].url}
               alt="IPEWO Hero Slide"
               fill
-              className="object-contain md:object-cover object-center opacity-90 md:opacity-100"
+              className="object-fill md:object-cover object-center opacity-90 md:opacity-100"
               priority
             />
           </motion.div>
@@ -69,18 +69,8 @@ export default function Hero() {
           transition={{ duration: 1.2, type: "spring", bounce: 0.5 }}
           className="relative w-56 h-28 md:w-72 md:h-36 mb-4"
         >
-          {/* Desktop White Logo */}
-          <div className="hidden md:block w-full h-full relative" style={{ filter: "brightness(0) invert(1) drop-shadow(0 4px 4px rgba(0,0,0,0.5))" }}>
-            <Image
-              src="/ipewo-logo.webp"
-              alt="IPEWO Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          {/* Mobile Original Logo */}
-          <div className="block md:hidden w-full h-full relative drop-shadow-md">
+          {/* White Logo */}
+          <div className="w-full h-full relative" style={{ filter: "brightness(0) invert(1) drop-shadow(0 4px 4px rgba(0,0,0,0.5))" }}>
             <Image
               src="/ipewo-logo.webp"
               alt="IPEWO Logo"
@@ -107,7 +97,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-800 md:text-white/95 md:drop-shadow-md leading-tight text-center max-w-4xl tracking-wide"
+                  className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide"
                 >
                   {t("title")}
                 </motion.h1>
@@ -142,8 +132,8 @@ export default function Hero() {
             onClick={() => setCurrentIndex(idx)}
             className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
               idx === currentIndex
-                ? "bg-blue-600 md:bg-white scale-125"
-                : "bg-slate-300 hover:bg-slate-400 md:bg-white/40 md:hover:bg-white/60"
+                ? "bg-white scale-125"
+                : "bg-white/40 hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
