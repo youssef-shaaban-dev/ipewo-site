@@ -29,6 +29,7 @@ export default function ClientsPage({ params: { locale } }: { params: { locale: 
     { src: "/images/clients/images (2).jpg", name: "Client" },
     { src: "/images/clients/images (3).jpg", name: "Client" },
     { src: "/images/clients/images (4).jpg", name: "Client" },
+    { src: "/images/clients/cairo-air-airport.jpeg", name: "Client" },
   ];
 
   return (

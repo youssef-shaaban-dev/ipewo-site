@@ -72,8 +72,8 @@ export default function Navbar() {
                 <span className="font-semibold tracking-wider">01014298465</span>
                 <PhoneCall className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
               </a>
-              <a href="mailto:info@ipewofilters.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
-                <span>info@ipewofilters.com</span>
+              <a href="mailto:ipewo@yahoo.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
+                <span>ipewo@yahoo.com</span>
                 <Mail className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
               </a>
               <div className={`w-px h-4 ${isHeaderSolid ? "bg-slate-300" : "bg-white/30"}`}></div>

@@ -504,7 +504,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
 
       خامات الفلاتر الكربون                                              خامات فلاترالكرتون
 
-      خامات فلاتر الالومنيوم                                               خامات الفلاتر الدهان
+      خامات فلاتر الالومنيوم                                               خامات لفلاتر الدهان
 
       خامات الفلاتر الفوم                                                    خامات الفلاتر الهيبا`,
     descEn: `Filter Media (Raw Roll Filters):
@@ -552,7 +552,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     subProducts: [],
     descAr: `بعض القطاعات تستخدم الفلاتربصفة مستمرة :
 
-      المستشفيات  شركات انتاج الادوية
+      المستشفيات                                   شركات انتاج الادوية
 
       المصانع وخاصة مصانع الاغذية                      قطاع البتروكيماويات ومحطات الطاقة
 
@@ -590,23 +590,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
       ASHRAE 52.2 - This standard covers the general testing of removal efficiency by particle size.
       EN 779:2012 - This standard widely used in Europe defines the filtration classes according to the average filtration efficiency of particles with a diameter of 0.4 micron size.
       EN 16890 - This new standard defines the air concentrations of particles whose diameters are less than 10, 2.5 & 1 micron size.
-      EN 1822:2009 - This standard covers HEPA filtration
-
-      ===TABLE===
-      EN 779
-      Class  ASHRAE
-      52.1  ASHRAE
-      52.1  ASHRAE
-      52.2  ASHRAE 52.2  ASHRAE 52.2  EN 779:
-      2012  EN 1822: 2009  EN 1822:
-      2009   Arrest  Dust spot  3-10 μm  1-3 μm  0.3-1 μm  0.4 μm  0.3 μm  MPPS
-      G2  <75%  <20%  <20%  -  -  -  -  -   G3  <90%  <20%  <50%  -  -  -  -  -   G4  >90%  <45%  >80%  <50%  -  -  -  -   M5  >95%  50-55%  >85%  50-65%  -  40-60%  -  -   M6  >98%  60-75%  >90%  65-80%  -  60-80%  -  -   F7  >98%  80-90%  >90%  >90%  <75%  80-90%  -  -   F8  >98%  90-95%  >90%  >90%  75-85%  90-95%  -  -   F9  >98%  95%  >90%  >90%  85-90%  >95%  -  -   H10  -  -  -  -  -  -  95%  85%   H13  -  -  -  -  -  -  99.997%  99.95%   H14  -  -  -  -  -  -  99.999%  99.995%
-      ===TABLE===
-
-      ASHRAE 52.1 - This standard covers the determination of 'dust spot   efficiency' and 'dust weight arrestance'
-
-      ASHRAE 52.2 - This standard covers the general testing of removal efficiency by particle size.
-      EN 779:2012 - This standard widely used in Europe defines the filtration classes according to the average filtration efficiency of particles with a diameter of 0.4 micron size.`,
+      EN 1822:2009 - This standard covers HEPA filtration`,
     descEn: `Filters are used to purify and filter conditioned air before it reaches people. Types include mesh, pocket, and carbon filters, as well as HEPA filters-the latter being commonly used in hospitals.
 
       Classification of filters according to codes:
@@ -615,22 +599,6 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
       ASHRAE 52.2 - This standard covers the general testing of removal efficiency by particle size.
       EN 779:2012 - This standard widely used in Europe defines the filtration classes according to the average filtration efficiency of particles with a diameter of 0.4 micron size.
       EN 16890 - This new standard defines the air concentrations of particles whose diameters are less than 10, 2.5 & 1 micron size.
-      EN 1822:2009 - This standard covers HEPA filtration
-
-      ===TABLE===
-      EN 779
-      Class  ASHRAE
-      52.1  ASHRAE
-      52.1  ASHRAE
-      52.2  ASHRAE 52.2  ASHRAE 52.2  EN 779:
-      2012  EN 1822: 2009  EN 1822:
-      2009   Arrest  Dust spot  3-10 μm  1-3 μm  0.3-1 μm  0.4 μm  0.3 μm  MPPS
-      G2  <75%  <20%  <20%  -  -  -  -  -   G3  <90%  <20%  <50%  -  -  -  -  -   G4  >90%  <45%  >80%  <50%  -  -  -  -   M5  >95%  50-55%  >85%  50-65%  -  40-60%  -  -   M6  >98%  60-75%  >90%  65-80%  -  60-80%  -  -   F7  >98%  80-90%  >90%  >90%  <75%  80-90%  -  -   F8  >98%  90-95%  >90%  >90%  75-85%  90-95%  -  -   F9  >98%  95%  >90%  >90%  85-90%  >95%  -  -   H10  -  -  -  -  -  -  95%  85%   H13  -  -  -  -  -  -  99.997%  99.95%   H14  -  -  -  -  -  -  99.999%  99.995%
-      ===TABLE===
-
-      ASHRAE 52.1 - This standard covers the determination of 'dust spot   efficiency' and 'dust weight arrestance'
-
-      ASHRAE 52.2 - This standard covers the general testing of removal efficiency by particle size.
-      EN 779:2012 - This standard widely used in Europe defines the filtration classes according to the average filtration efficiency of particles with a diameter of 0.4 micron size.`
+      EN 1822:2009 - This standard covers HEPA filtration`
   }
 ];

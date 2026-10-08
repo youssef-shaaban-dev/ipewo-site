@@ -18,7 +18,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
       />
 
       {/* Quick Info Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-0 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           {/* Address Card */}
@@ -38,6 +38,12 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
           <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-8 flex items-center justify-between hover:-translate-y-1 transition-transform duration-300">
             <div className="text-start">
               <h3 className="text-xl font-bold text-slate-900 mb-2">{t("emailTitle")}</h3>
+
+
+              <p className="text-slate-500 font-medium text-sm leading-relaxed" dir="ltr">
+                {t("email2").replace("E-mail: ", "")}
+              </p>
+
               <p className="text-slate-500 font-medium text-sm leading-relaxed max-w-[200px]">
                 {t("emailValue")}
               </p>
@@ -69,7 +75,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
         <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-12">{t("contactHeading")}</h2>
 
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-8 text-start">
-          
+
           {/* Map Side */}
           <div className="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-lg border border-slate-100 min-h-[400px] lg:min-h-full">
             <iframe
@@ -121,10 +127,16 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
                 <Mail className="w-7 h-7" />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-400 mb-1">{isRtl ? "البريد الإلكتروني" : "Emails"}</p>
+
+                <a href={`mailto:${t("email2").replace("E-mail: ", "")}`} className="block text-base font-bold text-slate-800 hover:text-blue-600 transition-colors" dir="ltr">
+                  {t("email2").replace("E-mail: ", "")}
+                </a>
+
+
                 <a href={`mailto:${t("email1").replace("E-mail: ", "")}`} className="block text-base font-bold text-slate-800 hover:text-blue-600 transition-colors" dir="ltr">
                   {t("email1").replace("E-mail: ", "")}
                 </a>
+
               </div>
             </div>
           </div>
