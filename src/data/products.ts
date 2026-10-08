@@ -69,7 +69,7 @@ export const productsData: Category[] = [
       },
       {
         id: "felt",
-        nameEn: "Felt filters",
+        nameEn: "Plated filters",
         nameAr: "الفلاتر اللباد",
         images: ["/images/catalog/cat-1-sub-2-double-skin-air-handling-unit-500x500.jpg", "/images/catalog/cat-1-sub-2-pre g4.png", "/images/catalog/cat-1-sub-2-vz8qzNJfn1IM4346PKgLq9dC40uElhJ57m1V9C1A.jpeg"],
         descAr: `فلاتراللباد : Class G3/G4
@@ -78,7 +78,7 @@ export const productsData: Category[] = [
           الكفاءة G3-G4. وسيط المرشح مصنوع من الألياف الاصطناعية المموجة ، مما يزيد من مساحة الترشيح ويسمح بقدرة أعلى على جمع الغبار
 
           فلاتر وحدات FAN COIL UNITS G3/G4`,
-        descEn: `Felt ( LABAD ) Filters: Class G3/G4
+        descEn: `Plated ( LABAD ) Filters: Class G3/G4
 
           Used as a first-stage filter for coarse particle filtration; tested in accordance with the EN 779:2012 standard.
           Efficiency: G3-G4. The filter medium is made of pleated synthetic fibers, which increases the filtration surface area and allows for higher dust-holding capacity.
@@ -472,7 +472,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
   },
   {
     id: "filter-equipment",
-    nameEn: "Filter manufacturing equipment",
+    nameEn: "Filters manufacturing equipments",
     nameAr: "المهمات اللازمة لتصنيع الفلاتر",
     isCategory: true,
     images: ["/images/catalog/cat-8-51ZZ6BuRcCL._SS400_.jpg", "/images/catalog/cat-8-FB_IMG_1606945531264.jpg", "/images/catalog/cat-8-FB_IMG_1672059970000.jpg", "/images/catalog/cat-8-FB_IMG_1697227314795.jpg", "/images/catalog/cat-8-FB_IMG_1697227337838.jpg", "/images/catalog/cat-8-Galvanized-Frame-Blue.jpg", "/images/catalog/cat-8-images (2).jpg"],
@@ -493,8 +493,8 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
   },
   {
     id: "cat-5",
-    nameEn: "خامات الفلاتر",
     nameAr: "خامات الفلاتر",
+    nameEn: "Filter materials",
     isCategory: true,
     images: ["/images/catalog/cat-5-11.PNG", "/images/catalog/cat-5-1630479804791.jpg", "/images/catalog/cat-5-1631081481881.jpg", "/images/catalog/cat-5-31h70NpotML__1607972570.jpg", "/images/catalog/cat-5-7300010-11.jpg", "/images/catalog/cat-5-FB_IMG_1671896739485.jpg", "/images/catalog/cat-5-HEPA-Filter-material.jpg", "/images/catalog/cat-5-images (11).jpg", "/images/catalog/cat-5-PSG.jpg", "/images/catalog/cat-5-synthetic roll.png", "/images/catalog/cat-5-thumbnail (3).jpg"],
     descAr: `خامات الفلاتر Raw Roll Filters   :
@@ -512,17 +512,17 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
 
       The company imports a wide range of high-quality filter media:
 
-      Felt filter media                                                     Bag filter media
+      Felt filters media                                                     Bag filters media
 
-      Carbon filter media                                                Cardboard filter media
+      Carbon filters media                                                Cardboard filters media
 
-      Aluminum filter media                                             Paint filter media
+      Aluminum filters media                                             Paint filters media
 
-      Foam filter media                                                    HEPA filter media`
+      Foam filters media                                                    HEPA filters media`
   },
   {
     id: "cat-9",
-    nameEn: "الاستيراد",
+    nameEn: "Importing",
     nameAr: "الاستيراد",
     isCategory: true,
     images: ["/images/catalog/cat-9-1630548953131.jpg", "/images/catalog/cat-9-31698932_835049996685440_1038754797068484608_n.png", "/images/catalog/cat-9-75323295_771413943280079_5574940800875233280_n.png", "/images/catalog/cat-9-aaf-logo-red-retina.png", "/images/catalog/cat-9-camfil3.png", "/images/catalog/cat-9-downloa.png", "/images/catalog/cat-9-download (2).png", "/images/catalog/cat-9-download.jpg", "/images/catalog/cat-9-downlolllad.png", "/images/catalog/cat-9-downlSSSoad.png", "/images/catalog/cat-9-logo-fcr-1.png", "/images/catalog/cat-9-logo.png", "/images/catalog/cat-9-marchio_SagiCofimUK.jpg"],
@@ -546,7 +546,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
   },
   {
     id: "cat-10",
-    nameEn: "القطاعات اللتي تستخدم الفلاتر",
+    nameEn: "Sectors using filters",
     nameAr: "القطاعات اللتي تستخدم الفلاتر",
     isCategory: true,
     images: ["/images/catalog/cat-10-المباني الادارية.jpeg", "/images/catalog/cat-10-المستشفيات.jpg", "/images/catalog/cat-10-المصانع وخاصة مصانع الاغذية.jpg", "/images/catalog/cat-10-صناعة الادوية.jpg", "/images/catalog/cat-10-قطاع البتروكيماويات ومحطات الطاقة.jpg", "/images/catalog/cat-10-وسائل النقل.jpg"],
@@ -562,14 +562,13 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
 
       Pharmaceutical manufacturing companies                    Hospitals
 
-      Petrochemicals and Power Plants Sector
-      Factories, especially food processing plants.
+      Petrochemicals and Power Plants Sector                   Factories, especially food processing plants.
 
       Administrative Buildings                                                        Means of transportation`
   },
   {
     id: "cat-11",
-    nameEn: "نبذة عن الفلاتر",
+    nameEn: "Idea about filters",
     nameAr: "نبذة عن الفلاتر",
     isCategory: true,
     images: [
