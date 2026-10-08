@@ -137,7 +137,7 @@ export const productsData: Category[] = [
       {
         id: "fan-coil",
         nameEn: "Fan coil filters",
-        nameAr: "Fan coil filter",
+        nameAr: "Fan coil filters",
         images: ["/images/catalog/cat-1-fan-coil-filter-15675867_1811279082465249_1273095336654163750_o.jpg", "/images/catalog/cat-1-fan-coil-filter-203379_4.png", "/images/catalog/cat-1-fan-coil-filter-IMG-20200302-WA0001.jpg"],
         descAr: `فلاتر وحدات FAN COIL UNITS( G2) :
 
@@ -429,14 +429,15 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Paint booth filters rolls",
     nameAr: "رولات فلاتر الدهان",
     isCategory: true,
-    images: ["/images/catalog/cat-6-13731655_1749934125247765_5016347219987776619_n.png", "/images/catalog/cat-6-187885988_2285688954900992_2197314563246218708_n.jpg", "/images/catalog/cat-6-468125548_122165047682050465_4601384919979319396_n.jpg", "/images/catalog/cat-6-619623826_122144252168979198_8490867250375582077_n.jpg", "/images/catalog/cat-6-75551b43e850aa12f30f68e6b001c93f (1).png", "/images/catalog/cat-6-paint-booth-1.jpg", "/images/catalog/cat-6-paintsprayboothfiltershero.jpg", "/images/catalog/cat-6-synthetic roll.png", "/images/catalog/cat-6-فلتر سقفي.PNG"],
+    images: ["/images/catalog/cat-6-187885988_2285688954900992_2197314563246218708_n.jpg", "/images/catalog/cat-6-468125548_122165047682050465_4601384919979319396_n.jpg", "/images/catalog/cat-6-619623826_122144252168979198_8490867250375582077_n.jpg", "/images/catalog/cat-6-75551b43e850aa12f30f68e6b001c93f (1).png", "/images/catalog/cat-6-paint-booth-1.jpg", "/images/catalog/cat-6-paintsprayboothfiltershero.jpg", "/images/catalog/cat-6-synthetic roll.png", "/images/catalog/cat-6-فلتر سقفي.PNG"],
     descAr: `متوفر جميع الرولات الخاصة بغرف الدهان :
 
       1-رول فلتر سقف مقاس :
 
       ( 2 متر عرض * طول 20 متر  سمك  يبداء من 2 سم )
 
-      :G4 2-رول فلتر جنب
+      2- رول فلتر جنب:
+
 
       ( 2 متر عرض * طول 20 متر  سمك  يبداء من 6 سم )
 
