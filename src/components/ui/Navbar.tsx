@@ -57,8 +57,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHeaderSolid
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md"
-          : "bg-gradient-to-b from-black/60 to-transparent"
+        ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md"
+        : "bg-linear-to-b from-black/60 to-transparent"
         }`}
     >
       {/* Top Bar */}
@@ -78,7 +78,9 @@ export default function Navbar() {
               </a>
               <div className={`w-px h-4 ${isHeaderSolid ? "bg-slate-300" : "bg-white/30"}`}></div>
               <div className="flex items-center gap-4" dir="ltr">
-                <a href="#" className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>
+                <a href="https://www.facebook.com/profile.php?id=100089779290426"
+                  target="_blank"
+                  className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>
                   <FacebookIcon className="w-4.5 h-4.5" />
                 </a>
                 <a href="#" className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>

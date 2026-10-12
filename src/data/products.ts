@@ -478,14 +478,14 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     images: ["/images/catalog/cat-8-51ZZ6BuRcCL._SS400_.jpg", "/images/catalog/cat-8-FB_IMG_1606945531264.jpg", "/images/catalog/cat-8-FB_IMG_1672059970000.jpg", "/images/catalog/cat-8-FB_IMG_1697227314795.jpg", "/images/catalog/cat-8-FB_IMG_1697227337838.jpg", "/images/catalog/cat-8-Galvanized-Frame-Blue.jpg", "/images/catalog/cat-8-images (2).jpg"],
     descAr: `توريد وتصنيع المهمات اللازمة لتصنيع الفلاتر
 
-      الشبك الخارجي لخامة  للفلاتر :
+      الشبك الخارجي للفلاتر :
 
       الفريمات الجاهزة ( الحديد - البلاستيك ):
 
       الصاج المقطع شرائح بسماكات مختلفة  ( الصاج المشرح )  :`,
     descEn: `Equipment required for filter manufacturing
 
-      Outer mesh for filter material:
+      Outer mesh for filter :
 
       Frames (iron - plastic):
 
@@ -494,7 +494,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
   {
     id: "cat-5",
     nameAr: "خامات الفلاتر",
-    nameEn: "Filter materials",
+    nameEn: "Filters materials",
     isCategory: true,
     images: ["/images/catalog/cat-5-11.PNG", "/images/catalog/cat-5-1630479804791.jpg", "/images/catalog/cat-5-1631081481881.jpg", "/images/catalog/cat-5-31h70NpotML__1607972570.jpg", "/images/catalog/cat-5-7300010-11.jpg", "/images/catalog/cat-5-FB_IMG_1671896739485.jpg", "/images/catalog/cat-5-HEPA-Filter-material.jpg", "/images/catalog/cat-5-images (11).jpg", "/images/catalog/cat-5-PSG.jpg", "/images/catalog/cat-5-synthetic roll.png", "/images/catalog/cat-5-thumbnail (3).jpg"],
     descAr: `خامات الفلاتر Raw Roll Filters   :
@@ -525,7 +525,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Importing",
     nameAr: "الاستيراد",
     isCategory: true,
-    images: ["/images/catalog/cat-9-1630548953131.jpg", "/images/catalog/cat-9-31698932_835049996685440_1038754797068484608_n.png", "/images/catalog/cat-9-75323295_771413943280079_5574940800875233280_n.png", "/images/catalog/cat-9-aaf-logo-red-retina.png", "/images/catalog/cat-9-camfil3.png", "/images/catalog/cat-9-downloa.png", "/images/catalog/cat-9-download (2).png", "/images/catalog/cat-9-download.jpg", "/images/catalog/cat-9-downlolllad.png", "/images/catalog/cat-9-downlSSSoad.png", "/images/catalog/cat-9-logo-fcr-1.png", "/images/catalog/cat-9-logo.png", "/images/catalog/cat-9-marchio_SagiCofimUK.jpg"],
+    images: ["/images/catalog/cat-9-1630548953131.jpg", "/images/catalog/cat-9-31698932_835049996685440_1038754797068484608_n.png", "/images/catalog/cat-9-75323295_771413943280079_5574940800875233280_n.png", "/images/catalog/cat-9-aaf-logo-red-retina.png", "/images/catalog/cat-9-camfil3.png",  "/images/catalog/cat-9-download (2).png", "/images/catalog/cat-9-download.jpg", "/images/catalog/cat-9-downlolllad.png", "/images/catalog/cat-9-downlSSSoad.png", "/images/catalog/cat-9-logo-fcr-1.png", "/images/catalog/cat-9-logo.png", "/images/catalog/cat-9-marchio_SagiCofimUK.jpg"],
     subProducts: [],
     descAr: `نبيع جميع انواع الفلاتر المستوردة من انحاء العالم :
 

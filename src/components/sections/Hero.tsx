@@ -113,7 +113,7 @@ export default function Hero() {
         className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-20 cursor-pointer hidden sm:block"
         aria-label="Previous Slide"
       >
-        <ChevronLeft className="w-12 h-12 drop-shadow-md font-light stroke-[1.5] bg-black/70" />
+        <ChevronLeft className="w-12 h-12 drop-shadow-md font-light stroke-[1.5] text-black bg-gray-100/50 rounded-full p-2" />
       </button>
 
       <button
@@ -121,7 +121,7 @@ export default function Hero() {
         className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-20 cursor-pointer hidden sm:block"
         aria-label="Next Slide"
       >
-        <ChevronRight className="w-12 h-12 drop-shadow-md font-light stroke-[1.5] bg-black/70" />
+        <ChevronRight className="w-12 h-12 drop-shadow-md font-light stroke-[1.5] text-black bg-gray-100/50 rounded-full p-2" />
       </button>
 
       {/* Pagination Dots Bottom Center */}
