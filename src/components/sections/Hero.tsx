@@ -31,7 +31,7 @@ export default function Hero() {
   }, [handleNext]);
 
   return (
-    <section className="relative h-[60vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-white md:bg-slate-900">
+    <section className="relative h-[60vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
       
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
