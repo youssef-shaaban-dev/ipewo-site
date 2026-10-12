@@ -61,30 +61,45 @@ export default function Navbar() {
         : "bg-linear-to-b from-black/60 to-transparent"
         }`}
     >
-      {/* Top Bar */}
-      <div className={`hidden lg:block border-b transition-all duration-300 ${isHeaderSolid ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-white/5 backdrop-blur-xs"
-        }`}>
+      {/* Top Bar - Always Solid White with highest priority on page load */}
+      <div className="border-b border-slate-200/90 bg-white shadow-xs transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-2">
+          <div className="flex items-center justify-between py-1.5 sm:py-2">
             <div></div>
-            <div className={`flex items-center gap-6 text-sm font-medium ${isHeaderSolid ? "text-slate-600" : "text-white/90"}`}>
-              <a href="tel:01014298465" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
+            <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-slate-700 flex-wrap justify-end">
+              <a
+                href="tel:01014298465"
+                className="flex items-center gap-1.5 sm:gap-2 hover:text-blue-600 transition-colors text-slate-800 font-bold tracking-wider"
+                dir="ltr"
+              >
                 <span className="font-semibold tracking-wider">01014298465</span>
-                <PhoneCall className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
+                <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 shrink-0" />
               </a>
-              <a href="mailto:ipewo@yahoo.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors" dir="ltr">
+              <a
+                href="mailto:ipewo@yahoo.com"
+                className="flex items-center gap-1.5 sm:gap-2 hover:text-blue-600 transition-colors text-slate-700"
+                dir="ltr"
+              >
                 <span>ipewo@yahoo.com</span>
-                <Mail className={`w-4 h-4 ${isHeaderSolid ? "text-blue-600" : "text-cyan-400"}`} />
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 shrink-0" />
               </a>
-              <div className={`w-px h-4 ${isHeaderSolid ? "bg-slate-300" : "bg-white/30"}`}></div>
-              <div className="flex items-center gap-4" dir="ltr">
-                <a href="https://www.facebook.com/profile.php?id=100089779290426"
+              <div className="w-px h-3.5 sm:h-4 bg-slate-300"></div>
+              <div className="flex items-center gap-3 sm:gap-4" dir="ltr">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100089779290426"
                   target="_blank"
-                  className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>
-                  <FacebookIcon className="w-4.5 h-4.5" />
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 transition-colors text-slate-800"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </a>
-                <a href="#" className={`hover:text-blue-600 transition-colors ${isHeaderSolid ? "text-slate-800" : "text-white"}`}>
-                  <LinkedinIcon className="w-4.5 h-4.5" />
+                <a
+                  href="#"
+                  className="hover:text-blue-600 transition-colors text-slate-800"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </a>
               </div>
             </div>
