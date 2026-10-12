@@ -18,13 +18,13 @@ export const productsData: Category[] = [
     nameEn: "Pre-filters",
     nameAr: "الفلاتر الابتدائية",
     isCategory: true,
-    images: ["/images/catalog/cat-1-intro-FB_IMG_1785160523498.jpg"],
+    images: ["/images/catalog/pre-filters-1.webp"],
     subProducts: [
       {
         id: "aluminum",
         nameEn: "Aluminum filters",
         nameAr: "الفلاتر الالومنيوم",
-        images: ["/images/catalog/cat-1-sub-1-1526655_746186395411272_1953156455_n.jpg", "/images/catalog/cat-1-sub-1-50454586_2017274658386745_7221806986453581824_n.jpg", "/images/catalog/cat-1-sub-1-812qL+LhT3L._AC_SL1500_.jpg", "/images/catalog/cat-1-sub-1-Aluminum-Filter-G2.jpg", "/images/catalog/cat-1-sub-1-FB_IMG_1671894160105.jpg", "/images/catalog/cat-1-sub-1-lPpVidzwgDwK6Ie1g0OvTmLN0jvX2oiKePMQbfwc.jpeg"],
+        images: ["/images/catalog/pre-filters-aluminum-1.webp", "/images/catalog/pre-filters-aluminum-2.webp", "/images/catalog/pre-filters-aluminum-3.webp", "/images/catalog/pre-filters-aluminum-4.webp", "/images/catalog/pre-filters-aluminum-5.webp", "/images/catalog/pre-filters-aluminum-6.webp"],
         descAr: `فلاترالالومنيوم :Class G2
 
           المقاسات الاستاندرد ( بالسم )
@@ -71,7 +71,7 @@ export const productsData: Category[] = [
         id: "felt",
         nameEn: "Plated filters",
         nameAr: "الفلاتر اللباد",
-        images: ["/images/catalog/cat-1-sub-2-double-skin-air-handling-unit-500x500.jpg", "/images/catalog/cat-1-sub-2-pre g4.png", "/images/catalog/cat-1-sub-2-vz8qzNJfn1IM4346PKgLq9dC40uElhJ57m1V9C1A.jpeg"],
+        images: ["/images/catalog/pre-filters-felt-1.webp", "/images/catalog/pre-filters-felt-2.webp", "/images/catalog/pre-filters-felt-3.webp"],
         descAr: `فلاتراللباد : Class G3/G4
 
           ستخدم كمرحلة ترشيح أولى في ترشيح الجسيمات الخشنة ، وقد تم اختبارها وفقًا لمعيار EN 779: 2012
@@ -94,7 +94,7 @@ export const productsData: Category[] = [
         id: "cardboard",
         nameEn: "Cardboard filters",
         nameAr: "الفلاتر الكرتون",
-        images: ["/images/catalog/cat-1-sub-3-468511583_122165124332050465_5080404655674054655_n.jpg", "/images/catalog/cat-1-sub-3-469279125_122166207350050465_7182114009012383809_n.jpg", "/images/catalog/cat-1-sub-3-95897740_2545185825742313_5780224234575888384_n.jpg", "/images/catalog/cat-1-sub-3-FB_IMG_1672061840422.jpg"],
+        images: ["/images/catalog/pre-filters-cardboard-1.webp", "/images/catalog/pre-filters-cardboard-2.webp", "/images/catalog/pre-filters-cardboard-3.webp", "/images/catalog/pre-filters-cardboard-4.webp"],
         descAr: `- فلاتر الكرتون : : Class G4
 
           فلتر الكرتون بإطار من الورق المقوى وفئة ترشيح Class G4 هو فلتر هواء أولي (Pre-filter) يُستخدم لحجز الجسيمات الخشنة الكبيرة في أنظمة التكييف والتهوية (HVAC).
@@ -122,7 +122,7 @@ export const productsData: Category[] = [
         id: "carbon",
         nameEn: "Carbon filters",
         nameAr: "فلاتر الكربون",
-        images: ["/images/catalog/cat-1-sub-4-carbon panel.png", "/images/catalog/cat-1-sub-4-FB_IMG_1690189253169.jpg", "/images/catalog/cat-1-sub-4-SuperFlow_VC.png"],
+        images: ["/images/catalog/pre-filters-carbon-1.webp", "/images/catalog/pre-filters-carbon-2.webp", "/images/catalog/pre-filters-carbon-3.webp"],
         descAr: `فلاتر الكربون :Active Carbon Filters
 
           فلاتر الكربون النشط (Activated Carbon Filters) هي أنظمة تنقية تعتمد على الامتزاز السطحي لإزالة الروائح، والغازات، والمركبات العضوية، والكلور من الهواء.
@@ -138,7 +138,7 @@ export const productsData: Category[] = [
         id: "fan-coil",
         nameEn: "Fan coil filters",
         nameAr: "Fan coil filters",
-        images: ["/images/catalog/cat-1-fan-coil-filter-15675867_1811279082465249_1273095336654163750_o.jpg", "/images/catalog/cat-1-fan-coil-filter-203379_4.png", "/images/catalog/cat-1-fan-coil-filter-IMG-20200302-WA0001.jpg"],
+        images: ["/images/catalog/pre-filters-fan-coil-1.webp", "/images/catalog/pre-filters-fan-coil-2.webp", "/images/catalog/pre-filters-fan-coil-3.webp"],
         descAr: `فلاتر وحدات FAN COIL UNITS( G2) :
 
           فلاتر وحدات FAN COIL UNITS G3/G4 :
@@ -184,7 +184,7 @@ export const productsData: Category[] = [
         id: "fiberglass",
         nameEn: "Fiberglass filters",
         nameAr: "Fiber glass filters",
-        images: ["/images/catalog/cat-1-fiber-glass-filters-cache_449_317_3_100_100_16777215_glass-fibre-panel-4inch.png", "/images/catalog/cat-1-fiber-glass-filters-FB_IMG_1672045046543.jpg"],
+        images: ["/images/catalog/pre-filters-fiberglass-1.webp", "/images/catalog/pre-filters-fiberglass-2.webp"],
         descAr: `فلاتر الفيبر جلاس :
 
           FILTER CLASS: G3
@@ -219,7 +219,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Bag and rigid filters",
     nameAr: "فلاتر الباج والريجد",
     isCategory: true,
-    images: ["/images/catalog/cat-2-14522687_660286504144533_7098677189200325737_n.jpg", "/images/catalog/cat-2-16112651_1822365324689958_6686259729897216666_o.jpg", "/images/catalog/cat-2-1674475572406_275158894.png", "/images/catalog/cat-2-74634382_450784398904919_1438712115996131328_n - Copy.jpg", "/images/catalog/cat-2-bag f8.png", "/images/catalog/cat-2-FB_IMG_1575539156449.jpg", "/images/catalog/cat-2-FB_IMG_1672068246787.jpg", "/images/catalog/cat-2-FB_IMG_1672068250940.jpg", "/images/catalog/cat-2-٢٠١٨٠٨٠٨_١٣٥٠٥٨.png"],
+    images: ["/images/catalog/bag-and-rigid-1.webp", "/images/catalog/bag-and-rigid-2.webp", "/images/catalog/bag-and-rigid-3.webp", "/images/catalog/bag-and-rigid-4.webp", "/images/catalog/bag-and-rigid-5.webp", "/images/catalog/bag-and-rigid-6.webp", "/images/catalog/bag-and-rigid-7.webp", "/images/catalog/bag-and-rigid-8.webp", "/images/catalog/bag-and-rigid-9.webp"],
     descAr: `الفلاتر الباج : Pocket filters ( bag filters ) F5-F6-F7-F8
 
       المقاسات الاستاندرد :بالسم :
@@ -256,7 +256,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Foam filters",
     nameAr: "Foam filters",
     isCategory: true,
-    images: ["/images/catalog/foam-filters-15b55f95-bbd4-41f9-ade6-47bddff53e40.jpg", "/images/catalog/foam-filters-32cee602-893d-4db7-88c5-8c3c231d7d8d.jpg", "/images/catalog/foam-filters-6e67198c-d96d-48eb-8d81-fbc0d61c6b15.jpg"],
+    images: ["/images/catalog/foam-1.webp", "/images/catalog/foam-2.webp", "/images/catalog/foam-3.webp"],
     descAr: `- فلاتر الفوم :
       Reticulated polyurethane filter foam
       Washable Panel Air Filter (Comparable to Grade G3 or G4 to EN779:2012
@@ -280,13 +280,13 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "HEPA filters",
     nameAr: "الفلاتر الهيبا",
     isCategory: true,
-    images: ["/images/catalog/cat-4-intro-hepa-filter-10.png"],
+    images: ["/images/catalog/hepa-1.webp"],
     subProducts: [
       {
         id: "v-shape",
         nameEn: "V-shape",
         nameAr: "V-shape",
-        images: ["/images/catalog/cat-4-v-shape-286781830_5356209714401706_7993848533879448772_n.png", "/images/catalog/cat-4-v-shape-BioMAXV2000.png"],
+        images: ["/images/catalog/hepa-v-shape-1.webp", "/images/catalog/hepa-v-shape-2.webp"],
         descAr: `1-Abslute HEPA filter V-Shape ( H13-H14)
 
           Manufactured from mini-pleat packs of high quality micro glass paper, bonded into 'V' banks and sealed into a galvanized frame. A neoprene gasket is fitted on clean air side.
@@ -316,7 +316,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
         id: "abslute-mini-plate",
         nameEn: "Absolute (mini-pleat)",
         nameAr: "Absolute (mini-pleat)",
-        images: ["/images/catalog/cat-4-abslute-mini-plate-1-3-1-hepa-purifier-replacement-air-filter_01b.jpg", "/images/catalog/cat-4-abslute-mini-plate-f896a323-6e02-456c-a57d-ecf5ff9bc325.jpg"],
+        images: ["/images/catalog/hepa-abslute-mini-plate-1.webp", "/images/catalog/hepa-abslute-mini-plate-2.webp"],
         descAr: `2- Abslute HEPA filter(H13- H14)
 
           Manufactured using high-quality borosilicate micro glass paper with either aluminum or Kraft separators, sealed into a wooden or galvanized case with a 2 part polyurethane sealant. A neoprene gasket is fitted on clean air side.
@@ -336,7 +336,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
         id: "terminal",
         nameEn: "Terminal",
         nameAr: "Terminal",
-        images: ["/images/catalog/cat-4-terminal-14517361_1775078536085304_8413073429371454509_n.jpg", "/images/catalog/cat-4-terminal-TM-Hood-center-divider.jpg"],
+        images: ["/images/catalog/hepa-terminal-1.webp", "/images/catalog/hepa-terminal-2.webp"],
         descAr: `3-Terminal abslute HEPA filter ( H14 )   (  ذو الرقبة ) HEPA HOOD
 
           المقاسات الاستاندرد :بالسم :
@@ -364,7 +364,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
         id: "deep-plate",
         nameEn: "Deep Plate",
         nameAr: "Deep Plate",
-        images: ["/images/catalog/cat-4-deep-plate-118570-11624005 (1).jpg", "/images/catalog/cat-4-deep-plate-mgh-10as-aluminium-seperator-hepa-filters-galvanized-frame-292-mm.jpg"],
+        images: ["/images/catalog/hepa-deep-plate-1.webp", "/images/catalog/hepa-deep-plate-2.webp"],
         descAr: `Deep pleat absolute HEPA filter (ALUMINUM SEPERATOR)
 
           . Filter media Water repellent glass fibre paper folded with constantly calibrated spacing. Separation with thermoplastic threads.
@@ -392,7 +392,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
         id: "high-temprature-filters",
         nameEn: "High Temperature Filters",
         nameAr: "High Temperature Filters",
-        images: ["/images/catalog/cat-4-high-temprature-filters-704041974_122218616588050465_5342743417406722168_n.jpg"],
+        images: ["/images/catalog/hepa-high-temprature-filters-1.webp"],
         descAr: `High-Temperature Filters
           فلاتر درجات الحرارة العالية
 
@@ -404,7 +404,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
         id: "ulpa-filters",
         nameEn: "ULPA Filters",
         nameAr: "ULPA Filters",
-        images: ["/images/catalog/cat-4-ulpa-filters-images.jpg", "/images/catalog/cat-4-ulpa-filters-particlesizechartnew461271d0b3874cdeba52eff55beb0a0e.png"],
+        images: ["/images/catalog/hepa-ulpa-filters-1.webp", "/images/catalog/hepa-ulpa-filters-2.webp"],
         descAr: `Ulpa Filters
 
           يُعد مرشح ULPA (مرشح الهواء فائق الكفاءة في احتجاز الجسيمات) نظاماً متطوراً لترشيح الهواء، حيث يزيل ما لا يقل عن 99.999% من الجسيمات العالقة في الهواء التي يصل حجمها إلى 0.12 ميكرون.
@@ -429,7 +429,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Paint booth filters rolls",
     nameAr: "رولات فلاتر الدهان",
     isCategory: true,
-    images: ["/images/catalog/cat-6-187885988_2285688954900992_2197314563246218708_n.jpg", "/images/catalog/cat-6-468125548_122165047682050465_4601384919979319396_n.jpg", "/images/catalog/cat-6-619623826_122144252168979198_8490867250375582077_n.jpg", "/images/catalog/cat-6-75551b43e850aa12f30f68e6b001c93f (1).png", "/images/catalog/cat-6-paint-booth-1.jpg", "/images/catalog/cat-6-paintsprayboothfiltershero.jpg", "/images/catalog/cat-6-synthetic roll.png", "/images/catalog/cat-6-فلتر سقفي.PNG"],
+    images: ["/images/catalog/paint-booth-rolls-1.webp", "/images/catalog/paint-booth-rolls-2.webp", "/images/catalog/paint-booth-rolls-3.webp", "/images/catalog/paint-booth-rolls-4.webp", "/images/catalog/paint-booth-rolls-5.webp", "/images/catalog/paint-booth-rolls-6.webp", "/images/catalog/paint-booth-rolls-7.webp", "/images/catalog/paint-booth-rolls-8.webp"],
     descAr: `متوفر جميع الرولات الخاصة بغرف الدهان :
 
       1-رول فلتر سقف مقاس :
@@ -463,7 +463,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Dust collector filters",
     nameAr: "Dust Collectors filters",
     isCategory: true,
-    images: ["/images/catalog/dust-collectors-filters-91825180_2409734585793485_6559244943162867712_n.jpg", "/images/catalog/dust-collectors-filters-91861380_2409730602460550_9088280970204807168_n.jpg", "/images/catalog/dust-collectors-filters-China-Factory-Price-Dust-Collector-Filter-Bag-for-Filtration.jpg", "/images/catalog/dust-collectors-filters-custom_engineered_dust_collection_system_large.jpg", "/images/catalog/dust-collectors-filters-Dust-Filter-Bag-6.jpg"],
+    images: ["/images/catalog/dust-collectors-1.webp", "/images/catalog/dust-collectors-2.webp", "/images/catalog/dust-collectors-3.webp", "/images/catalog/dust-collectors-4.webp", "/images/catalog/dust-collectors-5.webp"],
     descAr: `فلاتر لمجمع الاتربة والمواد الدقيقة
       Needle Felt Filter Bag( Pocket Filters ) for Dust Collector
       Manufactroy all kind and size of dust Collector`,
@@ -475,7 +475,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Filters manufacturing equipments",
     nameAr: "المهمات اللازمة لتصنيع الفلاتر",
     isCategory: true,
-    images: ["/images/catalog/cat-8-51ZZ6BuRcCL._SS400_.jpg", "/images/catalog/cat-8-FB_IMG_1606945531264.jpg", "/images/catalog/cat-8-FB_IMG_1672059970000.jpg", "/images/catalog/cat-8-FB_IMG_1697227314795.jpg", "/images/catalog/cat-8-FB_IMG_1697227337838.jpg", "/images/catalog/cat-8-Galvanized-Frame-Blue.jpg", "/images/catalog/cat-8-images (2).jpg"],
+    images: ["/images/catalog/filter-equipment-1.webp", "/images/catalog/filter-equipment-2.webp", "/images/catalog/filter-equipment-3.webp", "/images/catalog/filter-equipment-4.webp", "/images/catalog/filter-equipment-5.webp", "/images/catalog/filter-equipment-6.webp", "/images/catalog/filter-equipment-7.webp"],
     descAr: `توريد وتصنيع المهمات اللازمة لتصنيع الفلاتر
 
       الشبك الخارجي للفلاتر :
@@ -496,7 +496,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameAr: "خامات الفلاتر",
     nameEn: "Filters materials",
     isCategory: true,
-    images: ["/images/catalog/cat-5-11.PNG", "/images/catalog/cat-5-1630479804791.jpg", "/images/catalog/cat-5-1631081481881.jpg", "/images/catalog/cat-5-31h70NpotML__1607972570.jpg", "/images/catalog/cat-5-7300010-11.jpg", "/images/catalog/cat-5-FB_IMG_1671896739485.jpg", "/images/catalog/cat-5-HEPA-Filter-material.jpg", "/images/catalog/cat-5-images (11).jpg", "/images/catalog/cat-5-PSG.jpg", "/images/catalog/cat-5-synthetic roll.png", "/images/catalog/cat-5-thumbnail (3).jpg"],
+    images: ["/images/catalog/cat-5-1.webp", "/images/catalog/cat-5-2.webp", "/images/catalog/cat-5-3.webp", "/images/catalog/cat-5-4.webp", "/images/catalog/cat-5-5.webp", "/images/catalog/cat-5-6.webp", "/images/catalog/cat-5-7.webp", "/images/catalog/cat-5-8.webp", "/images/catalog/cat-5-9.webp", "/images/catalog/cat-5-10.webp", "/images/catalog/cat-5-11.webp"],
     descAr: `خامات الفلاتر Raw Roll Filters   :
 
       تقوم الشركة  باستيراد جميع انواع خامات الفلاتر من اجود الانواع :
@@ -525,7 +525,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Importing",
     nameAr: "الاستيراد",
     isCategory: true,
-    images: ["/images/catalog/cat-9-1630548953131.jpg", "/images/catalog/cat-9-31698932_835049996685440_1038754797068484608_n.png", "/images/catalog/cat-9-75323295_771413943280079_5574940800875233280_n.png", "/images/catalog/cat-9-aaf-logo-red-retina.png", "/images/catalog/cat-9-camfil3.png",  "/images/catalog/cat-9-download (2).png", "/images/catalog/cat-9-download.jpg", "/images/catalog/cat-9-downlolllad.png", "/images/catalog/cat-9-downlSSSoad.png", "/images/catalog/cat-9-logo-fcr-1.png", "/images/catalog/cat-9-logo.png", "/images/catalog/cat-9-marchio_SagiCofimUK.jpg"],
+    images: ["/images/catalog/cat-9-1.webp", "/images/catalog/cat-9-2.webp", "/images/catalog/cat-9-3.webp", "/images/catalog/cat-9-4.webp", "/images/catalog/cat-9-5.webp",  "/images/catalog/cat-9-6.webp", "/images/catalog/cat-9-7.webp", "/images/catalog/cat-9-8.webp", "/images/catalog/cat-9-9.webp", "/images/catalog/cat-9-10.webp", "/images/catalog/cat-9-11.webp", "/images/catalog/cat-9-12.webp"],
     subProducts: [],
     descAr: `نبيع جميع انواع الفلاتر المستوردة من انحاء العالم :
 
@@ -549,7 +549,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Sectors using filters",
     nameAr: "القطاعات اللتي تستخدم الفلاتر",
     isCategory: true,
-    images: ["/images/catalog/cat-10-المباني الادارية.jpeg", "/images/catalog/cat-10-المستشفيات.jpg", "/images/catalog/cat-10-المصانع وخاصة مصانع الاغذية.jpg", "/images/catalog/cat-10-صناعة الادوية.jpg", "/images/catalog/cat-10-قطاع البتروكيماويات ومحطات الطاقة.jpg", "/images/catalog/cat-10-وسائل النقل.jpg"],
+    images: ["/images/catalog/cat-10-1.webp", "/images/catalog/cat-10-2.webp", "/images/catalog/cat-10-3.webp", "/images/catalog/cat-10-4.webp", "/images/catalog/cat-10-5.webp", "/images/catalog/cat-10-6.webp"],
     subProducts: [],
     descAr: `بعض القطاعات تستخدم الفلاتربصفة مستمرة :
 
@@ -572,13 +572,13 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameAr: "نبذة عن الفلاتر",
     isCategory: true,
     images: [
-      "/images/catalog/cat-11-3-s2.0-b9781845695644500141-f14-05-9781845695644.jpg",
-      "/images/catalog/cat-11-1111.png",
-      "/images/catalog/cat-11-air-filter-solution3.jpg",
-      "/images/catalog/cat-11-filterchart.gif",
-      "/images/catalog/cat-11-filterklasser--bubblor.png",
-      "/images/catalog/cat-11-how-a-hepa-filter-works-prana-air_1.png",
-      "/images/catalog/cat-11-table-1-hf.png"
+      "/images/catalog/cat-11-1.webp",
+      "/images/catalog/cat-11-2.webp",
+      "/images/catalog/cat-11-3.webp",
+      "/images/catalog/cat-11-4.webp",
+      "/images/catalog/cat-11-5.webp",
+      "/images/catalog/cat-11-6.webp",
+      "/images/catalog/cat-11-7.webp"
     ],
     subProducts: [],
     descAr: `تستخدم الفلاتر لتنقية وترشيح الهواء المكيف قبل ان ينتقل للانسان وانواعها:

@@ -8,23 +8,23 @@ export default function ProductsGrid() {
   const t = useTranslations("products");
 
   const productsList = [
-    { key: "aluminum", category: "primary", title: t("items.aluminum"), image: "/images/products/all/image1.jpeg" },
-    { key: "bag", category: "primary", title: t("items.bag"), image: "/images/products/all/image2.jpeg" },
-    { key: "carton", category: "primary", title: t("items.carton"), image: "/images/products/all/image3.jpeg" },
-    { key: "rigid", category: "primary", title: t("items.rigid"), image: "/images/products/all/image4.jpeg" },
-    { key: "foam", category: "primary", title: t("items.foam"), image: "/images/products/all/image5.jpeg" },
-    { key: "fiberglass", category: "primary", title: t("items.fiberglass"), image: "/images/products/all/image6.jpeg" },
-    { key: "carbon", category: "primary", title: t("items.carbon"), image: "/images/products/all/image7.jpeg" },
-    { key: "carbon2", category: "primary", title: t("items.carbon2"), image: "/images/products/all/image8.jpeg" },
-    { key: "dustCollector", category: "primary", title: t("items.dustCollector"), image: "/images/products/all/image9.jpeg" },
+    { key: "aluminum", category: "primary", title: t("items.aluminum"), image: "/images/products/all/image1.webp" },
+    { key: "bag", category: "primary", title: t("items.bag"), image: "/images/products/all/image2.webp" },
+    { key: "carton", category: "primary", title: t("items.carton"), image: "/images/products/all/image3.webp" },
+    { key: "rigid", category: "primary", title: t("items.rigid"), image: "/images/products/all/image4.webp" },
+    { key: "foam", category: "primary", title: t("items.foam"), image: "/images/products/all/image5.webp" },
+    { key: "fiberglass", category: "primary", title: t("items.fiberglass"), image: "/images/products/all/image6.webp" },
+    { key: "carbon", category: "primary", title: t("items.carbon"), image: "/images/products/all/image7.webp" },
+    { key: "carbon2", category: "primary", title: t("items.carbon2"), image: "/images/products/all/image8.webp" },
+    { key: "dustCollector", category: "primary", title: t("items.dustCollector"), image: "/images/products/all/image9.webp" },
     
-    { key: "hepaMini", category: "hepa", title: t("items.hepaMini"), image: "/images/products/all/image10.jpeg" },
-    { key: "terminal", category: "hepa", title: t("items.terminal"), image: "/images/products/all/image11.jpeg" },
-    { key: "vShape", category: "hepa", title: t("items.vShape"), image: "/images/products/all/image12.jpeg" },
-    { key: "hepaDeep", category: "hepa", title: t("items.hepaDeep"), image: "/images/products/all/image13.jpeg" },
+    { key: "hepaMini", category: "hepa", title: t("items.hepaMini"), image: "/images/products/all/image10.webp" },
+    { key: "terminal", category: "hepa", title: t("items.terminal"), image: "/images/products/all/image11.webp" },
+    { key: "vShape", category: "hepa", title: t("items.vShape"), image: "/images/products/all/image12.webp" },
+    { key: "hepaDeep", category: "hepa", title: t("items.hepaDeep"), image: "/images/products/all/image13.webp" },
 
-    { key: "rollBag", category: "materials", title: t("items.rollBag"), image: "/images/products/all/image14.jpeg" },
-    { key: "rollAluminum", category: "materials", title: t("items.rollAluminum"), image: "/images/products/all/image15.png" },
+    { key: "rollBag", category: "materials", title: t("items.rollBag"), image: "/images/products/all/image14.webp" },
+    { key: "rollAluminum", category: "materials", title: t("items.rollAluminum"), image: "/images/products/all/image15.webp" },
   ];
 
   return (

@@ -73,7 +73,7 @@ export default function About() {
             className="relative w-full h-full min-h-87.5 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border-[6px] border-white"
           >
             <Image
-              src="/images/hero/slide-1.jpg"
+              src="/images/hero/slide-1.webp"
               alt={t("title")}
               fill
               className="object-cover"
