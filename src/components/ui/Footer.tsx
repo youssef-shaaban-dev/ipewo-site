@@ -1,15 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { ShieldCheck, PhoneCall, Mail, MapPin } from "lucide-react";
+import { ShieldCheck, PhoneCall, Mail, MapPin, Info } from "lucide-react";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const navT = useTranslations("nav");
   const locale = useLocale();
+  const isRtl = locale === "ar";
+  const [showPartnership, setShowPartnership] = useState(false);
 
   return (
     <footer className="bg-slate-900 border-t border-slate-800 text-slate-200 pt-20 pb-14 relative overflow-hidden">
@@ -20,7 +23,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12">
 
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-5">
@@ -142,12 +145,80 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm font-semibold text-slate-400">
-          <div>{t("rights")}</div>
-          <div className="flex items-center gap-2 text-xs text-slate-500">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>{locale === "ar" ? "صُنع بإتقان في مصر 🇪🇬" : "Crafted with precision in Egypt 🇪🇬"}</span>
+        {/* Bottom Credits & Partnership */}
+        <div className="pt-8 border-t border-slate-800 flex flex-col items-center justify-center text-center space-y-3">
+        
+          {/* Copyright */}
+          <p className="max-w-4xl text-xs sm:text-[13px] font-semibold text-slate-400 leading-relaxed">
+            {isRtl
+              ? "© 2026 إبيو (IPEWO) - جميع الحقوق محفوظة. يُحظر تماماً الاستخدام غير المصرح به، بما في ذلك تدريب نماذج الذكاء الاصطناعي، أو إعادة الإنتاج، أو الاستغلال التجاري."
+              : "© 2026 IPEWO - All content is copyrighted. Unauthorized use, including AI training, reproduction, or commercial exploitation, is strictly prohibited."}
+          </p>
+
+          {/* Crafted in Egypt & Developed by MRCO */}
+          <p className="text-xs sm:text-sm font-semibold text-slate-300">
+            {isRtl ? "صُنع بكل حب في مصر ❤️ " : "Proudly Crafted in Egypt with Love ❤️ "}
+            <a
+              href="https://mrco-egypt.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors underline underline-offset-4 font-bold"
+            >
+              {isRtl ? "تطوير الموقع من خلال شركة ميركو ايجيبت" : "Website developed by MRCO-Egypt"}
+            </a>
+          </p>
+
+          {/* MRCO-Egypt Partnership Tooltip */}
+          <div className="pt-2">
+            <div
+              className="inline-flex flex-wrap items-center justify-center gap-2 group relative cursor-help text-center select-none"
+              onClick={() => setShowPartnership(!showPartnership)}
+            >
+              <p
+                dir="ltr"
+                className="text-xs sm:text-[13px] text-slate-400 group-hover:text-slate-200 transition-colors leading-relaxed max-w-[320px] sm:max-w-none border-b border-dashed border-slate-600 group-hover:border-cyan-400 pb-0.5 font-medium"
+              >
+                <span className="text-white font-bold">IPEWO | </span>
+                <a
+                  href="https://mrco-egypt.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:underline hover:text-cyan-300 transition-colors font-bold"
+                >
+                  Growth & Marketing by MRCO-Egypt
+                </a>
+                <span className="text-slate-400 group-hover:text-slate-300 transition-colors font-medium">
+                  {" "}a strategy-driven digital marketing and brand communication agency in Egypt
+                </span>
+              </p>
+
+              <Info
+                className={`w-4 h-4 transition-colors flex-shrink-0 inline-block ${
+                  showPartnership ? "text-cyan-400" : "text-cyan-500 group-hover:text-cyan-400"
+                }`}
+              />
+
+              <div
+                className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-[90vw] sm:w-[460px] p-4 sm:p-5 bg-slate-950 rounded-xl border border-cyan-500/30 shadow-2xl transition-all duration-300 z-50 text-left pointer-events-none ${
+                  showPartnership
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible translate-y-2 lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0"
+                }`}
+                dir="ltr"
+              >
+                <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
+                  <span className="text-cyan-400 font-bold text-sm tracking-wide">Growth & Marketing</span>
+                </div>
+                <p className="text-xs sm:text-[13px] font-normal text-slate-300 leading-relaxed mb-3">
+                  IPEWO - Growth & Marketing by MRCO-Egypt, a strategy-driven digital marketing and brand communication agency in Egypt, for brand strategy, digital marketing, and web development.
+                </p>
+                <p className="text-xs sm:text-[13px] font-normal text-slate-300 leading-relaxed">
+                  MRCO-Egypt specializes in brand strategy, brand identity, web development, SEO, Generative Engine Optimization (GEO), and AI Optimization (AIO), helping businesses build distinctive brands and achieve measurable digital growth.
+                </p>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 border-[7px] border-transparent border-t-cyan-500/30"></div>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-slate-950 -mt-[1px]"></div>
+              </div>
+            </div>
           </div>
         </div>
 
