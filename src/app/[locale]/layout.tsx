@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import { getStructuredData } from "@/data/schema";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
 
   const messages = await getMessages({ locale });
   const isRtl = locale === "ar";
+  const jsonLd = getStructuredData(locale);
 
   return (
     <html
@@ -65,6 +67,10 @@ export default async function LocaleLayout({
       className={`${tajawal.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
       <body className={`min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ${isRtl ? "font-arabic" : ""}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <main className="min-h-screen flex flex-col">
           <NextIntlClientProvider messages={messages} locale={locale}>
             <Navbar />
