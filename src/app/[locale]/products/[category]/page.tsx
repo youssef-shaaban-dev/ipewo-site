@@ -15,7 +15,9 @@ export function generateStaticParams() {
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ locale: string; category: string }> }) {
-  const { locale, category } = await params;
+  const resolved = await params;
+  console.error(">>> CATEGORY PAGE PARAMS:", JSON.stringify(resolved));
+  const { locale, category } = resolved;
   setRequestLocale(locale);
   const catData = productsData.find((c) => c.id === category);
 
