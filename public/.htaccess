@@ -15,13 +15,7 @@ Options -Indexes
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # 2. Redirect root domain (/) to default/detected language
-    # If browser accepts English as primary, redirect to /en/
-    RewriteCond %{REQUEST_URI} ^/?$
-    RewriteCond %{HTTP:Accept-Language} ^en [NC]
-    RewriteRule ^$ /en/ [R=302,L]
-
-    # Otherwise default root domain to Arabic (/ar/)
+    # 2. Redirect root domain (/) unconditionally to default language (/ar/)
     RewriteCond %{REQUEST_URI} ^/?$
     RewriteRule ^$ /ar/ [R=302,L]
 
