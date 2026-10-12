@@ -35,41 +35,32 @@ export default function Hero() {
       
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
-        <AnimatePresence>
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.8 }}
-            className="absolute inset-0"
+        {sliderImages.map((slide, idx) => (
+          <div
+            key={slide.url}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+            }`}
           >
             <Image
-              src={sliderImages[currentIndex].url}
+              src={slide.url}
               alt="IPEWO Hero Slide"
               fill
               sizes="100vw"
               className="object-fill md:object-cover object-center opacity-90 md:opacity-100"
-              priority
+              priority={idx === 0}
+              loading={idx === 0 ? "eager" : "lazy"}
             />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        ))}
       </div>
 
 
       {/* Main Content Center Overlay */}
-      <div className={`relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto transition-transform duration-700 ${
-        currentIndex === 0 ? "-translate-y-8 md:-translate-y-24" : "translate-y-0"
-      }`}>
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto -translate-y-8 md:-translate-y-16">
         
-        {/* Logo */}
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, rotate: -180, scale: 0.5 }}
-          animate={{ opacity: 1, rotate: 0, scale: 1 }}
-          transition={{ duration: 1.2, type: "spring", bounce: 0.5 }}
-          className="relative w-56 h-28 md:w-72 md:h-36 mb-4"
-        >
+        {/* Logo - Static (No rotation, bounce, or position shifting) */}
+        <div className="relative w-56 h-28 md:w-72 md:h-36 mb-4">
           {/* White Logo */}
           <div className="w-full h-full relative" style={{ filter: "brightness(0) invert(1) drop-shadow(0 4px 4px rgba(0,0,0,0.5))" }}>
             <Image
@@ -81,28 +72,23 @@ export default function Hero() {
               priority
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* Text Lines */}
         <div className="w-full relative flex justify-center h-0 pointer-events-none">
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             {currentIndex === 0 && (
               <motion.div
                 key="hero-text"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
+                exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.5 }}
                 className="absolute top-0 flex flex-col items-center w-full px-4"
               >
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide"
-                >
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide">
                   {t("title")}
-                </motion.h1>
+                </h1>
               </motion.div>
             )}
           </AnimatePresence>

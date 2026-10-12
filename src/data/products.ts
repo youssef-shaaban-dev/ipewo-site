@@ -525,7 +525,7 @@ Structure and Mechanism: The panel filter usually consists of a frame made of ca
     nameEn: "Importing",
     nameAr: "الاستيراد",
     isCategory: true,
-    images: ["/images/catalog/cat-9-1.webp", "/images/catalog/cat-9-2.webp", "/images/catalog/cat-9-3.webp", "/images/catalog/cat-9-4.webp", "/images/catalog/cat-9-5.webp",  "/images/catalog/cat-9-6.webp", "/images/catalog/cat-9-7.webp", "/images/catalog/cat-9-8.webp", "/images/catalog/cat-9-9.webp", "/images/catalog/cat-9-10.webp", "/images/catalog/cat-9-11.webp", "/images/catalog/cat-9-12.webp"],
+    images: ["/images/catalog/cat-9-1.webp", "/images/catalog/cat-9-2.webp", "/images/catalog/cat-9-3.webp", "/images/catalog/cat-9-4.webp", "/images/catalog/cat-9-5.webp", "/images/catalog/cat-9-7.webp", "/images/catalog/cat-9-8.webp", "/images/catalog/cat-9-9.webp", "/images/catalog/cat-9-10.webp", "/images/catalog/cat-9-11.webp", "/images/catalog/cat-9-12.webp"],
     subProducts: [],
     descAr: `نبيع جميع انواع الفلاتر المستوردة من انحاء العالم :
 
