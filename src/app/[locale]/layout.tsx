@@ -28,9 +28,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const resolved = await params;
-  console.error(">>> LAYOUT GENERATEMETADATA PARAMS:", JSON.stringify(resolved));
-  const { locale } = resolved;
+  const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "hero" });
 
@@ -48,9 +46,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const resolved = await params;
-  console.error(">>> LOCALE LAYOUT PARAMS:", JSON.stringify(resolved));
-  const { locale } = resolved;
+  const { locale } = await params;
 
   if (!routing.locales.includes(locale as "ar" | "en")) {
     notFound();

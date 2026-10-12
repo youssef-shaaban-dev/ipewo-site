@@ -1,0 +1,143 @@
+# ==============================================================================
+# IPEWO Site - Apache & cPanel Configuration (.htaccess)
+# Designed for Next.js Static Export with Arabic / English i18n
+# ==============================================================================
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # 2. Redirect root domain (/) to default/detected language
+    # If browser accepts English as primary, redirect to /en/
+    RewriteCond %{REQUEST_URI} ^/?$
+    RewriteCond %{HTTP:Accept-Language} ^en [NC]
+    RewriteRule ^$ /en/ [R=302,L]
+
+    # Otherwise default root domain to Arabic (/ar/)
+    RewriteCond %{REQUEST_URI} ^/?$
+    RewriteRule ^$ /ar/ [R=302,L]
+
+    # 3. Trailing Slash normalization for localized directories
+    # Ensure /ar -> /ar/ and /en -> /en/
+    RewriteRule ^(ar|en)$ /$1/ [R=301,L]
+
+    # 4. Remove .html extensions if requested directly
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*?)\.html[\s?] [NC]
+    RewriteRule ^ /%1/ [R=301,L]
+
+    # 5. Serve existing directories and files directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 6. Fallback routing for clean URLs (look for /file.html)
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# ==============================================================================
+# Custom Error Documents
+# ==============================================================================
+ErrorDocument 404 /404.html
+
+# ==============================================================================
+# Security Headers
+# ==============================================================================
+<IfModule mod_headers.c>
+    # Protect against MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # XSS Protection for older browsers
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions policy
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ==============================================================================
+# Performance & Caching Rules
+# ==============================================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML files: never cache permanently so updates deploy instantly
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+
+    # Static CSS and JS assets (Next.js generates unique hashes)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Images
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Immutable cache for Next.js hashed assets (_next/static/)
+    <FilesMatch "\.(js|css|woff2|woff|ttf|otf|webp|jpg|jpeg|png|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Disable caching for HTML to guarantee instant client updates
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# ==============================================================================
+# Gzip / Brotli Compression
+# ==============================================================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain \
+                                  text/html \
+                                  text/xml \
+                                  text/css \
+                                  application/xml \
+                                  application/xhtml+xml \
+                                  application/rss+xml \
+                                  application/javascript \
+                                  application/x-javascript \
+                                  application/json \
+                                  image/svg+xml \
+                                  font/woff \
+                                  font/woff2
+</IfModule>
+
+# ==============================================================================
+# Proper MIME Types
+# ==============================================================================
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    AddType image/svg+xml .svg
+</IfModule>

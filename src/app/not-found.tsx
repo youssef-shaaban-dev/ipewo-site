@@ -1,6 +1,6 @@
 import { Tajawal, Inter } from "next/font/google";
 import "./globals.css";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -23,7 +23,7 @@ export default function GlobalNotFound() {
           <p className="text-slate-500 mb-8 text-center max-w-md">
             يبدو أن الرابط الذي اتبعته غير صحيح أو أن الصفحة قد تم نقلها.
           </p>
-          <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all">
+          <Link href="/ar" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all">
             العودة للرئيسية
           </Link>
         </main>

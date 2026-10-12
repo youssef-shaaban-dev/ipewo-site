@@ -22,7 +22,10 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build project
-        run: npm run build 
+        run: npm run build
+
+      - name: Ensure .htaccess is copied to out directory
+        run: cp public/.htaccess out/.htaccess
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
