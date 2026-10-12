@@ -1,11 +1,15 @@
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Mail, PhoneCall, Printer, Smartphone } from "lucide-react";
 import SectionHero from "@/components/ui/SectionHero";
 
-export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("contact");
+  const t = await getTranslations({ locale, namespace: "contact" });
   const isRtl = locale === "ar";
 
   return (

@@ -1,11 +1,15 @@
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
-import { Circle, Mail, MessageCircle  } from "lucide-react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Circle, Mail, MessageCircle } from "lucide-react";
 import SectionHero from "@/components/ui/SectionHero";
 
-export default function CareersPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function CareersPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("careers"); 
+  const t = await getTranslations({ locale, namespace: "careers" });
   const isRtl = locale === "ar";
 
   const jobs = t.raw("jobs") as Array<{ title: string; desc: string }>;

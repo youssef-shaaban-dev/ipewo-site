@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Tajawal, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -19,12 +19,19 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const resolved = await params;
+  console.error(">>> LAYOUT GENERATEMETADATA PARAMS:", JSON.stringify(resolved));
+  const { locale } = resolved;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "hero" });
 
   return {
@@ -41,11 +48,15 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const resolved = await params;
+  console.error(">>> LOCALE LAYOUT PARAMS:", JSON.stringify(resolved));
+  const { locale } = resolved;
 
   if (!routing.locales.includes(locale as "ar" | "en")) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   const messages = await getMessages({ locale });
   const isRtl = locale === "ar";

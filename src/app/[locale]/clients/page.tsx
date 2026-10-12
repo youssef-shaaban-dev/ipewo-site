@@ -1,11 +1,15 @@
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import SectionHero from "@/components/ui/SectionHero";
 
-export default function ClientsPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function ClientsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("clients");
+  const t = await getTranslations({ locale, namespace: "clients" });
   const isRtl = locale === "ar";
 
   // List of all 19 client logos available in the public folder
