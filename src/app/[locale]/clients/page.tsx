@@ -64,6 +64,7 @@ export default function ClientsPage({ params: { locale } }: { params: { locale: 
                   src={client.src}
                   alt={`Client Logo ${idx + 1}`}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                   className="object-contain p-6 transition-all duration-500 group-hover:scale-110"
                 />
               </div>

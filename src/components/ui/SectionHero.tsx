@@ -20,6 +20,7 @@ export default function SectionHero({ title, imageSrc, isRtl, breadcrumb }: Sect
             src={imageSrc}
             alt={title}
             fill
+            sizes="100vw"
             className="object-cover object-center opacity-10 grayscale"
             priority
           />

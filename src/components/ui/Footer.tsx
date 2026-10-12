@@ -30,6 +30,7 @@ export default function Footer() {
                   src="/ipewo-logo.webp"
                   alt="IPEWO Logo"
                   fill
+                  sizes="144px"
                   className="object-contain p-1"
                 />
               </div>

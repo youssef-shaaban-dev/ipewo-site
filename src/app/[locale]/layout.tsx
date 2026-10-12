@@ -54,6 +54,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={isRtl ? "rtl" : "ltr"}
+      data-scroll-behavior="smooth"
       className={`${tajawal.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
       <body className={`min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ${isRtl ? "font-arabic" : ""}`}>

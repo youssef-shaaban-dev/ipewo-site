@@ -35,6 +35,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                       src={category.images[0]}
                       alt={locale === "ar" ? category.nameAr : category.nameEn}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   ) : (

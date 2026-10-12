@@ -76,6 +76,7 @@ export default function About() {
               src="/images/hero/slide-1.webp"
               alt={t("title")}
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </motion.div>

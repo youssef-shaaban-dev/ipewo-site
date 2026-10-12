@@ -119,7 +119,7 @@ export default function Navbar() {
                 fill
                 className={`object-contain transition-all duration-300 ${isHeaderSolid ? "" : "brightness-0 invert drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]"}`}
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="144px"
               />
             </div>
           </Link>

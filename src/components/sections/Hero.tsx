@@ -48,6 +48,7 @@ export default function Hero() {
               src={sliderImages[currentIndex].url}
               alt="IPEWO Hero Slide"
               fill
+              sizes="100vw"
               className="object-fill md:object-cover object-center opacity-90 md:opacity-100"
               priority
             />
@@ -75,6 +76,7 @@ export default function Hero() {
               src="/ipewo-logo.webp"
               alt="IPEWO Logo"
               fill
+              sizes="(max-width: 768px) 224px, 288px"
               className="object-contain"
               priority
             />

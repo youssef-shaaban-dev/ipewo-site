@@ -38,6 +38,7 @@ export default function ProductGallery({ images, title }: { images?: string[], t
               src={currentImage}
               alt={title}
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-contain p-4 transition-all duration-300"
               priority
             />
@@ -88,7 +89,13 @@ export default function ProductGallery({ images, title }: { images?: string[], t
                 currentIndex === idx ? 'border-blue-600 opacity-100 scale-105' : 'border-slate-200 opacity-60 hover:opacity-100 hover:border-blue-400'
               }`}
             >
-              <Image src={img} alt={`${title} thumbnail ${idx + 1}`} fill className="object-cover" />
+              <Image
+                src={img}
+                alt={`${title} thumbnail ${idx + 1}`}
+                fill
+                sizes="(max-width: 768px) 25vw, 150px"
+                className="object-cover"
+              />
             </button>
           ))}
         </div>
