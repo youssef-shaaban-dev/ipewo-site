@@ -4,6 +4,8 @@ import ProductGallery from "@/components/ui/ProductGallery";
 import ParsedText from "@/components/ui/ParsedText";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -12,6 +14,33 @@ export function generateStaticParams() {
       category: cat.id,
     }))
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; category: string }>;
+}): Promise<Metadata> {
+  const { locale, category } = await params;
+  setRequestLocale(locale);
+  const catData = productsData.find((c) => c.id === category);
+
+  const fallbackTitle = catData
+    ? (locale === "ar" ? `${catData.nameAr} | إبيو IPEWO` : `${catData.nameEn} | IPEWO`)
+    : undefined;
+  const fallbackDesc = catData
+    ? (locale === "ar" ? catData.descAr?.replace(/\s+/g, " ").trim().slice(0, 160) : catData.descEn?.replace(/\s+/g, " ").trim().slice(0, 160))
+    : undefined;
+  const fallbackImage = catData?.images?.[0];
+
+  return buildPageMetadata({
+    locale,
+    path: `products/${category}`,
+    seoKey: `category/${category}`,
+    fallbackTitle,
+    fallbackDesc,
+    fallbackImage,
+  });
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ locale: string; category: string }> }) {

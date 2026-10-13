@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Tajawal, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { getStructuredData } from "@/data/schema";
+
+import { buildPageMetadata, SITE_URL } from "@/data/seo";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -31,12 +33,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "hero" });
 
+  const baseMeta = buildPageMetadata({ locale, path: "", seoKey: "home" });
   return {
-    title: "إبيو - IPEWO Air Filtration & Industrial Solutions",
-    description: t("subtitle"),
-    keywords: ["Air Filters", "HEPA Filters", "فلاتر هواء", "فلاتر هيبا", "IPEWO", "إبيو"],
+    metadataBase: new URL(SITE_URL),
+    ...baseMeta,
   };
 }
 

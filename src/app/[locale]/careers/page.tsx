@@ -1,6 +1,18 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Circle, Mail, MessageCircle } from "lucide-react";
 import SectionHero from "@/components/ui/SectionHero";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return buildPageMetadata({ locale, path: "careers", seoKey: "careers" });
+}
 
 export default async function CareersPage({
   params,

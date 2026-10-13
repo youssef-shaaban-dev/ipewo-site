@@ -3,6 +3,18 @@ import { productsData } from "@/data/products";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return buildPageMetadata({ locale, path: "products", seoKey: "products" });
+}
 
 export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

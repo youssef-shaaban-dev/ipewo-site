@@ -7,7 +7,15 @@ export default function RootPage() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="refresh" content="0; url=/ar/" />
-        <title>إبيو للحلول الصناعية وفلاتر الهواء | IPEWO Filters</title>
+        <title>فلاتر التكييف المركزي وتنقية الهواء في مصر | إبيو IPEWO</title>
+        <meta
+          name="description"
+          content="تصنيع وتوريد فلاتر التكييف المركزي وHEPA وULPA وحلول تنقية الهواء للشركات والقطاعات الحيوية في مصر."
+        />
+        <link rel="canonical" href="https://ipewofilters.com/ar/" />
+        <link rel="alternate" hrefLang="ar" href="https://ipewofilters.com/ar/" />
+        <link rel="alternate" hrefLang="en" href="https://ipewofilters.com/en/" />
+        <link rel="alternate" hrefLang="x-default" href="https://ipewofilters.com/ar/" />
       </head>
       <body style={{ margin: 0, padding: 0, fontFamily: "sans-serif", backgroundColor: "#f8fafc" }}>
         <script

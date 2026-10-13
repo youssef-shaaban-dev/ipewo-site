@@ -5,6 +5,8 @@ import ProductGallery from "@/components/ui/ProductGallery";
 import ParsedText from "@/components/ui/ParsedText";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/seo";
 
 export async function generateStaticParams({
   params,
@@ -32,6 +34,36 @@ export async function generateStaticParams({
     }
   }
   return result;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; category: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, category, slug } = await params;
+  setRequestLocale(locale);
+  const catData = productsData.find((c) => c.id === category);
+  const productData = catData?.subProducts?.find((s) => s.id === slug);
+
+  const fallbackTitle = productData
+    ? (locale === "ar" ? `${productData.nameAr} | إبيو IPEWO` : `${productData.nameEn} | IPEWO`)
+    : undefined;
+  const fallbackDesc = productData
+    ? (locale === "ar"
+        ? productData.descAr?.replace(/\s+/g, " ").trim().slice(0, 160)
+        : productData.descEn?.replace(/\s+/g, " ").trim().slice(0, 160))
+    : undefined;
+  const fallbackImage = productData?.images?.[0];
+
+  return buildPageMetadata({
+    locale,
+    path: `products/${category}/${slug}`,
+    seoKey: `product/${category}/${slug}`,
+    fallbackTitle,
+    fallbackDesc,
+    fallbackImage,
+  });
 }
 
 export default async function SubProductPage({ params }: { params: Promise<{ locale: string; category: string; slug: string }> }) {

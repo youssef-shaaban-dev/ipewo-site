@@ -1,6 +1,18 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Mail, PhoneCall, Printer, Smartphone } from "lucide-react";
 import SectionHero from "@/components/ui/SectionHero";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return buildPageMetadata({ locale, path: "contact", seoKey: "contact" });
+}
 
 export default async function ContactPage({
   params,

@@ -1,6 +1,18 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import SectionHero from "@/components/ui/SectionHero";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return buildPageMetadata({ locale, path: "clients", seoKey: "clients" });
+}
 
 export default async function ClientsPage({
   params,
