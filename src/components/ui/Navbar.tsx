@@ -95,7 +95,9 @@ export default function Navbar() {
                   <FacebookIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/ipewo-filters/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-blue-600 transition-colors text-slate-800"
                   aria-label="LinkedIn"
                 >
