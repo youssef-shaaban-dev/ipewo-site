@@ -78,33 +78,21 @@ export default function Hero() {
         <div className="w-full relative flex justify-center h-0 pointer-events-none">
           <AnimatePresence initial={false}>
             {currentIndex === 0 && (
-              <>
-            <motion.div
-                key="hero-text"
+              <motion.div
+                key="hero-text-content"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-0 flex flex-col items-center w-full px-4"
+                className="absolute top-0 flex flex-col items-center w-full px-4 gap-2 sm:gap-3"
               >
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide">
                   {t("title")}
                 </h1>
-              </motion.div>
-              {/* subtitle */}
-              <motion.div
-                key="hero-subtitle"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.5 }}
-                className="absolute top-0 flex flex-col items-center w-full px-4"
-              >
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-medium text-white/95 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide mt-15 md:mt-10">
+                <h1 className="text-lg sm:text-xl md:text-2xl font-medium text-white/90 drop-shadow-md leading-tight text-center max-w-4xl tracking-wide">
                   {t("subtitle")}
                 </h1>
               </motion.div>
-              </>
             )}
           </AnimatePresence>
         </div>
