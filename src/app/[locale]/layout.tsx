@@ -67,6 +67,21 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
       className={`${tajawal.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-N6T4GSWZ"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            `,
+          }}
+        />
+      </head>
       <body className={`min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ${isRtl ? "font-arabic" : ""}`}>
         <script
           type="application/ld+json"
